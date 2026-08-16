@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cka-20-gateway-api-discovery-lab
+  namespace: girus
+  labels:
+    app: girus-lab-template
+data:
+  lab.yaml: "name: cka-20-gateway-api-discovery\ntitle: 'CKA 20: Gateway API discovery'\ndescription: Descubra se Gateway\
+    \ API esta disponivel e registre a checagem no cluster.\nduration: 25m\ntimerEnabled: true\nmaxDuration: 25m\nimage: linuxtips/girus-kind-single-node:0.1\n\
+    type: kubernetes\ntags:\n- CKA\n- Kubernetes\n- blcsilva\n- networking\ntasks:\n- name: Verificar disponibilidade da Gateway\
+    \ API\n  description: Fixar verificacao de recursos opcionais antes de usar gatewayclass/gateway/httproute.\n  steps:\n\
+    \  - '**Objetivo de fixacao:** este lab pratica descoberta de Gateway API para fixar verificacao de recursos opcionais\
+    \ antes\n    de usar GatewayClass/Gateway/HTTPRoute.'\n  - '**Como pensar antes de executar:** leia o enunciado, identifique\
+    \ o recurso Kubernetes envolvido, execute o menor comando\n    que cria ou altera o recurso e valide o estado final com\
+    \ `get`, `describe`, `logs`, `exec` ou `jsonpath`.'\n  - '**Comandos e parametros importantes:**\n\n    - kubectl api-resources\
+    \ confirma se a API existe.\n\n    - grep filtra Gateway e HTTPRoute.\n\n    - kubectl get gatewayclass falha com seguranca\
+    \ quando a API nao existe.\n\n    - ConfigMap registra que a checagem foi feita.'\n  - '**Referencias oficiais para estudo:**\n\
+    \n    - https://kubernetes.io/docs/reference/kubectl/\n\n    - https://kubernetes.io/docs/concepts/services-networking/service/'\n\
+    \  - '**Pratica:** execute os comandos abaixo e observe a saida de cada etapa. No CKA, criar o recurso e so metade do\
+    \ trabalho;\n    a outra metade e provar tecnicamente que ele ficou no estado esperado.'\n  - kubectl create namespace\
+    \ cka-20\n  - kubectl api-resources | grep -Ei 'gateway|httproute' || true\n  - kubectl get gatewayclass 2>/dev/null ||\
+    \ true\n  - kubectl create configmap gateway-api-check --from-literal=checked=true -n cka-20\n  - kubectl describe configmap\
+    \ gateway-api-check -n cka-20\n  - '**Conclusao e reforco:** Ao concluir, voce deve checar APIs opcionais antes de escrever\
+    \ manifestos que podem nem existir\n    no cluster. Repita o lab sem copiar os comandos, depois refaca contra o relogio\
+    \ e anote qual comando provou que a solucao\n    funcionou.'\n  tips:\n  - type: tip\n    title: Ritmo CKA\n    content:\
+    \ Execute uma vez consultando, repita sem consulta e finalize contra o relogio.\n  validation:\n  - command: kubectl get\
+    \ configmap gateway-api-check -n cka-20 -o jsonpath='{.data.checked}' 2>/dev/null | grep -q true &&\n      echo ok\n \
+    \   expectedOutput: ok\n    errorMessage: A checagem Gateway API nao foi registrada.\n"

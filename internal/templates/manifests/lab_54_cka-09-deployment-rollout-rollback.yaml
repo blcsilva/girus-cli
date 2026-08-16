@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cka-09-deployment-rollout-rollback-lab
+  namespace: girus
+  labels:
+    app: girus-lab-template
+data:
+  lab.yaml: "name: cka-09-deployment-rollout-rollback\ntitle: 'CKA 09: Deployment, rollout e rollback'\ndescription: Quebre\
+    \ uma revisao de Deployment, diagnostique e volte para a versao estavel.\nduration: 25m\ntimerEnabled: true\nmaxDuration:\
+    \ 25m\nimage: linuxtips/girus-kind-single-node:0.1\ntype: kubernetes\ntags:\n- CKA\n- Kubernetes\n- blcsilva\n- workloads\n\
+    tasks:\n- name: Gerenciar rollout e rollback de Deployments\n  description: Fixar atualizacao declarativa e recuperacao\
+    \ de uma revisao quebrada.\n  steps:\n  - '**Objetivo de fixacao:** este lab pratica Deployment, rollout e rollback para\
+    \ fixar atualizacao declarativa e recuperacao\n    de uma revisao quebrada.'\n  - '**Como pensar antes de executar:**\
+    \ leia o enunciado, identifique o recurso Kubernetes envolvido, execute o menor comando\n    que cria ou altera o recurso\
+    \ e valide o estado final com `get`, `describe`, `logs`, `exec` ou `jsonpath`.'\n  - '**Comandos e parametros importantes:**\n\
+    \n    - kubectl create deployment cria um Deployment com selector e ReplicaSet.\n\n    - --replicas define quantidade\
+    \ desejada de Pods.\n\n    - kubectl set image altera a imagem e gera nova revisao.\n\n    - kubectl rollout undo volta\
+    \ para a revisao anterior.'\n  - '**Referencias oficiais para estudo:**\n\n    - https://kubernetes.io/docs/concepts/workloads/controllers/deployment/\n\
+    \n    - https://kubernetes.io/docs/reference/kubectl/generated/kubectl_apply/'\n  - '**Pratica:** execute os comandos\
+    \ abaixo e observe a saida de cada etapa. No CKA, criar o recurso e so metade do trabalho;\n    a outra metade e provar\
+    \ tecnicamente que ele ficou no estado esperado.'\n  - kubectl create namespace cka-09\n  - kubectl create deployment\
+    \ web-rollout --image=nginx:1.25-alpine --replicas=2 -n cka-09\n  - kubectl rollout status deployment/web-rollout -n cka-09\n\
+    \  - kubectl set image deployment/web-rollout nginx=nginx:tag-inexistente-cka -n cka-09\n  - kubectl get pods -n cka-09\n\
+    \  - kubectl rollout undo deployment/web-rollout -n cka-09\n  - kubectl rollout status deployment/web-rollout -n cka-09\n\
+    \  - '**Conclusao e reforco:** Ao concluir, voce deve saber quebrar, diagnosticar e restaurar um Deployment com rollout/rollback.\n\
+    \    Repita o lab sem copiar os comandos, depois refaca contra o relogio e anote qual comando provou que a solucao funcionou.'\n\
+    \  tips:\n  - type: tip\n    title: Ritmo CKA\n    content: Execute uma vez consultando, repita sem consulta e finalize\
+    \ contra o relogio.\n  validation:\n  - command: kubectl get deployment web-rollout -n cka-09 -o jsonpath='{.spec.template.spec.containers[0].image}'\
+    \ 2>/dev/null\n      | grep -q nginx:1.25-alpine && echo ok\n    expectedOutput: ok\n    errorMessage: O Deployment nao\
+    \ voltou para nginx:1.25-alpine.\n"

@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cka-21-storageclass-pvc-lab
+  namespace: girus
+  labels:
+    app: girus-lab-template
+data:
+  lab.yaml: "name: cka-21-storageclass-pvc\ntitle: 'CKA 21: StorageClass e PVC dinamico'\ndescription: Inspecione StorageClass\
+    \ e crie PVC usando provisionamento dinamico quando disponivel.\nduration: 25m\ntimerEnabled: true\nmaxDuration: 25m\n\
+    image: linuxtips/girus-kind-single-node:0.1\ntype: kubernetes\ntags:\n- CKA\n- Kubernetes\n- blcsilva\n- storage\ntasks:\n\
+    - name: Solicitar armazenamento com PVC dinamico\n  description: Fixar solicitacao de armazenamento por persistentvolumeclaim.\n\
+    \  steps:\n  - '**Objetivo de fixacao:** este lab pratica StorageClass e PVC dinamico para fixar solicitacao de armazenamento\
+    \ por PersistentVolumeClaim.'\n  - '**Como pensar antes de executar:** leia o enunciado, identifique o recurso Kubernetes\
+    \ envolvido, execute o menor comando\n    que cria ou altera o recurso e valide o estado final com `get`, `describe`,\
+    \ `logs`, `exec` ou `jsonpath`.'\n  - '**Comandos e parametros importantes:**\n\n    - PVC e uma requisicao de armazenamento\
+    \ feita pelo usuario.\n\n    - accessModes define como o volume pode ser montado.\n\n    - resources.requests.storage\
+    \ define tamanho solicitado.\n\n    - Sem StorageClass padrao, o PVC pode ficar Pending e isso tambem e diagnostico valido.'\n\
+    \  - '**Referencias oficiais para estudo:**\n\n    - https://kubernetes.io/docs/concepts/storage/persistent-volumes/'\n\
+    \  - '**Pratica:** execute os comandos abaixo e observe a saida de cada etapa. No CKA, criar o recurso e so metade do\
+    \ trabalho;\n    a outra metade e provar tecnicamente que ele ficou no estado esperado.'\n  - kubectl create namespace\
+    \ cka-21\n  - kubectl get storageclass\n  - \"kubectl apply -f - <<EOF\\napiVersion: v1\\nkind: PersistentVolumeClaim\\\
+    nmetadata:\\n  name: dynamic-pvc\\n  namespace: cka-21\\n\\\n    spec:\\n  accessModes:\\n  - ReadWriteOnce\\n  resources:\\\
+    n    requests:\\n      storage: 256Mi\\nEOF\\n\"\n  - kubectl get pvc dynamic-pvc -n cka-21\n  - kubectl describe pvc\
+    \ dynamic-pvc -n cka-21\n  - '**Conclusao e reforco:** Ao concluir, voce deve saber criar PVC e interpretar Bound/Pending\
+    \ como parte do troubleshooting\n    de storage. Repita o lab sem copiar os comandos, depois refaca contra o relogio e\
+    \ anote qual comando provou que a solucao\n    funcionou.'\n  tips:\n  - type: tip\n    title: Ritmo CKA\n    content:\
+    \ Execute uma vez consultando, repita sem consulta e finalize contra o relogio.\n  validation:\n  - command: kubectl get\
+    \ pvc dynamic-pvc -n cka-21 -o jsonpath='{.status.phase}' 2>/dev/null | grep -Eq 'Bound|Pending' &&\n      echo ok\n \
+    \   expectedOutput: ok\n    errorMessage: O PVC dynamic-pvc nao foi criado.\n"

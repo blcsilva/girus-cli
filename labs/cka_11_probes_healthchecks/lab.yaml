@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cka-11-probes-healthchecks-lab
+  namespace: girus
+  labels:
+    app: girus-lab-template
+data:
+  lab.yaml: "name: cka-11-probes-healthchecks\ntitle: 'CKA 11: probes e health checks'\ndescription: Configure readiness e\
+    \ liveness probe em Deployment HTTP.\nduration: 25m\ntimerEnabled: true\nmaxDuration: 25m\nimage: linuxtips/girus-kind-single-node:0.1\n\
+    type: kubernetes\ntags:\n- CKA\n- Kubernetes\n- blcsilva\n- workloads\ntasks:\n- name: Configurar readiness e liveness\
+    \ probes\n  description: Fixar como kubernetes decide se um container esta pronto e saudavel.\n  steps:\n  - '**Objetivo\
+    \ de fixacao:** este lab pratica readiness e liveness probes para fixar como Kubernetes decide se um container\n    esta\
+    \ pronto e saudavel.'\n  - '**Como pensar antes de executar:** leia o enunciado, identifique o recurso Kubernetes envolvido,\
+    \ execute o menor comando\n    que cria ou altera o recurso e valide o estado final com `get`, `describe`, `logs`, `exec`\
+    \ ou `jsonpath`.'\n  - '**Comandos e parametros importantes:**\n\n    - readinessProbe controla se o Pod recebe trafego.\n\
+    \n    - livenessProbe permite reiniciar container travado.\n\n    - httpGet define caminho e porta da checagem.\n\n  \
+    \  - kubectl patch altera recurso existente de forma pontual.'\n  - '**Referencias oficiais para estudo:**\n\n    - https://kubernetes.io/docs/concepts/workloads/pods/\n\
+    \n    - https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/'\n  - '**Pratica:** execute os comandos abaixo\
+    \ e observe a saida de cada etapa. No CKA, criar o recurso e so metade do trabalho;\n    a outra metade e provar tecnicamente\
+    \ que ele ficou no estado esperado.'\n  - kubectl create namespace cka-11\n  - kubectl create deployment web-probe --image=nginx:1.25-alpine\
+    \ -n cka-11\n  - kubectl patch deployment web-probe -n cka-11 --type=json -p='[{\"op\":\"add\",\"path\":\"/spec/template/spec/containers/0/readinessProbe\"\
+    ,\"value\":{\"httpGet\":{\"path\":\"/\",\"port\":80},\"initialDelaySeconds\":3,\"periodSeconds\":5}},{\"op\":\"add\",\"\
+    path\":\"/spec/template/spec/containers/0/livenessProbe\",\"value\":{\"httpGet\":{\"path\":\"/\",\"port\":80},\"initialDelaySeconds\"\
+    :10,\"periodSeconds\":10}}]'\n  - kubectl rollout status deployment/web-probe -n cka-11\n  - '**Conclusao e reforco:**\
+    \ Ao concluir, voce deve diferenciar readiness de liveness e validar probes no template do Deployment.\n    Repita o lab\
+    \ sem copiar os comandos, depois refaca contra o relogio e anote qual comando provou que a solucao funcionou.'\n  tips:\n\
+    \  - type: tip\n    title: Ritmo CKA\n    content: Execute uma vez consultando, repita sem consulta e finalize contra\
+    \ o relogio.\n  validation:\n  - command: kubectl get deployment web-probe -n cka-11 -o jsonpath='{.spec.template.spec.containers[0].readinessProbe.httpGet.path}'\n\
+    \      2>/dev/null | grep -q '^/$' && echo ok\n    expectedOutput: ok\n    errorMessage: A readinessProbe HTTP nao foi\
+    \ configurada.\n"

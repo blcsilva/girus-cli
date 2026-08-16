@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cka-15-hpa-autoscaling-lab
+  namespace: girus
+  labels:
+    app: girus-lab-template
+data:
+  lab.yaml: "name: cka-15-hpa-autoscaling\ntitle: 'CKA 15: HPA e autoscaling'\ndescription: Crie um HPA e identifique dependencias\
+    \ de metrics-server.\nduration: 25m\ntimerEnabled: true\nmaxDuration: 25m\nimage: linuxtips/girus-kind-single-node:0.1\n\
+    type: kubernetes\ntags:\n- CKA\n- Kubernetes\n- blcsilva\n- workloads\ntasks:\n- name: Criar HPA e interpretar dependencias\
+    \ de metricas\n  description: Fixar criacao de horizontalpodautoscaler e dependencia de metricas.\n  steps:\n  - '**Objetivo\
+    \ de fixacao:** este lab pratica HPA e autoscaling para fixar criacao de HorizontalPodAutoscaler e dependencia\n    de\
+    \ metricas.'\n  - '**Como pensar antes de executar:** leia o enunciado, identifique o recurso Kubernetes envolvido, execute\
+    \ o menor comando\n    que cria ou altera o recurso e valide o estado final com `get`, `describe`, `logs`, `exec` ou `jsonpath`.'\n\
+    \  - '**Comandos e parametros importantes:**\n\n    - kubectl autoscale cria HPA para um Deployment.\n\n    - --cpu-percent\
+    \ define alvo medio de CPU.\n\n    - --min e --max limitam replicas.\n\n    - kubectl top depende de metrics-server disponivel\
+    \ no cluster.'\n  - '**Referencias oficiais para estudo:**\n\n    - https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/\n\
+    \n    - https://kubernetes.io/docs/concepts/workloads/controllers/deployment/'\n  - '**Pratica:** execute os comandos\
+    \ abaixo e observe a saida de cada etapa. No CKA, criar o recurso e so metade do trabalho;\n    a outra metade e provar\
+    \ tecnicamente que ele ficou no estado esperado.'\n  - kubectl create namespace cka-15\n  - kubectl create deployment\
+    \ hpa-web --image=nginx:1.25-alpine -n cka-15\n  - kubectl set resources deployment hpa-web --requests=cpu=100m --limits=cpu=200m\
+    \ -n cka-15\n  - kubectl autoscale deployment hpa-web --cpu-percent=50 --min=1 --max=3 -n cka-15\n  - kubectl get hpa\
+    \ -n cka-15\n  - kubectl top pods -n cka-15 || true\n  - '**Conclusao e reforco:** Ao concluir, voce deve saber criar\
+    \ HPA e identificar quando faltam metricas para escalar. Repita\n    o lab sem copiar os comandos, depois refaca contra\
+    \ o relogio e anote qual comando provou que a solucao funcionou.'\n  tips:\n  - type: tip\n    title: Ritmo CKA\n    content:\
+    \ Execute uma vez consultando, repita sem consulta e finalize contra o relogio.\n  validation:\n  - command: kubectl get\
+    \ hpa hpa-web -n cka-15 -o jsonpath='{.spec.maxReplicas}' 2>/dev/null | grep -q 3 && echo ok\n    expectedOutput: ok\n\
+    \    errorMessage: O HPA hpa-web nao foi criado com maxReplicas=3.\n"

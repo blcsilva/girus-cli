@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cka-16-services-endpoints-lab
+  namespace: girus
+  labels:
+    app: girus-lab-template
+data:
+  lab.yaml: "name: cka-16-services-endpoints\ntitle: 'CKA 16: Services e endpoints'\ndescription: Exponha Deployment por ClusterIP\
+    \ e valide endpoints reais.\nduration: 25m\ntimerEnabled: true\nmaxDuration: 25m\nimage: linuxtips/girus-kind-single-node:0.1\n\
+    type: kubernetes\ntags:\n- CKA\n- Kubernetes\n- blcsilva\n- networking\ntasks:\n- name: Expor workloads com Services e\
+    \ validar endpoints\n  description: Fixar o caminho deployment -> pods -> service -> endpoints.\n  steps:\n  - '**Objetivo\
+    \ de fixacao:** este lab pratica Service ClusterIP e endpoints para fixar o caminho Deployment -> Pods -> Service\n  \
+    \  -> Endpoints.'\n  - '**Como pensar antes de executar:** leia o enunciado, identifique o recurso Kubernetes envolvido,\
+    \ execute o menor comando\n    que cria ou altera o recurso e valide o estado final com `get`, `describe`, `logs`, `exec`\
+    \ ou `jsonpath`.'\n  - '**Comandos e parametros importantes:**\n\n    - kubectl expose cria Service a partir de um Deployment.\n\
+    \n    - --port define porta do Service.\n\n    - --target-port aponta para porta do container.\n\n    - Endpoints mostram\
+    \ quais Pods estao recebendo trafego.'\n  - '**Referencias oficiais para estudo:**\n\n    - https://kubernetes.io/docs/concepts/services-networking/service/\n\
+    \n    - https://kubernetes.io/docs/concepts/workloads/controllers/deployment/'\n  - '**Pratica:** execute os comandos\
+    \ abaixo e observe a saida de cada etapa. No CKA, criar o recurso e so metade do trabalho;\n    a outra metade e provar\
+    \ tecnicamente que ele ficou no estado esperado.'\n  - kubectl create namespace cka-16\n  - kubectl create deployment\
+    \ web-svc --image=nginx:1.25-alpine --replicas=2 -n cka-16\n  - kubectl expose deployment web-svc --port=80 --target-port=80\
+    \ -n cka-16\n  - kubectl get svc,endpoints,pods -n cka-16\n  - kubectl describe service web-svc -n cka-16\n  - '**Conclusao\
+    \ e reforco:** Ao concluir, voce deve diagnosticar Service sem endpoints comparando selector e labels. Repita\n    o lab\
+    \ sem copiar os comandos, depois refaca contra o relogio e anote qual comando provou que a solucao funcionou.'\n  tips:\n\
+    \  - type: tip\n    title: Ritmo CKA\n    content: Execute uma vez consultando, repita sem consulta e finalize contra\
+    \ o relogio.\n  validation:\n  - command: kubectl get endpoints web-svc -n cka-16 -o jsonpath='{.subsets[0].addresses[0].ip}'\
+    \ 2>/dev/null | grep -qE '[0-9]+'\n      && echo ok\n    expectedOutput: ok\n    errorMessage: O Service web-svc nao tem\
+    \ endpoints.\n"

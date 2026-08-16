@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cka-03-namespaces-labels-selectors-lab
+  namespace: girus
+  labels:
+    app: girus-lab-template
+data:
+  lab.yaml: "name: cka-03-namespaces-labels-selectors\ntitle: 'CKA 03: Namespaces, labels e selectors'\ndescription: Pratique\
+    \ isolamento por namespace, labels e seletores usados por Services.\nduration: 20m\ntimerEnabled: true\nmaxDuration: 20m\n\
+    image: linuxtips/girus-kind-single-node:0.1\ntype: kubernetes\ntags:\n- CKA\n- Kubernetes\n- blcsilva\n- kubectl\ntasks:\n\
+    - name: Organizar recursos com namespaces, labels e selectors\n  description: Fixar isolamento logico e selecao de recursos\
+    \ por labels.\n  steps:\n  - '**Objetivo de fixacao:** este lab pratica namespaces, labels e selectors para fixar isolamento\
+    \ logico e selecao de recursos\n    por labels.'\n  - '**Como pensar antes de executar:** leia o enunciado, identifique\
+    \ o recurso Kubernetes envolvido, execute o menor comando\n    que cria ou altera o recurso e valide o estado final com\
+    \ `get`, `describe`, `logs`, `exec` ou `jsonpath`.'\n  - '**Comandos e parametros importantes:**\n\n    - kubectl create\
+    \ namespace cria um limite logico para os objetos.\n\n    - kubectl label adiciona metadados consultaveis.\n\n    - -l\
+    \ filtra recursos por selector.\n\n    - Selectors sao a base para Services, Deployments e operacoes em lote.'\n  - '**Referencias\
+    \ oficiais para estudo:**\n\n    - https://kubernetes.io/docs/reference/kubectl/quick-reference/\n\n    - https://kubernetes.io/docs/concepts/services-networking/service/\n\
+    \n    - https://kubernetes.io/docs/concepts/workloads/controllers/deployment/'\n  - '**Pratica:** execute os comandos\
+    \ abaixo e observe a saida de cada etapa. No CKA, criar o recurso e so metade do trabalho;\n    a outra metade e provar\
+    \ tecnicamente que ele ficou no estado esperado.'\n  - kubectl create namespace cka-03\n  - kubectl create deployment\
+    \ web-label --image=nginx:1.25-alpine --replicas=2 -n cka-03\n  - kubectl label deployment web-label tier=frontend -n\
+    \ cka-03\n  - kubectl label pods -l app=web-label tier=frontend -n cka-03\n  - kubectl get pods -n cka-03 -l tier=frontend\n\
+    \  - '**Conclusao e reforco:** Ao concluir, voce deve conseguir organizar recursos por namespace e provar selecao por\
+    \ labels\n    sem depender de nomes de Pods. Repita o lab sem copiar os comandos, depois refaca contra o relogio e anote\
+    \ qual comando\n    provou que a solucao funcionou.'\n  tips:\n  - type: tip\n    title: Ritmo CKA\n    content: Execute\
+    \ uma vez consultando, repita sem consulta e finalize contra o relogio.\n  validation:\n  - command: kubectl get pods\
+    \ -n cka-03 -l tier=frontend --no-headers 2>/dev/null | wc -l | grep -q 2 && echo ok\n    expectedOutput: ok\n    errorMessage:\
+    \ Nao ha 2 Pods com label tier=frontend.\n"

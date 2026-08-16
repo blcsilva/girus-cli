@@ -3,6 +3,7 @@ package templates
 import (
 	"embed"
 	"io/fs"
+	"path"
 	"path/filepath"
 
 	"github.com/badtuxx/girus-cli/internal/common"
@@ -16,7 +17,7 @@ func GetManifest(name string) ([]byte, error) {
 	if common.Lang() == "es" {
 		dir = "manifests_es"
 	}
-	return fs.ReadFile(ManifestFS, filepath.Join(dir, name))
+	return fs.ReadFile(ManifestFS, path.Join(dir, name))
 }
 
 // ListManifests retorna uma lista de nomes de todos os arquivos YAML no diretório de manifests

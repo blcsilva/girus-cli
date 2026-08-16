@@ -1,0 +1,130 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kubernetes-rbac-serviceaccounts-lab
+  namespace: girus
+  labels:
+    app: girus-lab-template
+data:
+  lab.yaml: |
+    name: kubernetes-rbac-serviceaccounts
+    title: "Kubernetes: RBAC e ServiceAccounts"
+    description: "Aprenda a criar ServiceAccounts, Roles e RoleBindings para aplicar permissões mínimas dentro de um namespace Kubernetes."
+    duration: 35m
+    image: "linuxtips/girus-kind-single-node:0.1"
+    type: "kubernetes"
+    tags:
+      - "blcsilva"
+      - "CKA"
+    tasks:
+      - name: "Criando uma ServiceAccount"
+        description: "Crie uma identidade de aplicação e entenda como validar permissões com kubectl auth can-i."
+        steps:
+          - "Crie o namespace do exercício:"
+          - "`kubectl create namespace k8s-rbac`"
+          - "Crie uma ServiceAccount para uma aplicação de leitura:"
+          - "`kubectl create serviceaccount leitor-pods -n k8s-rbac`"
+          - "Liste as ServiceAccounts:"
+          - "`kubectl get serviceaccounts -n k8s-rbac`"
+          - "Verifique se a ServiceAccount ainda não pode listar Pods:"
+          - "`kubectl auth can-i list pods --as=system:serviceaccount:k8s-rbac:leitor-pods -n k8s-rbac`"
+        tips:
+          - type: "info"
+            title: "ServiceAccount"
+            content: "ServiceAccounts representam identidades usadas por Pods e automações dentro do cluster."
+          - type: "tip"
+            title: "can-i"
+            content: "kubectl auth can-i é a forma mais rápida de testar se uma identidade possui determinada permissão."
+        validation:
+          - command: "kubectl get serviceaccount leitor-pods -n k8s-rbac -o name 2>/dev/null | grep -q serviceaccount/leitor-pods && echo 'ok'"
+            expectedOutput: "ok"
+            errorMessage: "A ServiceAccount leitor-pods não foi criada."
+
+      - name: "Criando Role e RoleBinding"
+        description: "Aplique permissões mínimas para listar, obter e observar Pods dentro do namespace."
+        steps:
+          - "Crie o arquivo `role-pods.yaml`:"
+          - |
+            ```
+            apiVersion: rbac.authorization.k8s.io/v1
+            kind: Role
+            metadata:
+              name: pod-reader
+              namespace: k8s-rbac
+            rules:
+            - apiGroups: [""]
+              resources: ["pods"]
+              verbs: ["get", "list", "watch"]
+            ---
+            apiVersion: rbac.authorization.k8s.io/v1
+            kind: RoleBinding
+            metadata:
+              name: pod-reader-binding
+              namespace: k8s-rbac
+            subjects:
+            - kind: ServiceAccount
+              name: leitor-pods
+              namespace: k8s-rbac
+            roleRef:
+              kind: Role
+              name: pod-reader
+              apiGroup: rbac.authorization.k8s.io
+            ```
+          - "Aplique o manifesto:"
+          - "`kubectl apply -f role-pods.yaml`"
+          - "Teste a permissão de listar Pods:"
+          - "`kubectl auth can-i list pods --as=system:serviceaccount:k8s-rbac:leitor-pods -n k8s-rbac`"
+          - "Teste uma permissão que não deve existir:"
+          - "`kubectl auth can-i delete pods --as=system:serviceaccount:k8s-rbac:leitor-pods -n k8s-rbac`"
+        tips:
+          - type: "warning"
+            title: "Menor privilégio"
+            content: "Conceda apenas os verbos e recursos necessários. Evite wildcards como '*' em ambientes reais."
+          - type: "info"
+            title: "Role vs ClusterRole"
+            content: "Role vale apenas em um namespace. ClusterRole pode valer no cluster inteiro ou ser vinculada a um namespace via RoleBinding."
+        validation:
+          - command: "kubectl auth can-i list pods --as=system:serviceaccount:k8s-rbac:leitor-pods -n k8s-rbac | grep -q yes && echo 'ok'"
+            expectedOutput: "ok"
+            errorMessage: "A ServiceAccount leitor-pods ainda não consegue listar Pods."
+          - command: "kubectl auth can-i delete pods --as=system:serviceaccount:k8s-rbac:leitor-pods -n k8s-rbac | grep -q no && echo 'ok'"
+            expectedOutput: "ok"
+            errorMessage: "A ServiceAccount leitor-pods recebeu permissão indevida para deletar Pods."
+
+      - name: "Usando a ServiceAccount em um Pod"
+        description: "Associe a ServiceAccount a um Pod e valide a configuração aplicada."
+        steps:
+          - "Crie o arquivo `pod-rbac.yaml`:"
+          - |
+            ```
+            apiVersion: v1
+            kind: Pod
+            metadata:
+              name: app-com-rbac
+              namespace: k8s-rbac
+            spec:
+              serviceAccountName: leitor-pods
+              containers:
+              - name: app
+                image: bitnami/kubectl:latest
+                command: ["sh", "-c", "sleep 3600"]
+            ```
+          - "Aplique o Pod:"
+          - "`kubectl apply -f pod-rbac.yaml`"
+          - "Verifique se o Pod está usando a ServiceAccount correta:"
+          - "`kubectl get pod app-com-rbac -n k8s-rbac -o jsonpath='{.spec.serviceAccountName}'`"
+          - "Liste Roles e RoleBindings criados:"
+          - "`kubectl get role,rolebinding -n k8s-rbac`"
+          - "Ao final, remova o namespace:"
+          - "`kubectl delete namespace k8s-rbac`"
+        tips:
+          - type: "tip"
+            title: "serviceAccountName"
+            content: "O campo serviceAccountName define qual identidade Kubernetes será usada pelo Pod."
+          - type: "warning"
+            title: "Tokens em Pods"
+            content: "Pods podem receber tokens de ServiceAccount para falar com a API do Kubernetes. Combine isso com RBAC restrito."
+        validation:
+          - command: "kubectl get pod app-com-rbac -n k8s-rbac -o jsonpath='{.spec.serviceAccountName}' 2>/dev/null | grep -q leitor-pods && echo 'ok'"
+            expectedOutput: "ok"
+            errorMessage: "O Pod app-com-rbac não está usando a ServiceAccount leitor-pods."

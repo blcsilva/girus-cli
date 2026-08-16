@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cka-25-troubleshoot-image-service-lab
+  namespace: girus
+  labels:
+    app: girus-lab-template
+data:
+  lab.yaml: "name: cka-25-troubleshoot-image-service\ntitle: 'CKA 25: troubleshooting imagem e Service'\ndescription: Diagnostique\
+    \ ImagePullBackOff e Service sem endpoint por selector errado.\nduration: 35m\ntimerEnabled: true\nmaxDuration: 35m\n\
+    image: linuxtips/girus-kind-single-node:0.1\ntype: kubernetes\ntags:\n- CKA\n- Kubernetes\n- blcsilva\n- troubleshooting\n\
+    tasks:\n- name: Corrigir sintomas de imagem e Service sem endpoint\n  description: 'Fixar dois sintomas comuns do cka:\
+    \ pull de imagem e selector errado.'\n  steps:\n  - '**Objetivo de fixacao:** este lab pratica troubleshooting de imagem\
+    \ e Service sem endpoint para fixar dois sintomas comuns\n    do CKA: pull de imagem e selector errado.'\n  - '**Como\
+    \ pensar antes de executar:** leia o enunciado, identifique o recurso Kubernetes envolvido, execute o menor comando\n\
+    \    que cria ou altera o recurso e valide o estado final com `get`, `describe`, `logs`, `exec` ou `jsonpath`.'\n  - '**Comandos\
+    \ e parametros importantes:**\n\n    - ImagePullBackOff/ErrImagePull indicam problema de imagem, tag, registry ou credencial.\n\
+    \n    - Service usa selector para encontrar Pods.\n\n    - patch altera selector propositalmente para simular erro.\n\n\
+    \    - endpoints vazio prova que nenhum Pod foi selecionado.'\n  - '**Referencias oficiais para estudo:**\n\n    - https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/\n\
+    \n    - https://kubernetes.io/docs/concepts/services-networking/service/'\n  - '**Pratica:** execute os comandos abaixo\
+    \ e observe a saida de cada etapa. No CKA, criar o recurso e so metade do trabalho;\n    a outra metade e provar tecnicamente\
+    \ que ele ficou no estado esperado.'\n  - kubectl create namespace cka-25\n  - kubectl run bad-image --image=nginx:tag-inexistente-cka\
+    \ -n cka-25 --restart=Never\n  - kubectl create deployment api-ok --image=nginx:1.25-alpine -n cka-25\n  - kubectl expose\
+    \ deployment api-ok --name=api-broken --port=80 --target-port=80 -n cka-25\n  - kubectl patch service api-broken -n cka-25\
+    \ -p '{\"spec\":{\"selector\":{\"app\":\"etiqueta-errada\"}}}'\n  - kubectl get pods,endpoints,svc -n cka-25\n  - kubectl\
+    \ describe pod bad-image -n cka-25\n  - '**Conclusao e reforco:** Ao concluir, voce deve usar describe para imagem e endpoints/labels\
+    \ para diagnosticar Service.\n    Repita o lab sem copiar os comandos, depois refaca contra o relogio e anote qual comando\
+    \ provou que a solucao funcionou.'\n  tips:\n  - type: tip\n    title: Ritmo CKA\n    content: Execute uma vez consultando,\
+    \ repita sem consulta e finalize contra o relogio.\n  validation:\n  - command: kubectl get pod bad-image -n cka-25 -o\
+    \ jsonpath='{.status.containerStatuses[0].state.waiting.reason}' 2>/dev/null\n      | grep -Eq 'ImagePullBackOff|ErrImagePull'\
+    \ && echo ok\n    expectedOutput: ok\n    errorMessage: O Pod bad-image nao esta em erro de pull de imagem.\n  - command:\
+    \ kubectl get endpoints api-broken -n cka-25 -o jsonpath='{.subsets}' 2>/dev/null | grep -q '^$' && echo ok\n    expectedOutput:\
+    \ ok\n    errorMessage: O Service api-broken deveria estar sem endpoints.\n"

@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cka-02-yaml-dry-run-lab
+  namespace: girus
+  labels:
+    app: girus-lab-template
+data:
+  lab.yaml: "name: cka-02-yaml-dry-run\ntitle: 'CKA 02: YAML, dry-run e apply'\ndescription: Gere YAML com dry-run client\
+    \ e aplique manifestos sem escrever tudo do zero.\nduration: 20m\ntimerEnabled: true\nmaxDuration: 20m\nimage: linuxtips/girus-kind-single-node:0.1\n\
+    type: kubernetes\ntags:\n- CKA\n- Kubernetes\n- blcsilva\n- kubectl\ntasks:\n- name: Gerar YAML com dry-run e aplicar\
+    \ manifestos\n  description: 'Fixar o padrao de prova: gerar manifesto rapido, revisar o yaml e aplicar de forma declarativa.'\n\
+    \  steps:\n  - '**Objetivo de fixacao:** este lab pratica geracao de YAML com dry-run e aplicacao declarativa para fixar\
+    \ o padrao de\n    prova: gerar manifesto rapido, revisar o YAML e aplicar de forma declarativa.'\n  - '**Como pensar\
+    \ antes de executar:** leia o enunciado, identifique o recurso Kubernetes envolvido, execute o menor comando\n    que\
+    \ cria ou altera o recurso e valide o estado final com `get`, `describe`, `logs`, `exec` ou `jsonpath`.'\n  - '**Comandos\
+    \ e parametros importantes:**\n\n    - --dry-run=client gera o objeto localmente sem enviar para a API.\n\n    - -o yaml\
+    \ imprime o objeto no formato YAML.\n\n    - > app-env.yaml grava o manifesto em arquivo.\n\n    - --command -- separa\
+    \ flags do kubectl do comando executado dentro do container; por isso dry-run e -o yaml precisam vir\n    antes.\n\n \
+    \   - --env injeta variaveis de ambiente no container.'\n  - '**Referencias oficiais para estudo:**\n\n    - https://kubernetes.io/docs/reference/kubectl/generated/kubectl_run/\n\
+    \n    - https://kubernetes.io/docs/reference/kubectl/generated/kubectl_apply/\n\n    - https://kubernetes.io/docs/reference/kubectl/quick-reference/\n\
+    \n    - https://kubernetes.io/docs/concepts/workloads/pods/'\n  - '**Pratica:** execute os comandos abaixo e observe a\
+    \ saida de cada etapa. No CKA, criar o recurso e so metade do trabalho;\n    a outra metade e provar tecnicamente que\
+    \ ele ficou no estado esperado.'\n  - kubectl create namespace cka-02\n  - kubectl run app-env --image=busybox:1.36 -n\
+    \ cka-02 --restart=Never --env=CKA_MODE=training --dry-run=client -o yaml --command\n    -- sh -c 'sleep 3600' > app-env.yaml\n\
+    \  - kubectl apply -f app-env.yaml\n  - kubectl wait --for=condition=Ready pod/app-env -n cka-02 --timeout=90s\n  - kubectl\
+    \ exec -n cka-02 app-env -- printenv CKA_MODE\n  - '**Conclusao e reforco:** Ao concluir, voce deve distinguir criar recurso\
+    \ diretamente de gerar YAML, e lembrar que tudo\n    depois de -- pertence ao comando do container. Repita o lab sem copiar\
+    \ os comandos, depois refaca contra o relogio e anote\n    qual comando provou que a solucao funcionou.'\n  tips:\n  -\
+    \ type: tip\n    title: Ritmo CKA\n    content: Execute uma vez consultando, repita sem consulta e finalize contra o relogio.\n\
+    \  validation:\n  - command: kubectl get pod app-env -n cka-02 -o jsonpath='{.spec.containers[0].env[0].value}' 2>/dev/null\
+    \ | grep -q training\n      && echo ok\n    expectedOutput: ok\n    errorMessage: O Pod app-env nao tem CKA_MODE=training.\n"

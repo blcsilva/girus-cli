@@ -128,6 +128,444 @@ entries:
       url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/kubernetes_deployment/lab.yaml"
       created: "2024-06-01T10:00:00Z"
       digest: "sha256:15234db636c79593918d1365fea9fa5dad8a67da17ec58f18c9dff1b9b40bf8d"
+  kubernetes_probes-healthchecks:
+    - name: kubernetes_probes-healthchecks
+      version: "1.0.0"
+      description: "Laboratório de Probes e Health Checks no Kubernetes"
+      keywords:
+        - kubernetes
+        - probes
+        - healthchecks
+        - observabilidade
+        - blcsilva
+        - CKA
+      maintainers:
+        - "Jeferson <jeferson@linuxtips.io>"
+      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/kubernetes_probes-healthchecks/lab.yaml"
+      created: "2026-08-16T00:00:00Z"
+      digest: "sha256:d68213e9d0f32c62988108904dcdc21d196d02a5b45e7165efffceb2eef5af31"
+  kubernetes_recursos-limits:
+    - name: kubernetes_recursos-limits
+      version: "1.0.0"
+      description: "Laboratório de Requests, Limits e Quotas no Kubernetes"
+      keywords:
+        - kubernetes
+        - resources
+        - limits
+        - quotas
+        - blcsilva
+        - CKA
+      maintainers:
+        - "Jeferson <jeferson@linuxtips.io>"
+      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/kubernetes_recursos-limits/lab.yaml"
+      created: "2026-08-16T00:00:00Z"
+      digest: "sha256:70eecf268b0927ad87d4d57a649ebcb88e57ebf5f37c574d36552eb88289d4f2"
+  kubernetes_rbac-serviceaccounts:
+    - name: kubernetes_rbac-serviceaccounts
+      version: "1.0.0"
+      description: "Laboratório de RBAC e ServiceAccounts no Kubernetes"
+      keywords:
+        - kubernetes
+        - rbac
+        - serviceaccounts
+        - security
+        - blcsilva
+        - CKA
+      maintainers:
+        - "Jeferson <jeferson@linuxtips.io>"
+      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/kubernetes_rbac-serviceaccounts/lab.yaml"
+      created: "2026-08-16T00:00:00Z"
+      digest: "sha256:dc6b8944b9ef556950d5d5faeaa7bc504d8e65f67c5f09f57dccac819efece01"
+  cka_01_kubectl_pods:
+    - name: cka-01-kubectl-pods
+      version: "1.0.0"
+      description: "Crie Pods rapidamente, inspecione status, eventos e detalhes com kubectl."
+      keywords:
+        - kubernetes
+        - cka
+        - kubectl
+        - blcsilva
+        - CKA
+      maintainers:
+        - "Bruno Silva <blcsilva>"
+      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_01_kubectl_pods/lab.yaml"
+      created: "2026-08-16T00:00:00Z"
+      digest: "sha256:ef1445cbcdc85f2f65ef46ba8d6499c1c297aac0249bbee38526415f2fb96aea"
+  cka_02_yaml_dry_run:
+    - name: cka-02-yaml-dry-run
+      version: "1.0.0"
+      description: "Gere YAML com dry-run client e aplique manifestos sem escrever tudo do zero."
+      keywords:
+        - kubernetes
+        - cka
+        - kubectl
+        - blcsilva
+        - CKA
+      maintainers:
+        - "Bruno Silva <blcsilva>"
+      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_02_yaml_dry_run/lab.yaml"
+      created: "2026-08-16T00:00:00Z"
+      digest: "sha256:89f4b855d345b5de67ad4886b5b84e9a4152a67afae9f729315f72a93842723a"
+  cka_03_namespaces_labels_selectors:
+    - name: cka-03-namespaces-labels-selectors
+      version: "1.0.0"
+      description: "Pratique isolamento por namespace, labels e seletores usados por Services."
+      keywords:
+        - kubernetes
+        - cka
+        - kubectl
+        - blcsilva
+        - CKA
+      maintainers:
+        - "Bruno Silva <blcsilva>"
+      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_03_namespaces_labels_selectors/lab.yaml"
+      created: "2026-08-16T00:00:00Z"
+      digest: "sha256:3efdb8cb30e6f3e1000cdd2d2be0f1d39b7ef05767f2d60ba6cea8c41021e8b8"
+  cka_04_logs_exec_debug:
+    - name: cka-04-logs-exec-debug
+      version: "1.0.0"
+      description: "Use logs e exec para provar comportamento dentro do container."
+      keywords:
+        - kubernetes
+        - cka
+        - kubectl
+        - blcsilva
+        - CKA
+      maintainers:
+        - "Bruno Silva <blcsilva>"
+      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_04_logs_exec_debug/lab.yaml"
+      created: "2026-08-16T00:00:00Z"
+      digest: "sha256:dd877c31fda4d2454468dd84a3cdff444f9d4f22b3f3cb1dba6103505151d4c3"
+  cka_05_cluster_components:
+    - name: cka-05-cluster-components
+      version: "1.0.0"
+      description: "Mapeie nodes, kube-system, API resources e versao do cluster."
+      keywords:
+        - kubernetes
+        - cka
+        - cluster
+        - blcsilva
+        - CKA
+      maintainers:
+        - "Bruno Silva <blcsilva>"
+      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_05_cluster_components/lab.yaml"
+      created: "2026-08-16T00:00:00Z"
+      digest: "sha256:5b292a128a4d3c0d8498c90ddc56dd95422a1faacbf75ffd22b0f84c540e8272"
+  cka_06_node_maintenance:
+    - name: cka-06-node-maintenance
+      version: "1.0.0"
+      description: "Pratique cordon e uncordon em ambiente single-node sem executar drain destrutivo."
+      keywords:
+        - kubernetes
+        - cka
+        - cluster
+        - blcsilva
+        - CKA
+      maintainers:
+        - "Bruno Silva <blcsilva>"
+      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_06_node_maintenance/lab.yaml"
+      created: "2026-08-16T00:00:00Z"
+      digest: "sha256:d5e723e8a5207702d5a25c16c761bd86da29c444ca555da6b0345967a5828bdd"
+  cka_07_rbac_serviceaccounts:
+    - name: cka-07-rbac-serviceaccounts
+      version: "1.0.0"
+      description: "Crie permissao minima com Role, RoleBinding e valide com auth can-i."
+      keywords:
+        - kubernetes
+        - cka
+        - cluster
+        - blcsilva
+        - CKA
+      maintainers:
+        - "Bruno Silva <blcsilva>"
+      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_07_rbac_serviceaccounts/lab.yaml"
+      created: "2026-08-16T00:00:00Z"
+      digest: "sha256:d93edccdf563292c3813cbbfbdc05420259b6aa5a535e3cb6eafc5f8f66ef1a0"
+  cka_08_api_helm_kustomize_crd:
+    - name: cka-08-api-helm-kustomize-crd
+      version: "1.0.0"
+      description: "Descubra capacidades administrativas sem depender de objetos externos ao cluster."
+      keywords:
+        - kubernetes
+        - cka
+        - cluster
+        - blcsilva
+        - CKA
+      maintainers:
+        - "Bruno Silva <blcsilva>"
+      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_08_api_helm_kustomize_crd/lab.yaml"
+      created: "2026-08-16T00:00:00Z"
+      digest: "sha256:2d333f225cbc3a6c90dbae7d8556589f71cc1c0d73baf00b601c168f47d94125"
+  cka_09_deployment_rollout_rollback:
+    - name: cka-09-deployment-rollout-rollback
+      version: "1.0.0"
+      description: "Quebre uma revisao de Deployment, diagnostique e volte para a versao estavel."
+      keywords:
+        - kubernetes
+        - cka
+        - workloads
+        - blcsilva
+        - CKA
+      maintainers:
+        - "Bruno Silva <blcsilva>"
+      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_09_deployment_rollout_rollback/lab.yaml"
+      created: "2026-08-16T00:00:00Z"
+      digest: "sha256:d95e3296c66a731275a000656168eea34ccc9822534f76e428a14adccfced987"
+  cka_10_configmap_secret_env:
+    - name: cka-10-configmap-secret-env
+      version: "1.0.0"
+      description: "Injete configuracao e segredo em um Pod e valide por exec."
+      keywords:
+        - kubernetes
+        - cka
+        - workloads
+        - blcsilva
+        - CKA
+      maintainers:
+        - "Bruno Silva <blcsilva>"
+      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_10_configmap_secret_env/lab.yaml"
+      created: "2026-08-16T00:00:00Z"
+      digest: "sha256:2b39dde25bace6c2b38c1264d62d4ddf891570d80f5271c4082c23880620736c"
+  cka_11_probes_healthchecks:
+    - name: cka-11-probes-healthchecks
+      version: "1.0.0"
+      description: "Configure readiness e liveness probe em Deployment HTTP."
+      keywords:
+        - kubernetes
+        - cka
+        - workloads
+        - blcsilva
+        - CKA
+      maintainers:
+        - "Bruno Silva <blcsilva>"
+      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_11_probes_healthchecks/lab.yaml"
+      created: "2026-08-16T00:00:00Z"
+      digest: "sha256:105f7e863b95a8451c1ebe63fa1e9f3e7eb2114f64a96adff9c9b9ce647181e0"
+  cka_12_resources_quotas_limits:
+    - name: cka-12-resources-quotas-limits
+      version: "1.0.0"
+      description: "Aplique LimitRange e ResourceQuota para controlar consumo de namespace."
+      keywords:
+        - kubernetes
+        - cka
+        - workloads
+        - blcsilva
+        - CKA
+      maintainers:
+        - "Bruno Silva <blcsilva>"
+      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_12_resources_quotas_limits/lab.yaml"
+      created: "2026-08-16T00:00:00Z"
+      digest: "sha256:d8473210a591de77d712740cc62fbbb2dafd23b788e19b3705f8cf276cb28020"
+  cka_13_scheduling_nodeselector:
+    - name: cka-13-scheduling-nodeselector
+      version: "1.0.0"
+      description: "Use labels de node e nodeSelector para influenciar agendamento."
+      keywords:
+        - kubernetes
+        - cka
+        - workloads
+        - blcsilva
+        - CKA
+      maintainers:
+        - "Bruno Silva <blcsilva>"
+      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_13_scheduling_nodeselector/lab.yaml"
+      created: "2026-08-16T00:00:00Z"
+      digest: "sha256:c7c5b7068fbb7a3b2182f59acf15371df663fd757775ecbbb1ad1846d7997c45"
+  cka_14_jobs_cronjobs:
+    - name: cka-14-jobs-cronjobs
+      version: "1.0.0"
+      description: "Crie Jobs e CronJobs, acompanhe execucao e valide completions."
+      keywords:
+        - kubernetes
+        - cka
+        - workloads
+        - blcsilva
+        - CKA
+      maintainers:
+        - "Bruno Silva <blcsilva>"
+      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_14_jobs_cronjobs/lab.yaml"
+      created: "2026-08-16T00:00:00Z"
+      digest: "sha256:323a972f7abce717aa1170b1424e0685be5a1ce7cb34a7b269474811be9a69ef"
+  cka_15_hpa_autoscaling:
+    - name: cka-15-hpa-autoscaling
+      version: "1.0.0"
+      description: "Crie um HPA e identifique dependencias de metrics-server."
+      keywords:
+        - kubernetes
+        - cka
+        - workloads
+        - blcsilva
+        - CKA
+      maintainers:
+        - "Bruno Silva <blcsilva>"
+      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_15_hpa_autoscaling/lab.yaml"
+      created: "2026-08-16T00:00:00Z"
+      digest: "sha256:68f475c2216794b7b77f9144d986c54f5373872f45e25917a35d4a4bf3148b98"
+  cka_16_services_endpoints:
+    - name: cka-16-services-endpoints
+      version: "1.0.0"
+      description: "Exponha Deployment por ClusterIP e valide endpoints reais."
+      keywords:
+        - kubernetes
+        - cka
+        - networking
+        - blcsilva
+        - CKA
+      maintainers:
+        - "Bruno Silva <blcsilva>"
+      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_16_services_endpoints/lab.yaml"
+      created: "2026-08-16T00:00:00Z"
+      digest: "sha256:002c1f5579ac4b7a229bdd21ec8eff26de2dd8f04f1c6add1cae5319888f21ff"
+  cka_17_dns_coredns:
+    - name: cka-17-dns-coredns
+      version: "1.0.0"
+      description: "Valide resolucao DNS de Services dentro do cluster."
+      keywords:
+        - kubernetes
+        - cka
+        - networking
+        - blcsilva
+        - CKA
+      maintainers:
+        - "Bruno Silva <blcsilva>"
+      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_17_dns_coredns/lab.yaml"
+      created: "2026-08-16T00:00:00Z"
+      digest: "sha256:de88916a5d348a771c6ca747a65483ef79884273a21a695ce3a1716fd0ef2f61"
+  cka_18_networkpolicy:
+    - name: cka-18-networkpolicy
+      version: "1.0.0"
+      description: "Crie uma NetworkPolicy default deny para treinar isolamento de trafego."
+      keywords:
+        - kubernetes
+        - cka
+        - networking
+        - blcsilva
+        - CKA
+      maintainers:
+        - "Bruno Silva <blcsilva>"
+      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_18_networkpolicy/lab.yaml"
+      created: "2026-08-16T00:00:00Z"
+      digest: "sha256:4d46ddc8ae520a610751fc6324e5164f35dc20d10142677ff7e2dbb484a35881"
+  cka_19_ingress:
+    - name: cka-19-ingress
+      version: "1.0.0"
+      description: "Crie um Ingress e valide regra, mesmo sem controller instalado."
+      keywords:
+        - kubernetes
+        - cka
+        - networking
+        - blcsilva
+        - CKA
+      maintainers:
+        - "Bruno Silva <blcsilva>"
+      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_19_ingress/lab.yaml"
+      created: "2026-08-16T00:00:00Z"
+      digest: "sha256:1c1ca465d40f5e3c1599ae8ddb922371a9496332cd64d7f230eb6e472f0262fe"
+  cka_20_gateway_api_discovery:
+    - name: cka-20-gateway-api-discovery
+      version: "1.0.0"
+      description: "Descubra se Gateway API esta disponivel e registre a checagem no cluster."
+      keywords:
+        - kubernetes
+        - cka
+        - networking
+        - blcsilva
+        - CKA
+      maintainers:
+        - "Bruno Silva <blcsilva>"
+      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_20_gateway_api_discovery/lab.yaml"
+      created: "2026-08-16T00:00:00Z"
+      digest: "sha256:87db31a0b4a9538f75213fcc89946d538b2f3c7db7b38a359c1c77a67366e049"
+  cka_21_storageclass_pvc:
+    - name: cka-21-storageclass-pvc
+      version: "1.0.0"
+      description: "Inspecione StorageClass e crie PVC usando provisionamento dinamico quando disponivel."
+      keywords:
+        - kubernetes
+        - cka
+        - storage
+        - blcsilva
+        - CKA
+      maintainers:
+        - "Bruno Silva <blcsilva>"
+      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_21_storageclass_pvc/lab.yaml"
+      created: "2026-08-16T00:00:00Z"
+      digest: "sha256:cd2315789f8c882c000a84da04843dcdee4b500d8778d486aa1ccc0faafd1129"
+  cka_22_pv_pvc_static:
+    - name: cka-22-pv-pvc-static
+      version: "1.0.0"
+      description: "Crie PV hostPath e PVC com bind explicito por volumeName."
+      keywords:
+        - kubernetes
+        - cka
+        - storage
+        - blcsilva
+        - CKA
+      maintainers:
+        - "Bruno Silva <blcsilva>"
+      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_22_pv_pvc_static/lab.yaml"
+      created: "2026-08-16T00:00:00Z"
+      digest: "sha256:4039a8c1e854ff32baf81029c96b063917a4e09d865551bb57de5733612d0bf3"
+  cka_23_volume_mounts:
+    - name: cka-23-volume-mounts
+      version: "1.0.0"
+      description: "Monte PVC em Pod e valide escrita/leitura de arquivo."
+      keywords:
+        - kubernetes
+        - cka
+        - storage
+        - blcsilva
+        - CKA
+      maintainers:
+        - "Bruno Silva <blcsilva>"
+      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_23_volume_mounts/lab.yaml"
+      created: "2026-08-16T00:00:00Z"
+      digest: "sha256:de5c423b80ae6bc5f257c0a12222f05063bdac0c378845288a4ea053da0b703c"
+  cka_24_troubleshoot_crashloop:
+    - name: cka-24-troubleshoot-crashloop
+      version: "1.0.0"
+      description: "Diagnostique falha de comando, logs e eventos de Pod quebrado."
+      keywords:
+        - kubernetes
+        - cka
+        - troubleshooting
+        - blcsilva
+        - CKA
+      maintainers:
+        - "Bruno Silva <blcsilva>"
+      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_24_troubleshoot_crashloop/lab.yaml"
+      created: "2026-08-16T00:00:00Z"
+      digest: "sha256:30333cbe595e30d196e6a0036b2effd00de14f08f6c6f0a26bb559b3b5a478d0"
+  cka_25_troubleshoot_image_service:
+    - name: cka-25-troubleshoot-image-service
+      version: "1.0.0"
+      description: "Diagnostique ImagePullBackOff e Service sem endpoint por selector errado."
+      keywords:
+        - kubernetes
+        - cka
+        - troubleshooting
+        - blcsilva
+        - CKA
+      maintainers:
+        - "Bruno Silva <blcsilva>"
+      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_25_troubleshoot_image_service/lab.yaml"
+      created: "2026-08-16T00:00:00Z"
+      digest: "sha256:e95fcfa8e63f673e0ad5e1b9e18c4fb896de9f4520a226c06609791d2e5006b9"
+  cka_26_troubleshoot_pending_rbac_pvc:
+    - name: cka-26-troubleshoot-pending-rbac-pvc
+      version: "1.0.0"
+      description: "Treine diagnostico combinado de scheduling, acesso e storage pendente."
+      keywords:
+        - kubernetes
+        - cka
+        - troubleshooting
+        - blcsilva
+        - CKA
+      maintainers:
+        - "Bruno Silva <blcsilva>"
+      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_26_troubleshoot_pending_rbac_pvc/lab.yaml"
+      created: "2026-08-16T00:00:00Z"
+      digest: "sha256:dc60084d93c5744732558afa46cca39f301f47b4b3c9dea90738d02f900321a4"
   kubernetes_deployment-es:
     - name: kubernetes_deployment-es
       version: "1.0.0"
@@ -372,3 +810,8 @@ entries:
       url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/linux_monitoramento-sistema/lab.yaml"
       created: "2024-06-01T10:00:00Z"
       digest: "sha256:d0b045f51c2ae38ec654571cb8d14774ef56843c865167fd4ec1e7506d50e565"
+
+
+
+
+

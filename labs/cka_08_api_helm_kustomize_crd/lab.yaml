@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cka-08-api-helm-kustomize-crd-lab
+  namespace: girus
+  labels:
+    app: girus-lab-template
+data:
+  lab.yaml: "name: cka-08-api-helm-kustomize-crd\ntitle: 'CKA 08: API, Helm, Kustomize e CRDs'\ndescription: Descubra capacidades\
+    \ administrativas sem depender de objetos externos ao cluster.\nduration: 25m\ntimerEnabled: true\nmaxDuration: 25m\n\
+    image: linuxtips/girus-kind-single-node:0.1\ntype: kubernetes\ntags:\n- CKA\n- Kubernetes\n- blcsilva\n- cluster\ntasks:\n\
+    - name: Descobrir APIs, CRDs e suporte a Kustomize\n  description: Fixar como descobrir extensoes e capacidades do cluster.\n\
+    \  steps:\n  - '**Objetivo de fixacao:** este lab pratica descoberta de API, CRDs e ferramentas auxiliares para fixar\
+    \ como descobrir\n    extensoes e capacidades do cluster.'\n  - '**Como pensar antes de executar:** leia o enunciado,\
+    \ identifique o recurso Kubernetes envolvido, execute o menor comando\n    que cria ou altera o recurso e valide o estado\
+    \ final com `get`, `describe`, `logs`, `exec` ou `jsonpath`.'\n  - '**Comandos e parametros importantes:**\n\n    - kubectl\
+    \ api-resources lista recursos nativos e CRDs.\n\n    - kubectl get crd mostra CustomResourceDefinitions instaladas.\n\
+    \n    - kubectl kustomize confirma suporte a renderizacao Kustomize.\n\n    - ConfigMap registra uma checagem simples\
+    \ e validavel no cluster.'\n  - '**Referencias oficiais para estudo:**\n\n    - https://kubernetes.io/docs/reference/kubectl/\n\
+    \n    - https://kubernetes.io/docs/reference/kubectl/generated/kubectl_apply/'\n  - '**Pratica:** execute os comandos\
+    \ abaixo e observe a saida de cada etapa. No CKA, criar o recurso e so metade do trabalho;\n    a outra metade e provar\
+    \ tecnicamente que ele ficou no estado esperado.'\n  - kubectl create namespace cka-08\n  - kubectl api-resources | grep\
+    \ -Ei 'customresourcedefinitions|ingress|networkpolicies'\n  - kubectl get crd 2>/dev/null || true\n  - kubectl kustomize\
+    \ --help >/tmp/cka-kustomize-help.txt\n  - kubectl create configmap cka-api-check --from-literal=checked=true -n cka-08\n\
+    \  - '**Conclusao e reforco:** Ao concluir, voce deve saber investigar capacidades do cluster antes de assumir que uma\
+    \ API\n    existe. Repita o lab sem copiar os comandos, depois refaca contra o relogio e anote qual comando provou que\
+    \ a solucao\n    funcionou.'\n  tips:\n  - type: tip\n    title: Ritmo CKA\n    content: Execute uma vez consultando,\
+    \ repita sem consulta e finalize contra o relogio.\n  validation:\n  - command: kubectl get configmap cka-api-check -n\
+    \ cka-08 -o jsonpath='{.data.checked}' 2>/dev/null | grep -q true && echo\n      ok\n    expectedOutput: ok\n    errorMessage:\
+    \ O ConfigMap cka-api-check nao foi criado.\n"

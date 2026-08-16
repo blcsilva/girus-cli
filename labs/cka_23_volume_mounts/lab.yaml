@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cka-23-volume-mounts-lab
+  namespace: girus
+  labels:
+    app: girus-lab-template
+data:
+  lab.yaml: "name: cka-23-volume-mounts\ntitle: 'CKA 23: montagem de volumes'\ndescription: Monte PVC em Pod e valide escrita/leitura\
+    \ de arquivo.\nduration: 30m\ntimerEnabled: true\nmaxDuration: 30m\nimage: linuxtips/girus-kind-single-node:0.1\ntype:\
+    \ kubernetes\ntags:\n- CKA\n- Kubernetes\n- blcsilva\n- storage\ntasks:\n- name: Montar volumes em Pods e validar persistencia\n\
+    \  description: Fixar como um pvc aparece como filesystem dentro do container.\n  steps:\n  - '**Objetivo de fixacao:**\
+    \ este lab pratica montagem de volumes em Pod para fixar como um PVC aparece como filesystem dentro\n    do container.'\n\
+    \  - '**Como pensar antes de executar:** leia o enunciado, identifique o recurso Kubernetes envolvido, execute o menor\
+    \ comando\n    que cria ou altera o recurso e valide o estado final com `get`, `describe`, `logs`, `exec` ou `jsonpath`.'\n\
+    \  - '**Comandos e parametros importantes:**\n\n    - volumes referencia o PVC no Pod.\n\n    - volumeMounts define caminho\
+    \ dentro do container.\n\n    - command escreve um arquivo para provar persistencia.\n\n    - kubectl exec le o arquivo\
+    \ montado para validar o caminho.'\n  - '**Referencias oficiais para estudo:**\n\n    - https://kubernetes.io/docs/concepts/storage/volumes/\n\
+    \n    - https://kubernetes.io/docs/concepts/storage/persistent-volumes/\n\n    - https://kubernetes.io/docs/concepts/workloads/pods/'\n\
+    \  - '**Pratica:** execute os comandos abaixo e observe a saida de cada etapa. No CKA, criar o recurso e so metade do\
+    \ trabalho;\n    a outra metade e provar tecnicamente que ele ficou no estado esperado.'\n  - kubectl create namespace\
+    \ cka-23\n  - \"kubectl apply -f - <<EOF\\napiVersion: v1\\nkind: PersistentVolume\\nmetadata:\\n  name: cka-23-pv\\nspec:\\\
+    n  capacity:\\n\\\n    \\    storage: 1Gi\\n  accessModes:\\n  - ReadWriteOnce\\n  hostPath:\\n    path: /tmp/cka-23-pv\\\
+    n---\\napiVersion: v1\\nkind:\\\n    \\ PersistentVolumeClaim\\nmetadata:\\n  name: data-pvc\\n  namespace: cka-23\\nspec:\\\
+    n  accessModes:\\n  - ReadWriteOnce\\n\\\n    \\  resources:\\n    requests:\\n      storage: 256Mi\\n  volumeName: cka-23-pv\\\
+    nEOF\\n\"\n  - kubectl run storage-writer --image=busybox:1.36 -n cka-23 --restart=Never --overrides='{\"spec\":{\"containers\"\
+    :[{\"name\":\"storage-writer\",\"image\":\"busybox:1.36\",\"command\":[\"sh\",\"-c\",\"echo\n    cka > /data/result.txt\
+    \ && sleep 3600\"],\"volumeMounts\":[{\"name\":\"data\",\"mountPath\":\"/data\"}]}],\"volumes\":[{\"name\":\"data\",\"\
+    persistentVolumeClaim\":{\"claimName\":\"data-pvc\"}}]}}'\n  - kubectl wait --for=condition=Ready pod/storage-writer -n\
+    \ cka-23 --timeout=90s\n  - kubectl exec -n cka-23 storage-writer -- cat /data/result.txt\n  - '**Conclusao e reforco:**\
+    \ Ao concluir, voce deve conectar PVC, volume, mountPath e evidencia dentro do container. Repita\n    o lab sem copiar\
+    \ os comandos, depois refaca contra o relogio e anote qual comando provou que a solucao funcionou.'\n  tips:\n  - type:\
+    \ tip\n    title: Ritmo CKA\n    content: Execute uma vez consultando, repita sem consulta e finalize contra o relogio.\n\
+    \  validation:\n  - command: kubectl exec -n cka-23 storage-writer -- cat /data/result.txt 2>/dev/null | grep -q cka &&\
+    \ echo ok\n    expectedOutput: ok\n    errorMessage: O arquivo /data/result.txt nao foi lido pelo Pod.\n"

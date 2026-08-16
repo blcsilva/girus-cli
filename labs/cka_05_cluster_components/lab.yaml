@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cka-05-cluster-components-lab
+  namespace: girus
+  labels:
+    app: girus-lab-template
+data:
+  lab.yaml: "name: cka-05-cluster-components\ntitle: 'CKA 05: componentes do cluster'\ndescription: Mapeie nodes, kube-system,\
+    \ API resources e versao do cluster.\nduration: 25m\ntimerEnabled: true\nmaxDuration: 25m\nimage: linuxtips/girus-kind-single-node:0.1\n\
+    type: kubernetes\ntags:\n- CKA\n- Kubernetes\n- blcsilva\n- cluster\ntasks:\n- name: Mapear nodes, kube-system e recursos\
+    \ da API\n  description: Fixar como observar nodes, kube-system e recursos disponiveis.\n  steps:\n  - '**Objetivo de\
+    \ fixacao:** este lab pratica arquitetura do cluster e descoberta de APIs para fixar como observar nodes,\n    kube-system\
+    \ e recursos disponiveis.'\n  - '**Como pensar antes de executar:** leia o enunciado, identifique o recurso Kubernetes\
+    \ envolvido, execute o menor comando\n    que cria ou altera o recurso e valide o estado final com `get`, `describe`,\
+    \ `logs`, `exec` ou `jsonpath`.'\n  - '**Comandos e parametros importantes:**\n\n    - kubectl get nodes mostra saude\
+    \ e versao dos nodes.\n\n    - -o wide adiciona IPs, runtime e informacoes de scheduling.\n\n    - -n kube-system lista\
+    \ componentes do plano de controle/addons.\n\n    - kubectl api-resources mostra quais tipos de recurso a API conhece.'\n\
+    \  - '**Referencias oficiais para estudo:**\n\n    - https://kubernetes.io/docs/reference/kubectl/\n\n    - https://kubernetes.io/docs/reference/kubectl/quick-reference/'\n\
+    \  - '**Pratica:** execute os comandos abaixo e observe a saida de cada etapa. No CKA, criar o recurso e so metade do\
+    \ trabalho;\n    a outra metade e provar tecnicamente que ele ficou no estado esperado.'\n  - kubectl get nodes -o wide\n\
+    \  - kubectl get pods -n kube-system -o wide\n  - kubectl api-resources | grep -E 'deployments|daemonsets|roles|networkpolicies'\n\
+    \  - kubectl version\n  - '**Conclusao e reforco:** Ao concluir, voce deve reconhecer componentes do cluster e consultar\
+    \ rapidamente recursos suportados\n    pela API. Repita o lab sem copiar os comandos, depois refaca contra o relogio e\
+    \ anote qual comando provou que a solucao\n    funcionou.'\n  tips:\n  - type: tip\n    title: Ritmo CKA\n    content:\
+    \ Execute uma vez consultando, repita sem consulta e finalize contra o relogio.\n  validation:\n  - command: kubectl get\
+    \ nodes --no-headers 2>/dev/null | grep -q Ready && echo ok\n    expectedOutput: ok\n    errorMessage: Nenhum node Ready\
+    \ foi encontrado.\n  - command: kubectl get pods -n kube-system --no-headers 2>/dev/null | grep -q kube && echo ok\n \
+    \   expectedOutput: ok\n    errorMessage: Componentes kube-system nao foram listados.\n"

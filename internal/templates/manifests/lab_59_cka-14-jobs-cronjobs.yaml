@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cka-14-jobs-cronjobs-lab
+  namespace: girus
+  labels:
+    app: girus-lab-template
+data:
+  lab.yaml: "name: cka-14-jobs-cronjobs\ntitle: 'CKA 14: Jobs e CronJobs'\ndescription: Crie Jobs e CronJobs, acompanhe execucao\
+    \ e valide completions.\nduration: 25m\ntimerEnabled: true\nmaxDuration: 25m\nimage: linuxtips/girus-kind-single-node:0.1\n\
+    type: kubernetes\ntags:\n- CKA\n- Kubernetes\n- blcsilva\n- workloads\ntasks:\n- name: Executar tarefas com Jobs e CronJobs\n\
+    \  description: Fixar workloads de execucao finita e agendada.\n  steps:\n  - '**Objetivo de fixacao:** este lab pratica\
+    \ Jobs e CronJobs para fixar workloads de execucao finita e agendada.'\n  - '**Como pensar antes de executar:** leia o\
+    \ enunciado, identifique o recurso Kubernetes envolvido, execute o menor comando\n    que cria ou altera o recurso e valide\
+    \ o estado final com `get`, `describe`, `logs`, `exec` ou `jsonpath`.'\n  - '**Comandos e parametros importantes:**\n\n\
+    \    - kubectl create job cria uma execucao ate completar.\n\n    - condition=Complete espera o Job finalizar.\n\n   \
+    \ - kubectl create cronjob agenda execucoes recorrentes.\n\n    - --schedule usa sintaxe cron.'\n  - '**Referencias oficiais\
+    \ para estudo:**\n\n    - https://kubernetes.io/docs/concepts/workloads/\n\n    - https://kubernetes.io/docs/reference/kubectl/quick-reference/'\n\
+    \  - '**Pratica:** execute os comandos abaixo e observe a saida de cada etapa. No CKA, criar o recurso e so metade do\
+    \ trabalho;\n    a outra metade e provar tecnicamente que ele ficou no estado esperado.'\n  - kubectl create namespace\
+    \ cka-14\n  - kubectl create job pi-job --image=perl:5.34 -n cka-14 -- perl -Mbignum=bpi -wle 'print bpi(20)'\n  - kubectl\
+    \ wait --for=condition=Complete job/pi-job -n cka-14 --timeout=120s\n  - kubectl create cronjob hello-cron --image=busybox:1.36\
+    \ --schedule=\"*/5 * * * *\" -n cka-14 -- sh -c 'date; echo hello'\n  - kubectl get jobs,cronjobs -n cka-14\n  - '**Conclusao\
+    \ e reforco:** Ao concluir, voce deve diferenciar workload continuo de tarefa pontual/agendada. Repita o lab\n    sem\
+    \ copiar os comandos, depois refaca contra o relogio e anote qual comando provou que a solucao funcionou.'\n  tips:\n\
+    \  - type: tip\n    title: Ritmo CKA\n    content: Execute uma vez consultando, repita sem consulta e finalize contra\
+    \ o relogio.\n  validation:\n  - command: kubectl get job pi-job -n cka-14 -o jsonpath='{.status.succeeded}' 2>/dev/null\
+    \ | grep -q 1 && echo ok\n    expectedOutput: ok\n    errorMessage: O Job pi-job nao concluiu com sucesso.\n"

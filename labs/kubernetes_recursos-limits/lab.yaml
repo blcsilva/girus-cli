@@ -1,0 +1,145 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kubernetes-recursos-limits-lab
+  namespace: girus
+  labels:
+    app: girus-lab-template
+data:
+  lab.yaml: |
+    name: kubernetes-recursos-limits
+    title: "Kubernetes: Requests, Limits e Quotas"
+    description: "Aprenda a controlar consumo de CPU e memória usando requests, limits, LimitRange e ResourceQuota em namespaces Kubernetes."
+    duration: 35m
+    image: "linuxtips/girus-kind-single-node:0.1"
+    type: "kubernetes"
+    tags:
+      - "blcsilva"
+      - "CKA"
+    tasks:
+      - name: "Definindo Requests e Limits em um Pod"
+        description: "Crie um Pod com requests e limits explícitos para entender como o scheduler reserva recursos."
+        steps:
+          - "Crie um namespace para o exercício:"
+          - "`kubectl create namespace k8s-recursos`"
+          - "Crie o arquivo `pod-recursos.yaml`:"
+          - |
+            ```
+            apiVersion: v1
+            kind: Pod
+            metadata:
+              name: app-recursos
+              namespace: k8s-recursos
+            spec:
+              containers:
+              - name: app
+                image: nginx:1.25-alpine
+                resources:
+                  requests:
+                    cpu: "100m"
+                    memory: "64Mi"
+                  limits:
+                    cpu: "250m"
+                    memory: "128Mi"
+            ```
+          - "Aplique o manifesto:"
+          - "`kubectl apply -f pod-recursos.yaml`"
+          - "Verifique o Pod:"
+          - "`kubectl get pod app-recursos -n k8s-recursos`"
+          - "Veja requests e limits no describe:"
+          - "`kubectl describe pod app-recursos -n k8s-recursos`"
+        tips:
+          - type: "info"
+            title: "Requests"
+            content: "Requests são usados pelo scheduler para decidir em qual nó o Pod pode rodar."
+          - type: "warning"
+            title: "Limits"
+            content: "Limits restringem o consumo máximo. Limites de memória excedidos podem causar encerramento do container por OOMKilled."
+        validation:
+          - command: "kubectl get pod app-recursos -n k8s-recursos -o jsonpath='{.spec.containers[0].resources.requests.cpu}' 2>/dev/null | grep -q 100m && echo 'ok'"
+            expectedOutput: "ok"
+            errorMessage: "O request de CPU 100m não foi configurado no Pod app-recursos."
+          - command: "kubectl get pod app-recursos -n k8s-recursos -o jsonpath='{.spec.containers[0].resources.limits.memory}' 2>/dev/null | grep -q 128Mi && echo 'ok'"
+            expectedOutput: "ok"
+            errorMessage: "O limit de memória 128Mi não foi configurado no Pod app-recursos."
+
+      - name: "Aplicando LimitRange"
+        description: "Configure valores padrão de requests e limits para containers criados no namespace."
+        steps:
+          - "Crie o arquivo `limitrange.yaml`:"
+          - |
+            ```
+            apiVersion: v1
+            kind: LimitRange
+            metadata:
+              name: defaults-recursos
+              namespace: k8s-recursos
+            spec:
+              limits:
+              - type: Container
+                default:
+                  cpu: "300m"
+                  memory: "256Mi"
+                defaultRequest:
+                  cpu: "100m"
+                  memory: "128Mi"
+            ```
+          - "Aplique o LimitRange:"
+          - "`kubectl apply -f limitrange.yaml`"
+          - "Crie um Pod sem declarar resources:"
+          - "`kubectl run app-defaults -n k8s-recursos --image=nginx:1.25-alpine`"
+          - "Verifique os resources preenchidos automaticamente:"
+          - "`kubectl get pod app-defaults -n k8s-recursos -o yaml`"
+        tips:
+          - type: "tip"
+            title: "Padronização"
+            content: "LimitRange ajuda a evitar Pods sem requests e limits, mantendo previsibilidade no namespace."
+          - type: "info"
+            title: "Mutação automática"
+            content: "O Kubernetes injeta defaults do LimitRange na criação do Pod. Objetos já existentes não são atualizados retroativamente."
+        validation:
+          - command: "kubectl get limitrange defaults-recursos -n k8s-recursos -o jsonpath='{.spec.limits[0].default.cpu}' 2>/dev/null | grep -q 300m && echo 'ok'"
+            expectedOutput: "ok"
+            errorMessage: "O LimitRange defaults-recursos não foi configurado com default de CPU 300m."
+          - command: "kubectl get pod app-defaults -n k8s-recursos -o jsonpath='{.spec.containers[0].resources.requests.memory}' 2>/dev/null | grep -q 128Mi && echo 'ok'"
+            expectedOutput: "ok"
+            errorMessage: "O Pod app-defaults não recebeu o request de memória padrão."
+
+      - name: "Controlando o Namespace com ResourceQuota"
+        description: "Crie uma quota para limitar quantidade de Pods e soma de requests/limits do namespace."
+        steps:
+          - "Crie o arquivo `resourcequota.yaml`:"
+          - |
+            ```
+            apiVersion: v1
+            kind: ResourceQuota
+            metadata:
+              name: quota-recursos
+              namespace: k8s-recursos
+            spec:
+              hard:
+                pods: "5"
+                requests.cpu: "1"
+                requests.memory: "1Gi"
+                limits.cpu: "2"
+                limits.memory: "2Gi"
+            ```
+          - "Aplique a quota:"
+          - "`kubectl apply -f resourcequota.yaml`"
+          - "Inspecione o consumo atual:"
+          - "`kubectl describe resourcequota quota-recursos -n k8s-recursos`"
+          - "Liste todos os objetos do namespace:"
+          - "`kubectl get all -n k8s-recursos`"
+          - "Ao final, limpe o ambiente:"
+          - "`kubectl delete namespace k8s-recursos`"
+        tips:
+          - type: "warning"
+            title: "ResourceQuota"
+            content: "Quando uma quota exige requests/limits, objetos sem resources podem ser rejeitados se não houver LimitRange definindo defaults."
+          - type: "tip"
+            title: "Uso por equipe"
+            content: "ResourceQuota é comum para controlar consumo por equipe, ambiente ou turma dentro de um mesmo cluster."
+        validation:
+          - command: "kubectl get resourcequota quota-recursos -n k8s-recursos -o jsonpath='{.spec.hard.pods}' 2>/dev/null | grep -q 5 && echo 'ok'"
+            expectedOutput: "ok"
+            errorMessage: "A ResourceQuota quota-recursos não foi configurada com limite de 5 Pods."

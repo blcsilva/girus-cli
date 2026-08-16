@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cka-19-ingress-lab
+  namespace: girus
+  labels:
+    app: girus-lab-template
+data:
+  lab.yaml: "name: cka-19-ingress\ntitle: 'CKA 19: Ingress'\ndescription: Crie um Ingress e valide regra, mesmo sem controller\
+    \ instalado.\nduration: 25m\ntimerEnabled: true\nmaxDuration: 25m\nimage: linuxtips/girus-kind-single-node:0.1\ntype:\
+    \ kubernetes\ntags:\n- CKA\n- Kubernetes\n- blcsilva\n- networking\ntasks:\n- name: Criar regras de Ingress para Services\
+    \ HTTP\n  description: Fixar objeto de entrada http apontando para service.\n  steps:\n  - '**Objetivo de fixacao:** este\
+    \ lab pratica Ingress e roteamento HTTP para fixar objeto de entrada HTTP apontando para\n    Service.'\n  - '**Como pensar\
+    \ antes de executar:** leia o enunciado, identifique o recurso Kubernetes envolvido, execute o menor comando\n    que\
+    \ cria ou altera o recurso e valide o estado final com `get`, `describe`, `logs`, `exec` ou `jsonpath`.'\n  - '**Comandos\
+    \ e parametros importantes:**\n\n    - kubectl create ingress cria regra HTTP rapidamente.\n\n    - --rule define host,\
+    \ path, service e porta.\n\n    - Ingress precisa de controller para atender trafego real.\n\n    - describe ingress mostra\
+    \ regras e eventos.'\n  - '**Referencias oficiais para estudo:**\n\n    - https://kubernetes.io/docs/concepts/services-networking/ingress/\n\
+    \n    - https://kubernetes.io/docs/concepts/services-networking/service/'\n  - '**Pratica:** execute os comandos abaixo\
+    \ e observe a saida de cada etapa. No CKA, criar o recurso e so metade do trabalho;\n    a outra metade e provar tecnicamente\
+    \ que ele ficou no estado esperado.'\n  - kubectl create namespace cka-19\n  - kubectl create deployment web-ingress --image=nginx:1.25-alpine\
+    \ -n cka-19\n  - kubectl expose deployment web-ingress --port=80 --target-port=80 -n cka-19\n  - kubectl create ingress\
+    \ web-ingress --rule=cka-ingress.local/*=web-ingress:80 -n cka-19\n  - kubectl describe ingress web-ingress -n cka-19\n\
+    \  - '**Conclusao e reforco:** Ao concluir, voce deve saber criar a regra e lembrar que o controller e quem implementa\
+    \ o acesso\n    externo. Repita o lab sem copiar os comandos, depois refaca contra o relogio e anote qual comando provou\
+    \ que a solucao\n    funcionou.'\n  tips:\n  - type: tip\n    title: Ritmo CKA\n    content: Execute uma vez consultando,\
+    \ repita sem consulta e finalize contra o relogio.\n  validation:\n  - command: kubectl get ingress web-ingress -n cka-19\
+    \ -o jsonpath='{.spec.rules[0].host}' 2>/dev/null | grep -q cka-ingress.local\n      && echo ok\n    expectedOutput: ok\n\
+    \    errorMessage: O Ingress web-ingress nao foi criado com host esperado.\n"

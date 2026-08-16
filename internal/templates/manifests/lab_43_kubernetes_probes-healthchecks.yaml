@@ -1,0 +1,142 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kubernetes-probes-healthchecks-lab
+  namespace: girus
+  labels:
+    app: girus-lab-template
+data:
+  lab.yaml: |
+    name: kubernetes-probes-healthchecks
+    title: "Kubernetes: Probes e Health Checks"
+    description: "Aprenda a configurar livenessProbe, readinessProbe e startupProbe para tornar aplicações mais observáveis e resilientes no Kubernetes."
+    duration: 30m
+    image: "linuxtips/girus-kind-single-node:0.1"
+    type: "kubernetes"
+    tags:
+      - "blcsilva"
+      - "CKA"
+    tasks:
+      - name: "Preparando o Namespace e a Aplicação"
+        description: "Crie um namespace dedicado e suba uma aplicação simples que responde em HTTP para servir de base ao laboratório."
+        steps:
+          - "Crie um namespace para isolar os recursos deste exercício:"
+          - "`kubectl create namespace k8s-probes`"
+          - "Crie um arquivo chamado `app-probes.yaml` com um Deployment baseado em Nginx:"
+          - |
+            ```
+            apiVersion: apps/v1
+            kind: Deployment
+            metadata:
+              name: web-probes
+              namespace: k8s-probes
+            spec:
+              replicas: 1
+              selector:
+                matchLabels:
+                  app: web-probes
+              template:
+                metadata:
+                  labels:
+                    app: web-probes
+                spec:
+                  containers:
+                  - name: nginx
+                    image: nginx:1.25-alpine
+                    ports:
+                    - containerPort: 80
+            ```
+          - "Aplique o manifesto:"
+          - "`kubectl apply -f app-probes.yaml`"
+          - "Aguarde o Deployment ficar disponível:"
+          - "`kubectl rollout status deployment/web-probes -n k8s-probes`"
+          - "Liste o Pod criado:"
+          - "`kubectl get pods -n k8s-probes -l app=web-probes`"
+        tips:
+          - type: "info"
+            title: "Namespace por laboratório"
+            content: "Usar um namespace próprio facilita limpeza, troubleshooting e evita conflito com outros exercícios."
+          - type: "tip"
+            title: "rollout status"
+            content: "O comando kubectl rollout status é uma forma prática de esperar até que um Deployment esteja disponível."
+        validation:
+          - command: "kubectl get namespace k8s-probes -o name 2>/dev/null | grep -q namespace/k8s-probes && echo 'ok'"
+            expectedOutput: "ok"
+            errorMessage: "O namespace k8s-probes não foi criado."
+          - command: "kubectl get deployment web-probes -n k8s-probes -o jsonpath='{.status.readyReplicas}' 2>/dev/null | grep -q 1 && echo 'ok'"
+            expectedOutput: "ok"
+            errorMessage: "O Deployment web-probes não está com 1 réplica pronta."
+
+      - name: "Configurando Readiness e Liveness Probes"
+        description: "Configure probes HTTP para indicar quando o container está pronto para receber tráfego e quando deve ser reiniciado."
+        steps:
+          - "Edite `app-probes.yaml` e adicione readinessProbe e livenessProbe no container Nginx:"
+          - |
+            ```
+                    readinessProbe:
+                      httpGet:
+                        path: /
+                        port: 80
+                      initialDelaySeconds: 3
+                      periodSeconds: 5
+                    livenessProbe:
+                      httpGet:
+                        path: /
+                        port: 80
+                      initialDelaySeconds: 10
+                      periodSeconds: 10
+            ```
+          - "O bloco deve ficar dentro do container, no mesmo nível de `ports`."
+          - "Aplique novamente o manifesto:"
+          - "`kubectl apply -f app-probes.yaml`"
+          - "Acompanhe o rollout:"
+          - "`kubectl rollout status deployment/web-probes -n k8s-probes`"
+          - "Veja os detalhes do Pod e localize as probes:"
+          - "`kubectl describe pod -n k8s-probes -l app=web-probes`"
+        tips:
+          - type: "info"
+            title: "readinessProbe"
+            content: "A readinessProbe controla se o Pod entra ou sai dos endpoints de um Service. Ela não reinicia o container."
+          - type: "warning"
+            title: "livenessProbe"
+            content: "A livenessProbe reinicia containers considerados travados. Configure com cuidado para não criar reinícios desnecessários."
+        validation:
+          - command: "kubectl get deployment web-probes -n k8s-probes -o jsonpath='{.spec.template.spec.containers[0].readinessProbe.httpGet.path}' 2>/dev/null | grep -q '^/$' && echo 'ok'"
+            expectedOutput: "ok"
+            errorMessage: "A readinessProbe HTTP em / não foi configurada no Deployment web-probes."
+          - command: "kubectl get deployment web-probes -n k8s-probes -o jsonpath='{.spec.template.spec.containers[0].livenessProbe.httpGet.port}' 2>/dev/null | grep -q 80 && echo 'ok'"
+            expectedOutput: "ok"
+            errorMessage: "A livenessProbe HTTP na porta 80 não foi configurada no Deployment web-probes."
+
+      - name: "Adicionando Startup Probe e Limpando o Ambiente"
+        description: "Use startupProbe para proteger aplicações que demoram para iniciar e finalize o exercício removendo os recursos criados."
+        steps:
+          - "Adicione uma startupProbe ao mesmo container:"
+          - |
+            ```
+                    startupProbe:
+                      httpGet:
+                        path: /
+                        port: 80
+                      failureThreshold: 12
+                      periodSeconds: 5
+            ```
+          - "Aplique a alteração:"
+          - "`kubectl apply -f app-probes.yaml`"
+          - "Confirme que o Deployment segue saudável:"
+          - "`kubectl rollout status deployment/web-probes -n k8s-probes`"
+          - "Verifique os campos de probes em YAML:"
+          - "`kubectl get deployment web-probes -n k8s-probes -o yaml`"
+          - "Ao terminar, remova o namespace:"
+          - "`kubectl delete namespace k8s-probes`"
+        tips:
+          - type: "tip"
+            title: "startupProbe"
+            content: "Enquanto a startupProbe não passa, as probes de liveness e readiness ficam suspensas. Isso evita reinícios prematuros em aplicações lentas para iniciar."
+          - type: "info"
+            title: "Limpeza"
+            content: "Excluir o namespace remove todos os objetos criados dentro dele."
+        validation:
+          - command: "kubectl get deployment web-probes -n k8s-probes -o jsonpath='{.spec.template.spec.containers[0].startupProbe.failureThreshold}' 2>/dev/null | grep -q 12 && echo 'ok'"
+            expectedOutput: "ok"
+            errorMessage: "A startupProbe com failureThreshold 12 não foi configurada."

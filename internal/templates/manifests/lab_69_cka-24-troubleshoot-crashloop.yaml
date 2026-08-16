@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cka-24-troubleshoot-crashloop-lab
+  namespace: girus
+  labels:
+    app: girus-lab-template
+data:
+  lab.yaml: "name: cka-24-troubleshoot-crashloop\ntitle: 'CKA 24: troubleshooting CrashLoop'\ndescription: Diagnostique falha\
+    \ de comando, logs e eventos de Pod quebrado.\nduration: 30m\ntimerEnabled: true\nmaxDuration: 30m\nimage: linuxtips/girus-kind-single-node:0.1\n\
+    type: kubernetes\ntags:\n- CKA\n- Kubernetes\n- blcsilva\n- troubleshooting\ntasks:\n- name: Diagnosticar falhas de containers\
+    \ e logs\n  description: Fixar leitura de phase, describe e logs quando um container termina com erro.\n  steps:\n  -\
+    \ '**Objetivo de fixacao:** este lab pratica troubleshooting de falha de container para fixar leitura de phase, describe\n\
+    \    e logs quando um container termina com erro.'\n  - '**Como pensar antes de executar:** leia o enunciado, identifique\
+    \ o recurso Kubernetes envolvido, execute o menor comando\n    que cria ou altera o recurso e valide o estado final com\
+    \ `get`, `describe`, `logs`, `exec` ou `jsonpath`.'\n  - '**Comandos e parametros importantes:**\n\n    - restart=Never\
+    \ deixa o Pod terminar como Failed em vez de reiniciar.\n\n    - logs mostra a mensagem emitida antes da falha.\n\n  \
+    \  - describe mostra events e motivo de encerramento.\n\n    - exit 1 simula erro da aplicacao.'\n  - '**Referencias oficiais\
+    \ para estudo:**\n\n    - https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/\n\n    - https://kubernetes.io/docs/concepts/workloads/pods/\n\
+    \n    - https://kubernetes.io/docs/reference/kubectl/'\n  - '**Pratica:** execute os comandos abaixo e observe a saida\
+    \ de cada etapa. No CKA, criar o recurso e so metade do trabalho;\n    a outra metade e provar tecnicamente que ele ficou\
+    \ no estado esperado.'\n  - kubectl create namespace cka-24\n  - kubectl run crash-app --image=busybox:1.36 -n cka-24\
+    \ --restart=Never --command -- sh -c 'echo falha simulada; exit 1'\n  - kubectl get pod crash-app -n cka-24\n  - kubectl\
+    \ describe pod crash-app -n cka-24\n  - kubectl logs crash-app -n cka-24\n  - '**Conclusao e reforco:** Ao concluir, voce\
+    \ deve separar erro da aplicacao de erro de agendamento ou imagem. Repita o\n    lab sem copiar os comandos, depois refaca\
+    \ contra o relogio e anote qual comando provou que a solucao funcionou.'\n  tips:\n  - type: tip\n    title: Ritmo CKA\n\
+    \    content: Execute uma vez consultando, repita sem consulta e finalize contra o relogio.\n  validation:\n  - command:\
+    \ kubectl get pod crash-app -n cka-24 -o jsonpath='{.status.phase}' 2>/dev/null | grep -q Failed && echo ok\n    expectedOutput:\
+    \ ok\n    errorMessage: O Pod crash-app deveria estar Failed.\n"

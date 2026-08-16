@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cka-04-logs-exec-debug-lab
+  namespace: girus
+  labels:
+    app: girus-lab-template
+data:
+  lab.yaml: "name: cka-04-logs-exec-debug\ntitle: 'CKA 04: logs, exec e debug rapido'\ndescription: Use logs e exec para provar\
+    \ comportamento dentro do container.\nduration: 20m\ntimerEnabled: true\nmaxDuration: 20m\nimage: linuxtips/girus-kind-single-node:0.1\n\
+    type: kubernetes\ntags:\n- CKA\n- Kubernetes\n- blcsilva\n- kubectl\ntasks:\n- name: Investigar containers com logs e\
+    \ exec\n  description: Fixar a diferenca entre observar o que o container escreveu e executar comandos dentro dele.\n\
+    \  steps:\n  - '**Objetivo de fixacao:** este lab pratica inspecao com logs e exec para fixar a diferenca entre observar\
+    \ o que o container\n    escreveu e executar comandos dentro dele.'\n  - '**Como pensar antes de executar:** leia o enunciado,\
+    \ identifique o recurso Kubernetes envolvido, execute o menor comando\n    que cria ou altera o recurso e valide o estado\
+    \ final com `get`, `describe`, `logs`, `exec` ou `jsonpath`.'\n  - '**Comandos e parametros importantes:**\n\n    - kubectl\
+    \ logs le a saida padrao/erro do container.\n\n    - kubectl exec executa um comando dentro de um container existente.\n\
+    \n    - -- separa parametros do kubectl do comando remoto.\n\n    - sleep mantem o container vivo para permitir exec.'\n\
+    \  - '**Referencias oficiais para estudo:**\n\n    - https://kubernetes.io/docs/reference/kubectl/\n\n    - https://kubernetes.io/docs/concepts/workloads/pods/\n\
+    \n    - https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/'\n  - '**Pratica:** execute os comandos abaixo\
+    \ e observe a saida de cada etapa. No CKA, criar o recurso e so metade do trabalho;\n    a outra metade e provar tecnicamente\
+    \ que ele ficou no estado esperado.'\n  - kubectl create namespace cka-04\n  - kubectl run shellbox --image=busybox:1.36\
+    \ -n cka-04 --restart=Never --command -- sh -c 'echo cka-log && sleep 3600'\n  - kubectl wait --for=condition=Ready pod/shellbox\
+    \ -n cka-04 --timeout=90s\n  - kubectl logs shellbox -n cka-04\n  - kubectl exec -n cka-04 shellbox -- sh -c 'hostname\
+    \ && date'\n  - '**Conclusao e reforco:** Ao concluir, voce deve saber confirmar comportamento da aplicacao com logs e\
+    \ executar verificacoes\n    dentro do Pod. Repita o lab sem copiar os comandos, depois refaca contra o relogio e anote\
+    \ qual comando provou que a solucao\n    funcionou.'\n  tips:\n  - type: tip\n    title: Ritmo CKA\n    content: Execute\
+    \ uma vez consultando, repita sem consulta e finalize contra o relogio.\n  validation:\n  - command: kubectl logs shellbox\
+    \ -n cka-04 2>/dev/null | grep -q cka-log && echo ok\n    expectedOutput: ok\n    errorMessage: Os logs do Pod shellbox\
+    \ nao contem cka-log.\n"
