@@ -23,6 +23,103 @@ Desenvolvida pela LINUXtips, a plataforma GIRUS se diferencia por ser executada 
 - **Open Source**: Projeto totalmente aberto para contribuições da comunidade
 - **Multilíngue**: Além do português, o GIRUS agora oferece suporte oficial ao espanhol. O sistema de templates permite adicionar facilmente novos idiomas.
 
+## Trilha CKA Kubernetes
+
+Esta versão inclui uma proposta prática de preparação para a certificação **Certified Kubernetes Administrator (CKA)**, organizada como uma trilha de **26 laboratórios Kubernetes** com filtro dedicado `CKA`.
+
+A proposta foi desenhada para treino progressivo em ambiente local, com foco em execução prática no terminal, validação objetiva e repetição dos principais domínios cobrados em uma rotina de estudo para CKA.
+
+### Objetivos da Trilha
+
+Ao concluir os laboratórios CKA, a pessoa estudante deve praticar:
+
+- criação e inspeção de Pods com `kubectl`;
+- geração de YAML com `--dry-run=client -o yaml`;
+- uso de namespaces, labels e selectors;
+- leitura de logs, execução remota com `kubectl exec` e troubleshooting básico;
+- administração de componentes do cluster e manutenção segura de nodes;
+- RBAC com ServiceAccounts, Roles e RoleBindings;
+- Deployments, rollouts, rollbacks, probes, requests, limits, quotas e scheduling;
+- Services, Endpoints, DNS, NetworkPolicy, Ingress e descoberta de Gateway API;
+- StorageClass, PersistentVolume, PersistentVolumeClaim e montagem de volumes;
+- troubleshooting de Pods em falha, imagens inválidas, Services sem endpoints, PVCs pendentes e problemas de scheduling.
+
+### Laboratórios Incluídos
+
+| Ordem | Laboratório | Foco |
+| --- | --- | --- |
+| 01 | `cka-01-kubectl-pods` | Pods e comandos essenciais do `kubectl` |
+| 02 | `cka-02-yaml-dry-run` | Geração de YAML com `dry-run` e aplicação declarativa |
+| 03 | `cka-03-namespaces-labels-selectors` | Namespaces, labels e selectors |
+| 04 | `cka-04-logs-exec-debug` | Logs, `exec` e inspeção de containers |
+| 05 | `cka-05-cluster-components` | Nodes, `kube-system` e recursos da API |
+| 06 | `cka-06-node-maintenance` | `cordon`, `uncordon` e manutenção segura |
+| 07 | `cka-07-rbac-serviceaccounts` | RBAC e ServiceAccounts |
+| 08 | `cka-08-api-helm-kustomize-crd` | API resources, CRDs e Kustomize |
+| 09 | `cka-09-deployment-rollout-rollback` | Deployment, rollout e rollback |
+| 10 | `cka-10-configmap-secret-env` | ConfigMaps, Secrets e variáveis de ambiente |
+| 11 | `cka-11-probes-healthchecks` | Readiness e liveness probes |
+| 12 | `cka-12-resources-quotas-limits` | Requests, limits e ResourceQuota |
+| 13 | `cka-13-scheduling-nodeselector` | Scheduling com `nodeSelector` |
+| 14 | `cka-14-jobs-cronjobs` | Jobs e CronJobs |
+| 15 | `cka-15-hpa-autoscaling` | HPA e dependência de métricas |
+| 16 | `cka-16-services-endpoints` | Services e Endpoints |
+| 17 | `cka-17-dns-coredns` | DNS interno com CoreDNS |
+| 18 | `cka-18-networkpolicy` | NetworkPolicy e isolamento de tráfego |
+| 19 | `cka-19-ingress` | Ingress para Services HTTP |
+| 20 | `cka-20-gateway-api-discovery` | Descoberta de Gateway API |
+| 21 | `cka-21-storageclass-pvc` | StorageClass e PVC dinâmico |
+| 22 | `cka-22-pv-pvc-static` | PV e PVC estático |
+| 23 | `cka-23-volume-mounts` | Montagem de volumes em Pods |
+| 24 | `cka-24-troubleshoot-crashloop` | Troubleshooting de falhas de containers |
+| 25 | `cka-25-troubleshoot-image-service` | Imagem inválida e Service sem endpoint |
+| 26 | `cka-26-troubleshoot-pending-rbac-pvc` | Pending, RBAC e PVC em conjunto |
+
+### Modelo Pedagógico
+
+Cada laboratório CKA possui:
+
+- texto de fixação explicando a proposta do exercício;
+- explicação dos principais comandos e parâmetros usados;
+- referências para a documentação oficial do Kubernetes;
+- validações automáticas para confirmar o estado esperado;
+- conclusão com reforço do conhecimento aprendido;
+- nome de tarefa ajustado para aparecer corretamente em **Conhecimentos adquiridos** ao finalizar o lab.
+
+### Referências Oficiais
+
+Os laboratórios apontam para páginas oficiais da documentação Kubernetes, incluindo:
+
+- [`kubectl` reference](https://kubernetes.io/docs/reference/kubectl/)
+- [`kubectl run`](https://kubernetes.io/docs/reference/kubectl/generated/kubectl_run/)
+- [Pods](https://kubernetes.io/docs/concepts/workloads/pods/)
+- [Deployments](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
+- [Services](https://kubernetes.io/docs/concepts/services-networking/service/)
+- [DNS for Services and Pods](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/)
+- [Network Policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/)
+- [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/)
+- [Persistent Volumes](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)
+- [Resource Management](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/)
+- [Assigning Pods to Nodes](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/)
+
+### Como Usar no GIRUS
+
+Após subir a plataforma GIRUS, acesse a tela de laboratórios e use o filtro **CKA** para visualizar a trilha em ordem:
+
+```text
+CKA 01 -> CKA 02 -> ... -> CKA 26
+```
+
+Os mesmos laboratórios também aparecem no filtro **Kubernetes**, pois a trilha CKA é uma trilha prática de administração Kubernetes.
+
+Recomendação de estudo:
+
+1. Execute o lab consultando as instruções.
+2. Repita sem copiar os comandos.
+3. Quebre algo de propósito e diagnostique.
+4. Refaça contra o relógio.
+5. Anote qual comando provou que a solução funcionou.
+
 ## Gerenciamento de Repositórios e Laboratórios
 
 O GIRUS implementa um sistema robusto de gerenciamento de repositórios e laboratórios, similar ao Helm para Kubernetes. Este sistema permite:
