@@ -202,6 +202,32 @@ RHCSA 01 -> RHCSA 02 -> ... -> RHCSA 26
 
 Os laboratórios RHCSA também aparecem no filtro **Linux**, pois a trilha é uma trilha prática de administração Linux/RHEL. O filtro **RHCSA** usa ícone personalizado Red Hat para facilitar a identificação visual dos cards.
 
+### Ajuste do Bundle Frontend
+
+O frontend atualmente é servido a partir de um bundle JavaScript já compilado no pod Nginx. Quando a trilha RHCSA for aplicada em uma instalação existente, também é necessário publicar um bundle com o filtro **RHCSA**. O repositório inclui o script `scripts/patch-rhcsa-frontend-bundle.py` para reproduzir esse ajuste a partir do bundle original:
+
+```bash
+python scripts/patch-rhcsa-frontend-bundle.py main.9081a282.js main.9081a282.rhcsa.js
+```
+
+Depois copie o bundle e o ícone para o pod frontend e atualize o `index.html`:
+
+```bash
+FRONTEND_POD=$(kubectl get pod -n girus -l app=girus-frontend -o jsonpath='{.items[0].metadata.name}')
+
+kubectl cp main.9081a282.rhcsa.js girus/${FRONTEND_POD}:/usr/share/nginx/html/static/js/main.9081a282.rhcsa.js
+kubectl cp assets/images/rhcsa-redhat-icon.webp girus/${FRONTEND_POD}:/usr/share/nginx/html/assets/images/rhcsa-redhat-icon.webp
+
+kubectl exec -n girus ${FRONTEND_POD} -- sh -c "sed -i 's/main\.[^\" ]*\.js/main.9081a282.rhcsa.js/g' /usr/share/nginx/html/index.html"
+```
+
+Validação rápida:
+
+```bash
+curl -s http://localhost:8000/static/js/main.9081a282.rhcsa.js | grep 'label:"RHCSA"'
+curl -s http://localhost:8000/labs | grep 'main.9081a282.rhcsa.js'
+```
+
 ## Gerenciamento de Repositórios e Laboratórios
 
 O GIRUS implementa um sistema robusto de gerenciamento de repositórios e laboratórios, similar ao Helm para Kubernetes. Este sistema permite:
