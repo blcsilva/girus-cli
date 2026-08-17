@@ -8,8 +8,8 @@ metadata:
 data:
   lab.yaml: |
     name: rhcsa-08-software-rpm-dnf
-    title: 'RHCSA 08: RPM, DNF e repositorios'
-    description: Entenda o papel de rpm/dnf no RHEL e registre a ferramenta disponivel no ambiente do lab.
+    title: 'RHCSA 08: RPM, DNF, Flatpak e repositorios'
+    description: Pratique o raciocinio de RPM, DNF, Flatpak e repositorios em contexto RHEL.
     duration: 30m
     image: linuxtips/girus-devops:0.1
     type: linux
@@ -21,8 +21,8 @@ data:
     - Software
     timerEnabled: true
     tasks:
-    - name: 'Conhecimento aplicado: RPM, DNF e repositorios'
-      description: Entenda o papel de rpm/dnf no RHEL e registre a ferramenta disponivel no ambiente do lab. Este lab detalha cenario, comandos, criterios de validacao e aplicacao pratica em RHEL.
+    - name: 'Conhecimento aplicado: RPM, DNF, Flatpak e repositorios'
+      description: Pratique o raciocinio de RPM, DNF, Flatpak e repositorios em contexto RHEL. Este lab incorpora adendos EX200 RHEL 10 mantendo o formato GIRUS atual.
       steps:
       - '**Proposta do lab:** Entenda o papel de rpm/dnf no RHEL e registre a ferramenta disponivel no ambiente do lab. Este exercicio pertence ao bloco RH124, alinhado a fundamentos de administracao Linux: shell, arquivos, usuarios, rede, software e servicos.'
       - '**Contexto de aplicacao:** no RHCSA voce precisa resolver tarefas no terminal, produzir evidencias rapidas e reconhecer quando um recurso depende do ambiente RHEL completo. Neste GIRUS, comandos destrutivos de disco, boot ou servico real sao tratados como roteiro controlado quando o container nao oferece o subsistema.'
@@ -35,6 +35,12 @@ data:
       - '**Aplicacao em RHEL real:** Use para preparar servidores padronizados. Repositorios incorretos explicam boa parte dos problemas de instalacao.'
       - '**Erros comuns para evitar:** executar comando no diretorio errado, nao validar o arquivo gerado, confundir saida exibida com estado persistido, ignorar mensagens de erro e seguir para o proximo passo sem evidencia.'
       - '**Checklist mental:** 1) qual recurso sera alterado? 2) qual comando mostra o estado atual? 3) qual comando aplica a mudanca? 4) qual saida prova que funcionou? 5) como eu desfaria ou repetiria com seguranca?'
+      - '**Skill IDs EX200:** RHCSA-RPM-QUERY, RHCSA-RPM-INSTALL, RHCSA-DNF-INSTALL, RHCSA-DNF-REMOVE, RHCSA-DNF-REPOSITORY, RHCSA-DNF-LOCAL-PACKAGE, RHCSA-FLATPAK-REPOSITORY, RHCSA-FLATPAK-INSTALL, RHCSA-FLATPAK-REMOVE.'
+      - '**Nivel da skill:** Skill Guided. Guided permite copiar e entender; Challenge exige escolher comandos; Exam entrega cenario e validacao com minima ajuda.'
+      - '**Fases de aprendizagem:** FASE 1 - Descoberta: levante estado atual. FASE 2 - Execucao: aplique a menor mudanca necessaria. FASE 3 - Validacao: use a validacao automatica e comandos de conferencia. FASE 4 - Reforco: altere mentalmente um requisito e explique como adaptaria a solucao.'
+      - '**Estado desejado ampliado:** Documentar fluxo de consulta, instalacao/remocao RPM/DNF e repositorio/pacote Flatpak.'
+      - '**Cobertura EX200 reforcada:** Dominio D2 - Software. RPM repositories, RPM packages, Flatpak repositories e Flatpak packages.'
+      - '**Referencia EX200:** objetivos oficiais do Red Hat Certified System Administrator exam em RHEL 10 - https://www.redhat.com/en/services/training/ex200-red-hat-certified-system-administrator-rhcsa-exam'
       - '**Como ler os comandos:** opcoes curtas como `-p`, `-c`, `-f` ajustam comportamento imediato; opcoes longas como `--help`, `--version`, `--permanent` explicam intencao. Redirecionamentos como `>` gravam a saida, `| tee` grava e exibe, e `2>/dev/null` silencia erros esperados de ferramentas ausentes no container.'
       - '**Pratica orientada:** execute os comandos abaixo na ordem e observe a saida. Quando aparecer `RHEL real`, trate como referencia de prova para executar em uma VM RHEL completa.'
       - mkdir -p /tmp/rhcsa-08

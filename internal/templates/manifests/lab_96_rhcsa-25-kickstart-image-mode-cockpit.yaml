@@ -8,8 +8,8 @@ metadata:
 data:
   lab.yaml: |
     name: rhcsa-25-kickstart-image-mode-cockpit
-    title: 'RHCSA 25: Kickstart, Cockpit e image mode'
-    description: Consolide instalacao automatizada, gerenciamento via Cockpit e image mode em um pacote de configuracao.
+    title: 'RHCSA 25: Beyond RHCSA - Kickstart, Cockpit e image mode'
+    description: Documente Kickstart, Cockpit e image mode como topicos RHEL 10 alem do nucleo EX200.
     duration: 45m
     image: linuxtips/girus-devops:0.1
     type: linux
@@ -21,8 +21,8 @@ data:
     - Instalacao
     timerEnabled: true
     tasks:
-    - name: 'Conhecimento aplicado: Kickstart, Cockpit e image mode'
-      description: Consolide instalacao automatizada, gerenciamento via Cockpit e image mode em um pacote de configuracao. Este lab detalha cenario, comandos, criterios de validacao e aplicacao pratica em RHEL.
+    - name: 'Conhecimento aplicado: Beyond RHCSA - Kickstart, Cockpit e image mode'
+      description: Documente Kickstart, Cockpit e image mode como topicos RHEL 10 alem do nucleo EX200. Este lab incorpora adendos EX200 RHEL 10 mantendo o formato GIRUS atual.
       steps:
       - '**Proposta do lab:** Consolide instalacao automatizada, gerenciamento via Cockpit e image mode em um pacote de configuracao. Este exercicio pertence ao bloco RH200, alinhado a revisao acelerada RHCSA/RH199: consolidacao de RH124 e RH134 com foco operacional.'
       - '**Contexto de aplicacao:** no RHCSA voce precisa resolver tarefas no terminal, produzir evidencias rapidas e reconhecer quando um recurso depende do ambiente RHEL completo. Neste GIRUS, comandos destrutivos de disco, boot ou servico real sao tratados como roteiro controlado quando o container nao oferece o subsistema.'
@@ -35,6 +35,12 @@ data:
       - '**Aplicacao em RHEL real:** Use em instalacoes repetiveis e padronizacao de servidores.'
       - '**Erros comuns para evitar:** executar comando no diretorio errado, nao validar o arquivo gerado, confundir saida exibida com estado persistido, ignorar mensagens de erro e seguir para o proximo passo sem evidencia.'
       - '**Checklist mental:** 1) qual recurso sera alterado? 2) qual comando mostra o estado atual? 3) qual comando aplica a mudanca? 4) qual saida prova que funcionou? 5) como eu desfaria ou repetiria com seguranca?'
+      - '**Skill IDs EX200:** RHEL-KICKSTART, RHEL-COCKPIT, RHEL-IMAGE-MODE.'
+      - '**Nivel da skill:** Skill Guided. Guided permite copiar e entender; Challenge exige escolher comandos; Exam entrega cenario e validacao com minima ajuda.'
+      - '**Fases de aprendizagem:** FASE 1 - Descoberta: levante estado atual. FASE 2 - Execucao: aplique a menor mudanca necessaria. FASE 3 - Validacao: use a validacao automatica e comandos de conferencia. FASE 4 - Reforco: altere mentalmente um requisito e explique como adaptaria a solucao.'
+      - '**Estado desejado ampliado:** Tratar Kickstart, Cockpit e image mode como extensao RHEL 10 Beyond RHCSA, preservando o lab atual.'
+      - '**Cobertura EX200 reforcada:** Dominio Beyond RHCSA - Beyond RHCSA. Topicos uteis de administracao RHEL, mas apresentados como aprofundamento fora do nucleo EX200.'
+      - '**Referencia EX200:** objetivos oficiais do Red Hat Certified System Administrator exam em RHEL 10 - https://www.redhat.com/en/services/training/ex200-red-hat-certified-system-administrator-rhcsa-exam'
       - '**Como ler os comandos:** opcoes curtas como `-p`, `-c`, `-f` ajustam comportamento imediato; opcoes longas como `--help`, `--version`, `--permanent` explicam intencao. Redirecionamentos como `>` gravam a saida, `| tee` grava e exibe, e `2>/dev/null` silencia erros esperados de ferramentas ausentes no container.'
       - '**Pratica orientada:** execute os comandos abaixo na ordem e observe a saida. Quando aparecer `RHEL real`, trate como referencia de prova para executar em uma VM RHEL completa.'
       - mkdir -p /tmp/rhcsa-25
@@ -43,6 +49,7 @@ data:
 
         '' > /tmp/rhcsa-25/contexto-rh200.txt'
       - cat /tmp/rhcsa-25/ks.cfg /tmp/rhcsa-25/contexto-rh200.txt
+      - '**Adendo de reforco:** Este lab permanece como Beyond RHCSA. Ele ajuda a entender RHEL 10, mas nao substitui treino de usuarios, storage, rede, SELinux e servicos.'
       - '**Conclusao e reforco:** voce praticou kickstart, cockpit e image mode no dominio instalacao. Antes de seguir, diga em voz alta qual arquivo, comando ou saida provou que a tarefa foi concluida; esse habito reduz erro em prova pratica.'
       tips:
       - type: tip

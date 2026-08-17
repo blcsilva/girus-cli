@@ -825,7 +825,7 @@ entries:
     - Bruno Silva <blcsilva>
     url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_01_rhel_ecosystem_cli/lab.yaml
     created: '2026-08-17T00:00:00Z'
-    digest: sha256:d0fce20e0900c7a42a6794b78865b9600019a47067692f0a0ac008aa75637958
+    digest: sha256:bcf499e7ae4c970a247ece102da923e8e65b5ee0a4df87f244a03695cfe64ab1
   rhcsa_02_help_docs_man_pages:
   - name: rhcsa_02_help_docs_man_pages
     version: 1.0.0
@@ -841,7 +841,7 @@ entries:
     - Bruno Silva <blcsilva>
     url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_02_help_docs_man_pages/lab.yaml
     created: '2026-08-17T00:00:00Z'
-    digest: sha256:e22d7f2be1be0b8105c4edcdc046cfc91643e362bd0abe8485a904a6881358ca
+    digest: sha256:a0a0f9eff7f52512f5290a59ca10c45ed29b7248a06cad3093baf56af4bbed8f
   rhcsa_03_filesystem_navigation:
   - name: rhcsa_03_filesystem_navigation
     version: 1.0.0
@@ -857,7 +857,7 @@ entries:
     - Bruno Silva <blcsilva>
     url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_03_filesystem_navigation/lab.yaml
     created: '2026-08-17T00:00:00Z'
-    digest: sha256:214b1a94d0517238bc0ce47db6e3f31c077f4250cf7d64dd1d84afad111c47b6
+    digest: sha256:aae7e437303cdb0e54b5bb44102efb9e1e6d93025854fb35daf102adebcc3604
   rhcsa_04_file_management_editing:
   - name: rhcsa_04_file_management_editing
     version: 1.0.0
@@ -873,7 +873,7 @@ entries:
     - Bruno Silva <blcsilva>
     url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_04_file_management_editing/lab.yaml
     created: '2026-08-17T00:00:00Z'
-    digest: sha256:6d96b29caf6b8b32beaba38f859f7e6f702cde556611b2faf11bfe5bf2ab26f7
+    digest: sha256:dd748efdd1e922deadd5cab24a651749867c87e20a88d1978ec59b40ef82e95a
   rhcsa_05_redirection_pipelines_grep:
   - name: rhcsa_05_redirection_pipelines_grep
     version: 1.0.0
@@ -889,7 +889,7 @@ entries:
     - Bruno Silva <blcsilva>
     url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_05_redirection_pipelines_grep/lab.yaml
     created: '2026-08-17T00:00:00Z'
-    digest: sha256:8f066d12ed1a6aedc498c794604f5377d4a5041b81daf27a07170482901e438f
+    digest: sha256:2149363fde9c3606a81911cc25d4179462396bf115c479954aadfd36ab5778d7
   rhcsa_06_users_groups_passwords:
   - name: rhcsa_06_users_groups_passwords
     version: 1.0.0
@@ -905,7 +905,7 @@ entries:
     - Bruno Silva <blcsilva>
     url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_06_users_groups_passwords/lab.yaml
     created: '2026-08-17T00:00:00Z'
-    digest: sha256:23962f9c587c7ec2e263c54fbc8d77e516f5e92c54d97336ab1ec9a1b14dbabe
+    digest: sha256:38c95d9c804e34ccd40262c1f61b6a52aaddcd84b1f4af035ef48173c55c5af4
   rhcsa_07_permissions_acl_umask:
   - name: rhcsa_07_permissions_acl_umask
     version: 1.0.0
@@ -921,7 +921,7 @@ entries:
     - Bruno Silva <blcsilva>
     url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_07_permissions_acl_umask/lab.yaml
     created: '2026-08-17T00:00:00Z'
-    digest: sha256:ae14be8735d09ed2d21703a5977f4c8f849c265a8cb63f6f3f86bd689323a3e1
+    digest: sha256:2743017f9fb3d3d240a1de65cbac700c1d8fd060435dd8a88054e9c120988b8c
   rhcsa_08_software_rpm_dnf:
   - name: rhcsa_08_software_rpm_dnf
     version: 1.0.0
@@ -937,7 +937,7 @@ entries:
     - Bruno Silva <blcsilva>
     url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_08_software_rpm_dnf/lab.yaml
     created: '2026-08-17T00:00:00Z'
-    digest: sha256:fc39bced84564bcfa4530f34fe43dc8feecad125b411d8fa6ea0563164b8b3f4
+    digest: sha256:2e9cb4ef176e338d0c8f8a64e13225c0ec2910ad6be4e8b0c0ddba3058776b3d
   rhcsa_09_processes_jobs_signals:
   - name: rhcsa_09_processes_jobs_signals
     version: 1.0.0
@@ -953,7 +953,7 @@ entries:
     - Bruno Silva <blcsilva>
     url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_09_processes_jobs_signals/lab.yaml
     created: '2026-08-17T00:00:00Z'
-    digest: sha256:ffe3c1725185bccd04cac160da30f7cb6d485460b7a6764496303728dc2bf1f2
+    digest: sha256:4557efe12ef48eb243a9febb87a5f1825516282b855e7a24a18b70455bf3285b
   rhcsa_10_services_systemd:
   - name: rhcsa_10_services_systemd
     version: 1.0.0
@@ -969,7 +969,7 @@ entries:
     - Bruno Silva <blcsilva>
     url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_10_services_systemd/lab.yaml
     created: '2026-08-17T00:00:00Z'
-    digest: sha256:e4077cb65ef97c8aa46eb078807fe874a1c644dfc490055b6a4a6c9a3e456e4d
+    digest: sha256:b0ba020d4e1d8b7bc241f74d0dc2ad719749343c0d4aac9ae79c01b8db279f3b
   rhcsa_11_networking_nmcli_ip:
   - name: rhcsa_11_networking_nmcli_ip
     version: 1.0.0
@@ -985,7 +985,7 @@ entries:
     - Bruno Silva <blcsilva>
     url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_11_networking_nmcli_ip/lab.yaml
     created: '2026-08-17T00:00:00Z'
-    digest: sha256:bf7b71164d4d41eb0af55d1f5f871d5bb05313f4e6936610d788279398654d71
+    digest: sha256:264c8c787efd89715b0344af43f85adbf940f65a7f8f2efd2f630d8a654e2c73
   rhcsa_12_ssh_remote_access:
   - name: rhcsa_12_ssh_remote_access
     version: 1.0.0
@@ -1001,7 +1001,7 @@ entries:
     - Bruno Silva <blcsilva>
     url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_12_ssh_remote_access/lab.yaml
     created: '2026-08-17T00:00:00Z'
-    digest: sha256:45296fa34a373c20e1719304bc230c1e06f76ec9e0da37eae8976a242dbcbc4c
+    digest: sha256:eea92e0fac1efb7ad1c89a2be3d6ae69af19399c24e9a09fecfd69a0d63361fd
   rhcsa_13_shell_scripting:
   - name: rhcsa_13_shell_scripting
     version: 1.0.0
@@ -1017,7 +1017,7 @@ entries:
     - Bruno Silva <blcsilva>
     url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_13_shell_scripting/lab.yaml
     created: '2026-08-17T00:00:00Z'
-    digest: sha256:df8b1195262f0fee7bcd2dcd760f89880085ec2dcfb2653334fcdd7adbf29589
+    digest: sha256:abe462d0727845aa23398f68f164e88eac710dfa6488470630b50535211385de
   rhcsa_14_regex_text_processing:
   - name: rhcsa_14_regex_text_processing
     version: 1.0.0
@@ -1033,7 +1033,7 @@ entries:
     - Bruno Silva <blcsilva>
     url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_14_regex_text_processing/lab.yaml
     created: '2026-08-17T00:00:00Z'
-    digest: sha256:74c137a6c322af60d37eb6b1243649b9fd6129780fedc7975f3b60b53a33e0f1
+    digest: sha256:eeef5861e978aa02681020f7035012e7d20ed72f08fb8ca1fca83013edcda233
   rhcsa_15_scheduling_at_cron_systemd_timers:
   - name: rhcsa_15_scheduling_at_cron_systemd_timers
     version: 1.0.0
@@ -1049,7 +1049,7 @@ entries:
     - Bruno Silva <blcsilva>
     url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_15_scheduling_at_cron_systemd_timers/lab.yaml
     created: '2026-08-17T00:00:00Z'
-    digest: sha256:a4830d6e54af904c1b55cb3a33af2e2cbdd1ad7defeee9045b475b964d158125
+    digest: sha256:03f8d482bd0e8fab40b9a3f6be212c0941e72066d98f9cdece91e045f0dad59f
   rhcsa_16_logs_journalctl_rsyslog:
   - name: rhcsa_16_logs_journalctl_rsyslog
     version: 1.0.0
@@ -1065,7 +1065,7 @@ entries:
     - Bruno Silva <blcsilva>
     url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_16_logs_journalctl_rsyslog/lab.yaml
     created: '2026-08-17T00:00:00Z'
-    digest: sha256:ed5624e97509c29b6399bfd6e17bf8eb8cd732359602ef06b507f34c424c414e
+    digest: sha256:18ed3ae2cd76c5b775de710a0e249359c3b08d10fc7026160d7ba53da50457fb
   rhcsa_17_selinux_basics_contexts:
   - name: rhcsa_17_selinux_basics_contexts
     version: 1.0.0
@@ -1081,7 +1081,7 @@ entries:
     - Bruno Silva <blcsilva>
     url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_17_selinux_basics_contexts/lab.yaml
     created: '2026-08-17T00:00:00Z'
-    digest: sha256:05054fc7624f0e2986fd68a583447c4d7d7dd0c9133414d8af56b0d6479520f1
+    digest: sha256:2f89e949af9a13f6946978dee4521f90b280a21d42ecf81feb9eb1bac5cfea68
   rhcsa_18_archives_transfer:
   - name: rhcsa_18_archives_transfer
     version: 1.0.0
@@ -1097,7 +1097,7 @@ entries:
     - Bruno Silva <blcsilva>
     url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_18_archives_transfer/lab.yaml
     created: '2026-08-17T00:00:00Z'
-    digest: sha256:e0ff6dcbc5fdc1488ce15b2cc8f83934944134b6959eeb44245b68e2a7509600
+    digest: sha256:8c3fa3f26d38c3ea5add30fc54cddc1c35b32ea44e2ec09c33b58287b9b91cae
   rhcsa_19_storage_partitions_filesystems:
   - name: rhcsa_19_storage_partitions_filesystems
     version: 1.0.0
@@ -1113,7 +1113,7 @@ entries:
     - Bruno Silva <blcsilva>
     url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_19_storage_partitions_filesystems/lab.yaml
     created: '2026-08-17T00:00:00Z'
-    digest: sha256:c9427947a1499d7835943d29534fc0083b72d9959c1043995ea142b310bf4f6a
+    digest: sha256:eee0918bf2351547032b4bac25fe939346ea18e4ef7786ad03159f7f462ceb7c
   rhcsa_20_lvm_swap_storage:
   - name: rhcsa_20_lvm_swap_storage
     version: 1.0.0
@@ -1129,7 +1129,7 @@ entries:
     - Bruno Silva <blcsilva>
     url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_20_lvm_swap_storage/lab.yaml
     created: '2026-08-17T00:00:00Z'
-    digest: sha256:473bbccfa12087a3fb95b92ba173b000ca724ccd123a004b4f2e34ac412e599e
+    digest: sha256:81e3969cd6487533c94f0237eb76455239844dc7d5f4d97fe6beee9cb7ef921e
   rhcsa_21_boot_targets_recovery:
   - name: rhcsa_21_boot_targets_recovery
     version: 1.0.0
@@ -1145,7 +1145,7 @@ entries:
     - Bruno Silva <blcsilva>
     url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_21_boot_targets_recovery/lab.yaml
     created: '2026-08-17T00:00:00Z'
-    digest: sha256:0390a25b5ef6fc95fbee0458b4fd0285d539c7fb0dc5d5b3ef0be8ece1a25483
+    digest: sha256:eb6ee99b077114d9649121233915fbf75abecfdc30953c3bc7a2b12a4dcfad55
   rhcsa_22_firewall_network_security:
   - name: rhcsa_22_firewall_network_security
     version: 1.0.0
@@ -1161,7 +1161,7 @@ entries:
     - Bruno Silva <blcsilva>
     url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_22_firewall_network_security/lab.yaml
     created: '2026-08-17T00:00:00Z'
-    digest: sha256:9a2846fa15a6ab79c53f63038620a944e6c995aa8554420b7337f96670758613
+    digest: sha256:af68913a25c4f1458355b312e3fd99a118efcb67455653f742e1c9b599499d9e
   rhcsa_23_nfs_autofs:
   - name: rhcsa_23_nfs_autofs
     version: 1.0.0
@@ -1177,7 +1177,7 @@ entries:
     - Bruno Silva <blcsilva>
     url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_23_nfs_autofs/lab.yaml
     created: '2026-08-17T00:00:00Z'
-    digest: sha256:2047463a9f938b604972ea30f760143e0ce1b84b936cc90eab9e47077d527c8b
+    digest: sha256:f4bdae1e73e8eda609f5d3dca98c3e920f07ea11b96c53930f1d48c19bb3f87b
   rhcsa_24_podman_containers:
   - name: rhcsa_24_podman_containers
     version: 1.0.0
@@ -1193,7 +1193,7 @@ entries:
     - Bruno Silva <blcsilva>
     url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_24_podman_containers/lab.yaml
     created: '2026-08-17T00:00:00Z'
-    digest: sha256:6a99ea0306692dba76f4c3273747e66138486bb307657585fbe5cb0955b3aab1
+    digest: sha256:6a86fc58d389909e3b22ff8e8db5094e9fa2e0a2a842344789d4397c7cf37592
   rhcsa_25_kickstart_image_mode_cockpit:
   - name: rhcsa_25_kickstart_image_mode_cockpit
     version: 1.0.0
@@ -1209,7 +1209,7 @@ entries:
     - Bruno Silva <blcsilva>
     url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_25_kickstart_image_mode_cockpit/lab.yaml
     created: '2026-08-17T00:00:00Z'
-    digest: sha256:38120f6774c847b0cfb2a14a60e76ec7b620a76e8e590c87236184027aaac385
+    digest: sha256:cffe8d9e0cf72f37b0582b0cd2ccdfd4de2def2faa63c3bbc84eb9341771c61d
   rhcsa_26_rhcsa_comprehensive_review:
   - name: rhcsa_26_rhcsa_comprehensive_review
     version: 1.0.0
@@ -1225,4 +1225,4 @@ entries:
     - Bruno Silva <blcsilva>
     url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_26_rhcsa_comprehensive_review/lab.yaml
     created: '2026-08-17T00:00:00Z'
-    digest: sha256:f352c267b2559b3c026e1841f5538c72eef0be4ad606b60c79e43de5911c5128
+    digest: sha256:0ba2b30388c340a2bf0a4dd87d2bf428a1a237887eefb24c96e49d774e8b80ce

@@ -126,6 +126,29 @@ Esta versão também inclui uma proposta prática de preparação para a certifi
 
 A trilha segue a progressão dos treinamentos oficiais Red Hat **RH124**, **RH134** e **RH200/RH199**: fundamentos de administração, administração avançada e revisão acelerada para prova prática. Como os laboratórios rodam em container local, comandos que dependem de uma instalação RHEL completa, como `systemctl`, `dnf`, SELinux ativo, particionamento real, LVM real, `firewall-cmd`, Podman ou Kickstart, são tratados com roteiro controlado e explicação clara de aplicação em RHEL real.
 
+Os exercícios também foram ajustados para refletir os objetivos públicos atuais do **EX200 em RHEL 10**, sem mudar o formato GIRUS já adotado. Cada lab incorpora uma camada pedagógica de skills com domínio, nível, estado desejado, fases de aprendizagem e reforço prático.
+
+Os domínios usados como referência são:
+
+- **D1 — Essential Tools**
+- **D2 — Software**
+- **D3 — Shell Scripting**
+- **D4 — Running Systems**
+- **D5 — Local Storage**
+- **D6 — File Systems**
+- **D7 — Deploy & Maintain**
+- **D8 — Networking**
+- **D9 — Users & Groups**
+- **D10 — Security**
+
+Os níveis pedagógicos usados nos labs são:
+
+- **Skill Guided**: comandos e contexto disponíveis para aprendizado orientado;
+- **Skill Challenge**: objetivo, validação e menos direcionamento;
+- **Skill Exam**: cenário integrado, foco em decisão técnica e validação.
+
+Podman, Kickstart, Cockpit e image mode permanecem como conteúdo útil de administração RHEL moderna, mas são marcados como **bônus/Beyond RHCSA** quando não fazem parte do núcleo prático EX200 trabalhado nos demais labs.
+
 ### Objetivos da Trilha
 
 Ao concluir os laboratórios RHCSA, a pessoa estudante deve praticar:
@@ -153,14 +176,14 @@ Ao concluir os laboratórios RHCSA, a pessoa estudante deve praticar:
 | 05 | `rhcsa-05-redirection-pipelines-grep` | Redirecionamento, pipes e `grep` |
 | 06 | `rhcsa-06-users-groups-passwords` | Usuários, grupos e comandos reais de RHEL |
 | 07 | `rhcsa-07-permissions-acl-umask` | Permissões, ownership e umask |
-| 08 | `rhcsa-08-software-rpm-dnf` | RPM, DNF e repositórios |
+| 08 | `rhcsa-08-software-rpm-dnf` | RPM, DNF, Flatpak e repositórios |
 | 09 | `rhcsa-09-processes-jobs-signals` | Processos, jobs e sinais |
 | 10 | `rhcsa-10-services-systemd` | Serviços, systemd e PID 1 |
 | 11 | `rhcsa-11-networking-nmcli-ip` | Rede, IP, rotas e NetworkManager |
 | 12 | `rhcsa-12-ssh-remote-access` | SSH, chaves e acesso remoto |
 | 13 | `rhcsa-13-shell-scripting` | Shell scripting para administração |
 | 14 | `rhcsa-14-regex-text-processing` | Regex e processamento de texto |
-| 15 | `rhcsa-15-scheduling-at-cron-systemd-timers` | Cron, `at` e systemd timers |
+| 15 | `rhcsa-15-scheduling-at-cron-systemd-timers` | `at`, cron e systemd timers |
 | 16 | `rhcsa-16-logs-journalctl-rsyslog` | Logs, journalctl e rsyslog |
 | 17 | `rhcsa-17-selinux-basics-contexts` | SELinux, modos e contextos |
 | 18 | `rhcsa-18-archives-transfer` | `tar`, compressão e transferência |
@@ -169,8 +192,8 @@ Ao concluir os laboratórios RHCSA, a pessoa estudante deve praticar:
 | 21 | `rhcsa-21-boot-targets-recovery` | Boot, targets e recuperação |
 | 22 | `rhcsa-22-firewall-network-security` | Firewall, portas e segurança de rede |
 | 23 | `rhcsa-23-nfs-autofs` | NFS e automount |
-| 24 | `rhcsa-24-podman-containers` | Containers com Podman |
-| 25 | `rhcsa-25-kickstart-image-mode-cockpit` | Kickstart, Cockpit e image mode |
+| 24 | `rhcsa-24-podman-containers` | Bônus RHEL moderno: containers com Podman |
+| 25 | `rhcsa-25-kickstart-image-mode-cockpit` | Beyond RHCSA: Kickstart, Cockpit e image mode |
 | 26 | `rhcsa-26-rhcsa-comprehensive-review` | Revisão integrada RHCSA |
 
 ### Modelo Pedagógico
@@ -191,6 +214,7 @@ Os laboratórios apontam para as páginas oficiais de treinamento da Red Hat:
 - [RH124 - Red Hat System Administration I](https://www.redhat.com/en/services/training/rh124-red-hat-system-administration-i)
 - [RH134 - Red Hat System Administration II](https://www.redhat.com/en/services/training/rh134-red-hat-system-administration-ii)
 - [RH200 - Red Hat Certified System Administrator Rapid Track course with exam](https://www.redhat.com/en/services/training/rh200-red-hat-certified-system-administrator-rapid-track-course-exam)
+- [EX200 - Red Hat Certified System Administrator exam](https://www.redhat.com/en/services/training/ex200-red-hat-certified-system-administrator-rhcsa-exam)
 
 ### Como Usar no GIRUS
 

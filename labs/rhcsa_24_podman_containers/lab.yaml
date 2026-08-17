@@ -8,8 +8,8 @@ metadata:
 data:
   lab.yaml: |
     name: rhcsa-24-podman-containers
-    title: 'RHCSA 24: Containers com Podman'
-    description: Crie um Containerfile e registre comandos equivalentes de Podman usados em RHEL.
+    title: 'RHCSA 24: bonus RHEL moderno - containers com Podman'
+    description: Crie um Containerfile e registre comandos equivalentes de Podman como bonus de administracao RHEL moderna.
     duration: 35m
     image: linuxtips/girus-devops:0.1
     type: linux
@@ -21,8 +21,8 @@ data:
     - Containers
     timerEnabled: true
     tasks:
-    - name: 'Conhecimento aplicado: Containers com Podman'
-      description: Crie um Containerfile e registre comandos equivalentes de Podman usados em RHEL. Este lab detalha cenario, comandos, criterios de validacao e aplicacao pratica em RHEL.
+    - name: 'Conhecimento aplicado: bonus RHEL moderno - containers com Podman'
+      description: Crie um Containerfile e registre comandos equivalentes de Podman como bonus de administracao RHEL moderna. Este lab incorpora adendos EX200 RHEL 10 mantendo o formato GIRUS atual.
       steps:
       - '**Proposta do lab:** Crie um Containerfile e registre comandos equivalentes de Podman usados em RHEL. Este exercicio pertence ao bloco RH134, alinhado a administracao avancada: automacao, logs, SELinux, storage, boot, seguranca de rede e containers.'
       - '**Contexto de aplicacao:** no RHCSA voce precisa resolver tarefas no terminal, produzir evidencias rapidas e reconhecer quando um recurso depende do ambiente RHEL completo. Neste GIRUS, comandos destrutivos de disco, boot ou servico real sao tratados como roteiro controlado quando o container nao oferece o subsistema.'
@@ -35,6 +35,12 @@ data:
       - '**Aplicacao em RHEL real:** Use para empacotar aplicacoes simples e testar comportamento isolado em RHEL.'
       - '**Erros comuns para evitar:** executar comando no diretorio errado, nao validar o arquivo gerado, confundir saida exibida com estado persistido, ignorar mensagens de erro e seguir para o proximo passo sem evidencia.'
       - '**Checklist mental:** 1) qual recurso sera alterado? 2) qual comando mostra o estado atual? 3) qual comando aplica a mudanca? 4) qual saida prova que funcionou? 5) como eu desfaria ou repetiria com seguranca?'
+      - '**Skill IDs EX200:** RHEL-PODMAN-PULL, RHEL-PODMAN-RUN, RHEL-PODMAN-PS, RHEL-CONTAINERFILE, RHEL-PODMAN-BUILD, RHEL-PODMAN-VOLUME.'
+      - '**Nivel da skill:** Skill Challenge. Guided permite copiar e entender; Challenge exige escolher comandos; Exam entrega cenario e validacao com minima ajuda.'
+      - '**Fases de aprendizagem:** FASE 1 - Descoberta: levante estado atual. FASE 2 - Execucao: aplique a menor mudanca necessaria. FASE 3 - Validacao: use a validacao automatica e comandos de conferencia. FASE 4 - Reforco: altere mentalmente um requisito e explique como adaptaria a solucao.'
+      - '**Estado desejado ampliado:** Manter Podman como bonus de administracao RHEL moderna, sem tratar como nucleo do EX200 atual.'
+      - '**Cobertura EX200 reforcada:** Dominio RHEL Bonus - RHEL Bonus. Bonus fora do nucleo RHCSA: Containerfile, build, run, logs e diferenca entre imagem e container.'
+      - '**Referencia EX200:** objetivos oficiais do Red Hat Certified System Administrator exam em RHEL 10 - https://www.redhat.com/en/services/training/ex200-red-hat-certified-system-administrator-rhcsa-exam'
       - '**Como ler os comandos:** opcoes curtas como `-p`, `-c`, `-f` ajustam comportamento imediato; opcoes longas como `--help`, `--version`, `--permanent` explicam intencao. Redirecionamentos como `>` gravam a saida, `| tee` grava e exibe, e `2>/dev/null` silencia erros esperados de ferramentas ausentes no container.'
       - '**Pratica orientada:** execute os comandos abaixo na ordem e observe a saida. Quando aparecer `RHEL real`, trate como referencia de prova para executar em uma VM RHEL completa.'
       - mkdir -p /tmp/rhcsa-24/app
@@ -43,6 +49,7 @@ data:
       - 'printf ''RHEL real: podman build -t app .; podman run --rm app; podman ps; podman logs
 
         '' > /tmp/rhcsa-24/comandos-rhel.txt'
+      - '**Adendo de reforco:** Este lab permanece na trilha como bonus. Use-o para entender RHEL moderno, mas priorize os dominios EX200 nos estudos de prova.'
       - '**Conclusao e reforco:** voce praticou containers com podman no dominio containers. Antes de seguir, diga em voz alta qual arquivo, comando ou saida provou que a tarefa foi concluida; esse habito reduz erro em prova pratica.'
       tips:
       - type: tip
