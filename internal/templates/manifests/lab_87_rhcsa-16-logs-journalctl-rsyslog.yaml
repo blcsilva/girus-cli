@@ -22,11 +22,19 @@ data:
     timerEnabled: true
     tasks:
     - name: 'Conhecimento aplicado: Logs, journalctl e troubleshooting'
-      description: Colete logs disponiveis e registre comandos equivalentes de journalctl/rsyslog para RHEL.
+      description: Colete logs disponiveis e registre comandos equivalentes de journalctl/rsyslog para RHEL. Este lab detalha cenario, comandos, criterios de validacao e aplicacao pratica em RHEL.
       steps:
       - '**Proposta do lab:** Colete logs disponiveis e registre comandos equivalentes de journalctl/rsyslog para RHEL. Este exercicio pertence ao bloco RH134, alinhado a administracao avancada: automacao, logs, SELinux, storage, boot, seguranca de rede e containers.'
       - '**Contexto de aplicacao:** no RHCSA voce precisa resolver tarefas no terminal, produzir evidencias rapidas e reconhecer quando um recurso depende do ambiente RHEL completo. Neste GIRUS, comandos destrutivos de disco, boot ou servico real sao tratados como roteiro controlado quando o container nao oferece o subsistema.'
       - '**Referencia oficial:** RH134 - https://www.redhat.com/en/services/training/rh134-red-hat-system-administration-ii'
+      - '**Cenario pratico:** imagine que voce recebeu um chamado ou tarefa de prova envolvendo colete logs disponiveis e registre comandos equivalentes de journalctl/rsyslog para rhel. O objetivo nao e decorar uma linha de comando, e reconhecer o estado inicial, executar a menor mudanca necessaria e provar o resultado.'
+      - '**Dominio RHCSA trabalhado:** Troubleshooting. Troubleshooting exige hipotese, comando de coleta e evidencia. Nao pule direto para a correcao sem provar o sintoma.'
+      - '**Ligacao com o treinamento oficial:** Este bloco aprofunda operacao real: automacao, troubleshooting, seguranca, storage, boot, rede avancada e containers com foco em resolver problemas no terminal.'
+      - '**Criterio de sucesso antes de executar:** ao final, a validacao automatica precisa retornar `ok`. Leia a validacao agora para entender a evidencia esperada: `grep -q ''journalctl'' /tmp/rhcsa-16/comandos-rhel.txt && echo ok`.'
+      - '**Mapa dos comandos e parametros:** `mkdir -p` cria a arvore completa e nao falha se o diretorio ja existir. `journalctl` consulta o journal do systemd; use `-u` para unidade e `-n` para ultimas linhas. `printf` gera conteudo previsivel e evita ambiguidades de `echo` entre shells.'
+      - '**Aplicacao em RHEL real:** Use em incidentes: sintoma, coleta, hipotese, correcao e validacao final.'
+      - '**Erros comuns para evitar:** executar comando no diretorio errado, nao validar o arquivo gerado, confundir saida exibida com estado persistido, ignorar mensagens de erro e seguir para o proximo passo sem evidencia.'
+      - '**Checklist mental:** 1) qual recurso sera alterado? 2) qual comando mostra o estado atual? 3) qual comando aplica a mudanca? 4) qual saida prova que funcionou? 5) como eu desfaria ou repetiria com seguranca?'
       - '**Como ler os comandos:** opcoes curtas como `-p`, `-c`, `-f` ajustam comportamento imediato; opcoes longas como `--help`, `--version`, `--permanent` explicam intencao. Redirecionamentos como `>` gravam a saida, `| tee` grava e exibe, e `2>/dev/null` silencia erros esperados de ferramentas ausentes no container.'
       - '**Pratica orientada:** execute os comandos abaixo na ordem e observe a saida. Quando aparecer `RHEL real`, trate como referencia de prova para executar em uma VM RHEL completa.'
       - mkdir -p /tmp/rhcsa-16

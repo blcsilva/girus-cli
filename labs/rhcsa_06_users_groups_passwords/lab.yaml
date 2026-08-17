@@ -22,11 +22,19 @@ data:
     timerEnabled: true
     tasks:
     - name: 'Conhecimento aplicado: Usuarios, grupos e identidade'
-      description: Crie identidade local, associe grupo primario/secundario e valide com getent e id.
+      description: Crie identidade local, associe grupo primario/secundario e valide com getent e id. Este lab detalha cenario, comandos, criterios de validacao e aplicacao pratica em RHEL.
       steps:
       - '**Proposta do lab:** Crie identidade local, associe grupo primario/secundario e valide com getent e id. Este exercicio pertence ao bloco RH124, alinhado a fundamentos de administracao Linux: shell, arquivos, usuarios, rede, software e servicos.'
       - '**Contexto de aplicacao:** no RHCSA voce precisa resolver tarefas no terminal, produzir evidencias rapidas e reconhecer quando um recurso depende do ambiente RHEL completo. Neste GIRUS, comandos destrutivos de disco, boot ou servico real sao tratados como roteiro controlado quando o container nao oferece o subsistema.'
       - '**Referencia oficial:** RH124 - https://www.redhat.com/en/services/training/rh124-red-hat-system-administration-i'
+      - '**Cenario pratico:** imagine que voce recebeu um chamado ou tarefa de prova envolvendo crie identidade local, associe grupo primario/secundario e valide com getent e id. O objetivo nao e decorar uma linha de comando, e reconhecer o estado inicial, executar a menor mudanca necessaria e provar o resultado.'
+      - '**Dominio RHCSA trabalhado:** Usuarios. Identidade local define quem executa processos e quem acessa arquivos. No RHEL real, valide com getent, id e arquivos de configuracao.'
+      - '**Ligacao com o treinamento oficial:** Este bloco cobre a base operacional: localizar informacao, manipular arquivos, controlar identidades, entender processos, rede e software antes de automatizar qualquer rotina.'
+      - '**Criterio de sucesso antes de executar:** ao final, a validacao automatica precisa retornar `ok`. Leia a validacao agora para entender a evidencia esperada: `grep -q ''^rhcsauser:'' /tmp/rhcsa-06/passwd.sample && grep -q ''^rhcsagrp:'' /tmp/rhcsa-06/group.sample && echo ok`.'
+      - '**Mapa dos comandos e parametros:** `mkdir -p` cria a arvore completa e nao falha se o diretorio ja existir. `printf` gera conteudo previsivel e evita ambiguidades de `echo` entre shells. `cat` exibe conteudo; com `tee`, tambem grava a evidencia em arquivo.'
+      - '**Aplicacao em RHEL real:** Use em onboarding, contas de servico e delegacao de acesso. Em RHEL real, comandos alteram `/etc/passwd`, `/etc/group` e shadow.'
+      - '**Erros comuns para evitar:** executar comando no diretorio errado, nao validar o arquivo gerado, confundir saida exibida com estado persistido, ignorar mensagens de erro e seguir para o proximo passo sem evidencia.'
+      - '**Checklist mental:** 1) qual recurso sera alterado? 2) qual comando mostra o estado atual? 3) qual comando aplica a mudanca? 4) qual saida prova que funcionou? 5) como eu desfaria ou repetiria com seguranca?'
       - '**Como ler os comandos:** opcoes curtas como `-p`, `-c`, `-f` ajustam comportamento imediato; opcoes longas como `--help`, `--version`, `--permanent` explicam intencao. Redirecionamentos como `>` gravam a saida, `| tee` grava e exibe, e `2>/dev/null` silencia erros esperados de ferramentas ausentes no container.'
       - '**Pratica orientada:** execute os comandos abaixo na ordem e observe a saida. Quando aparecer `RHEL real`, trate como referencia de prova para executar em uma VM RHEL completa.'
       - mkdir -p /tmp/rhcsa-06

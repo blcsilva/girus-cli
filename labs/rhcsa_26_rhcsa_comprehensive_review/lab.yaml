@@ -22,11 +22,19 @@ data:
     timerEnabled: true
     tasks:
     - name: 'Conhecimento aplicado: Revisao integrada RHCSA'
-      description: Execute uma mini-revisao integrando arquivos, usuarios, permissoes, processos, logs e plano operacional.
+      description: Execute uma mini-revisao integrando arquivos, usuarios, permissoes, processos, logs e plano operacional. Este lab detalha cenario, comandos, criterios de validacao e aplicacao pratica em RHEL.
       steps:
       - '**Proposta do lab:** Execute uma mini-revisao integrando arquivos, usuarios, permissoes, processos, logs e plano operacional. Este exercicio pertence ao bloco RH200, alinhado a revisao acelerada RHCSA/RH199: consolidacao de RH124 e RH134 com foco operacional.'
       - '**Contexto de aplicacao:** no RHCSA voce precisa resolver tarefas no terminal, produzir evidencias rapidas e reconhecer quando um recurso depende do ambiente RHEL completo. Neste GIRUS, comandos destrutivos de disco, boot ou servico real sao tratados como roteiro controlado quando o container nao oferece o subsistema.'
       - '**Referencia oficial:** RH200 - https://www.redhat.com/en/services/training/rh200-red-hat-certified-system-administrator-rapid-track-course-exam'
+      - '**Cenario pratico:** imagine que voce recebeu um chamado ou tarefa de prova envolvendo execute uma mini-revisao integrando arquivos, usuarios, permissoes, processos, logs e plano operacional. O objetivo nao e decorar uma linha de comando, e reconhecer o estado inicial, executar a menor mudanca necessaria e provar o resultado.'
+      - '**Dominio RHCSA trabalhado:** Revisao. Revisao integrada treina alternancia de assuntos. O objetivo e sair do modo tutorial e executar com criterio de prova.'
+      - '**Ligacao com o treinamento oficial:** Este bloco consolida RH124 e RH134 em ritmo de prova: executar, validar, explicar o efeito do comando e reconhecer rapidamente o proximo diagnostico.'
+      - '**Criterio de sucesso antes de executar:** ao final, a validacao automatica precisa retornar `ok`. Leia a validacao agora para entender a evidencia esperada: `grep -q ''RHCSA revisao final'' /tmp/rhcsa-26/revisao/summary.txt && stat -c ''%a'' /tmp/rhcsa-26/revisao/summary.txt | grep -q ''^640$'' && echo ok`.'
+      - '**Mapa dos comandos e parametros:** `mkdir -p` cria a arvore completa e nao falha se o diretorio ja existir. `printf` gera conteudo previsivel e evita ambiguidades de `echo` entre shells. `chmod` aplica permissoes; leia modo numerico como dono/grupo/outros. `sleep` cria processo controlado para treino de `ps`, PID e sinais. `ps` lista processos; selecione colunas para reduzir ruido.'
+      - '**Aplicacao em RHEL real:** Use como simulado curto: alterne assuntos e valide cada entrega antes de seguir.'
+      - '**Erros comuns para evitar:** executar comando no diretorio errado, nao validar o arquivo gerado, confundir saida exibida com estado persistido, ignorar mensagens de erro e seguir para o proximo passo sem evidencia.'
+      - '**Checklist mental:** 1) qual recurso sera alterado? 2) qual comando mostra o estado atual? 3) qual comando aplica a mudanca? 4) qual saida prova que funcionou? 5) como eu desfaria ou repetiria com seguranca?'
       - '**Como ler os comandos:** opcoes curtas como `-p`, `-c`, `-f` ajustam comportamento imediato; opcoes longas como `--help`, `--version`, `--permanent` explicam intencao. Redirecionamentos como `>` gravam a saida, `| tee` grava e exibe, e `2>/dev/null` silencia erros esperados de ferramentas ausentes no container.'
       - '**Pratica orientada:** execute os comandos abaixo na ordem e observe a saida. Quando aparecer `RHEL real`, trate como referencia de prova para executar em uma VM RHEL completa.'
       - mkdir -p /tmp/rhcsa-26/revisao

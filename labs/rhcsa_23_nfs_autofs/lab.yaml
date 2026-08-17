@@ -22,11 +22,19 @@ data:
     timerEnabled: true
     tasks:
     - name: 'Conhecimento aplicado: NFS e automount'
-      description: Modele montagem NFS e automounter, separando configuracao persistente de montagem manual.
+      description: Modele montagem NFS e automounter, separando configuracao persistente de montagem manual. Este lab detalha cenario, comandos, criterios de validacao e aplicacao pratica em RHEL.
       steps:
       - '**Proposta do lab:** Modele montagem NFS e automounter, separando configuracao persistente de montagem manual. Este exercicio pertence ao bloco RH134, alinhado a administracao avancada: automacao, logs, SELinux, storage, boot, seguranca de rede e containers.'
       - '**Contexto de aplicacao:** no RHCSA voce precisa resolver tarefas no terminal, produzir evidencias rapidas e reconhecer quando um recurso depende do ambiente RHEL completo. Neste GIRUS, comandos destrutivos de disco, boot ou servico real sao tratados como roteiro controlado quando o container nao oferece o subsistema.'
       - '**Referencia oficial:** RH134 - https://www.redhat.com/en/services/training/rh134-red-hat-system-administration-ii'
+      - '**Cenario pratico:** imagine que voce recebeu um chamado ou tarefa de prova envolvendo modele montagem nfs e automounter, separando configuracao persistente de montagem manual. O objetivo nao e decorar uma linha de comando, e reconhecer o estado inicial, executar a menor mudanca necessaria e provar o resultado.'
+      - '**Dominio RHCSA trabalhado:** Storage. Storage exige cuidado porque comandos reais podem destruir dados. No lab, o roteiro e controlado; em RHEL real, confirme dispositivo, filesystem e persistencia.'
+      - '**Ligacao com o treinamento oficial:** Este bloco aprofunda operacao real: automacao, troubleshooting, seguranca, storage, boot, rede avancada e containers com foco em resolver problemas no terminal.'
+      - '**Criterio de sucesso antes de executar:** ao final, a validacao automatica precisa retornar `ok`. Leia a validacao agora para entender a evidencia esperada: `grep -q ''nfs'' /tmp/rhcsa-23/fstab.nfs && grep -q ''fstype=nfs4'' /tmp/rhcsa-23/auto.tools && echo ok`.'
+      - '**Mapa dos comandos e parametros:** `mkdir -p` cria a arvore completa e nao falha se o diretorio ja existir. `printf` gera conteudo previsivel e evita ambiguidades de `echo` entre shells. `cat` exibe conteudo; com `tee`, tambem grava a evidencia em arquivo.'
+      - '**Aplicacao em RHEL real:** Use em expansao de discos, filesystems e montagens. Confirme backup e dispositivo antes de executar em producao.'
+      - '**Erros comuns para evitar:** executar comando no diretorio errado, nao validar o arquivo gerado, confundir saida exibida com estado persistido, ignorar mensagens de erro e seguir para o proximo passo sem evidencia.'
+      - '**Checklist mental:** 1) qual recurso sera alterado? 2) qual comando mostra o estado atual? 3) qual comando aplica a mudanca? 4) qual saida prova que funcionou? 5) como eu desfaria ou repetiria com seguranca?'
       - '**Como ler os comandos:** opcoes curtas como `-p`, `-c`, `-f` ajustam comportamento imediato; opcoes longas como `--help`, `--version`, `--permanent` explicam intencao. Redirecionamentos como `>` gravam a saida, `| tee` grava e exibe, e `2>/dev/null` silencia erros esperados de ferramentas ausentes no container.'
       - '**Pratica orientada:** execute os comandos abaixo na ordem e observe a saida. Quando aparecer `RHEL real`, trate como referencia de prova para executar em uma VM RHEL completa.'
       - mkdir -p /tmp/rhcsa-23
