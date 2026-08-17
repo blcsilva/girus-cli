@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rhcsa-03-filesystem-navigation-lab
+  labels:
+    app: girus-lab-template
+    lab: rhcsa-03-filesystem-navigation
+data:
+  lab.yaml: |
+    name: rhcsa-03-filesystem-navigation
+    title: 'RHCSA 03: Hierarquia, caminhos absolutos e relativos'
+    description: Navegue pela FHS, diferencie caminhos absolutos e relativos e localize arquivos com seguranca.
+    duration: 30m
+    image: linuxtips/girus-devops:0.1
+    type: linux
+    tags:
+    - RHCSA
+    - Linux
+    - RHEL
+    - blcsilva
+    - Arquivos
+    timerEnabled: true
+    tasks:
+    - name: 'Conhecimento aplicado: Hierarquia, caminhos absolutos e relativos'
+      description: Navegue pela FHS, diferencie caminhos absolutos e relativos e localize arquivos com seguranca.
+      steps:
+      - '**Proposta do lab:** Navegue pela FHS, diferencie caminhos absolutos e relativos e localize arquivos com seguranca. Este exercicio pertence ao bloco RH124, alinhado a fundamentos de administracao Linux: shell, arquivos, usuarios, rede, software e servicos.'
+      - '**Contexto de aplicacao:** no RHCSA voce precisa resolver tarefas no terminal, produzir evidencias rapidas e reconhecer quando um recurso depende do ambiente RHEL completo. Neste GIRUS, comandos destrutivos de disco, boot ou servico real sao tratados como roteiro controlado quando o container nao oferece o subsistema.'
+      - '**Referencia oficial:** RH124 - https://www.redhat.com/en/services/training/rh124-red-hat-system-administration-i'
+      - '**Como ler os comandos:** opcoes curtas como `-p`, `-c`, `-f` ajustam comportamento imediato; opcoes longas como `--help`, `--version`, `--permanent` explicam intencao. Redirecionamentos como `>` gravam a saida, `| tee` grava e exibe, e `2>/dev/null` silencia erros esperados de ferramentas ausentes no container.'
+      - '**Pratica orientada:** execute os comandos abaixo na ordem e observe a saida. Quando aparecer `RHEL real`, trate como referencia de prova para executar em uma VM RHEL completa.'
+      - mkdir -p /tmp/rhcsa-03/projeto/conf /tmp/rhcsa-03/projeto/logs /tmp/rhcsa-03/projeto/dados
+      - touch /tmp/rhcsa-03/projeto/conf/app.conf
+      - cd /tmp/rhcsa-03/projeto && pwd > /tmp/rhcsa-03/pwd.txt
+      - cd /tmp/rhcsa-03/projeto && find . -maxdepth 2 -type f | sort > /tmp/rhcsa-03/arquivos.txt
+      - '**Conclusao e reforco:** voce praticou hierarquia, caminhos absolutos e relativos no dominio arquivos. Antes de seguir, diga em voz alta qual arquivo, comando ou saida provou que a tarefa foi concluida; esse habito reduz erro em prova pratica.'
+      tips:
+      - type: tip
+        title: Ritmo RHCSA
+        content: Treine primeiro entendendo o comando; depois repita buscando velocidade, clareza e validacao objetiva.
+      validation:
+      - command: grep -q './conf/app.conf' /tmp/rhcsa-03/arquivos.txt && echo ok
+        expectedOutput: ok
+        errorMessage: O arquivo app.conf nao foi localizado no caminho esperado.

@@ -1,0 +1,46 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rhcsa-17-selinux-basics-contexts-lab
+  labels:
+    app: girus-lab-template
+    lab: rhcsa-17-selinux-basics-contexts
+data:
+  lab.yaml: |
+    name: rhcsa-17-selinux-basics-contexts
+    title: 'RHCSA 17: SELinux, modos e contextos'
+    description: Reconheca modo, contexto e comandos de correcao SELinux mesmo em ambiente de lab sem SELinux ativo.
+    duration: 35m
+    image: linuxtips/girus-devops:0.1
+    type: linux
+    tags:
+    - RHCSA
+    - Linux
+    - RHEL
+    - blcsilva
+    - Seguranca
+    timerEnabled: true
+    tasks:
+    - name: 'Conhecimento aplicado: SELinux, modos e contextos'
+      description: Reconheca modo, contexto e comandos de correcao SELinux mesmo em ambiente de lab sem SELinux ativo.
+      steps:
+      - '**Proposta do lab:** Reconheca modo, contexto e comandos de correcao SELinux mesmo em ambiente de lab sem SELinux ativo. Este exercicio pertence ao bloco RH134, alinhado a administracao avancada: automacao, logs, SELinux, storage, boot, seguranca de rede e containers.'
+      - '**Contexto de aplicacao:** no RHCSA voce precisa resolver tarefas no terminal, produzir evidencias rapidas e reconhecer quando um recurso depende do ambiente RHEL completo. Neste GIRUS, comandos destrutivos de disco, boot ou servico real sao tratados como roteiro controlado quando o container nao oferece o subsistema.'
+      - '**Referencia oficial:** RH134 - https://www.redhat.com/en/services/training/rh134-red-hat-system-administration-ii'
+      - '**Como ler os comandos:** opcoes curtas como `-p`, `-c`, `-f` ajustam comportamento imediato; opcoes longas como `--help`, `--version`, `--permanent` explicam intencao. Redirecionamentos como `>` gravam a saida, `| tee` grava e exibe, e `2>/dev/null` silencia erros esperados de ferramentas ausentes no container.'
+      - '**Pratica orientada:** execute os comandos abaixo na ordem e observe a saida. Quando aparecer `RHEL real`, trate como referencia de prova para executar em uma VM RHEL completa.'
+      - mkdir -p /tmp/rhcsa-17/web
+      - touch /tmp/rhcsa-17/web/index.html
+      - (getenforce 2>/dev/null || echo 'SELinux indisponivel neste container') | tee /tmp/rhcsa-17/mode.txt
+      - 'printf ''RHEL real: getenforce; sestatus; ls -Z; semanage fcontext; restorecon -Rv
+
+        '' > /tmp/rhcsa-17/comandos-rhel.txt'
+      - '**Conclusao e reforco:** voce praticou selinux, modos e contextos no dominio seguranca. Antes de seguir, diga em voz alta qual arquivo, comando ou saida provou que a tarefa foi concluida; esse habito reduz erro em prova pratica.'
+      tips:
+      - type: tip
+        title: Ritmo RHCSA
+        content: Treine primeiro entendendo o comando; depois repita buscando velocidade, clareza e validacao objetiva.
+      validation:
+      - command: grep -q 'restorecon' /tmp/rhcsa-17/comandos-rhel.txt && echo ok
+        expectedOutput: ok
+        errorMessage: O roteiro de SELinux nao foi criado.

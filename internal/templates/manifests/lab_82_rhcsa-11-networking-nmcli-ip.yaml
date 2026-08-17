@@ -1,0 +1,46 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rhcsa-11-networking-nmcli-ip-lab
+  labels:
+    app: girus-lab-template
+    lab: rhcsa-11-networking-nmcli-ip
+data:
+  lab.yaml: |
+    name: rhcsa-11-networking-nmcli-ip
+    title: 'RHCSA 11: Rede, IP, rotas e NetworkManager'
+    description: Colete estado de rede, entenda enderecos/rotas e conecte a pratica aos comandos nmcli do RHEL.
+    duration: 30m
+    image: linuxtips/girus-devops:0.1
+    type: linux
+    tags:
+    - RHCSA
+    - Linux
+    - RHEL
+    - blcsilva
+    - Rede
+    timerEnabled: true
+    tasks:
+    - name: 'Conhecimento aplicado: Rede, IP, rotas e NetworkManager'
+      description: Colete estado de rede, entenda enderecos/rotas e conecte a pratica aos comandos nmcli do RHEL.
+      steps:
+      - '**Proposta do lab:** Colete estado de rede, entenda enderecos/rotas e conecte a pratica aos comandos nmcli do RHEL. Este exercicio pertence ao bloco RH124, alinhado a fundamentos de administracao Linux: shell, arquivos, usuarios, rede, software e servicos.'
+      - '**Contexto de aplicacao:** no RHCSA voce precisa resolver tarefas no terminal, produzir evidencias rapidas e reconhecer quando um recurso depende do ambiente RHEL completo. Neste GIRUS, comandos destrutivos de disco, boot ou servico real sao tratados como roteiro controlado quando o container nao oferece o subsistema.'
+      - '**Referencia oficial:** RH124 - https://www.redhat.com/en/services/training/rh124-red-hat-system-administration-i'
+      - '**Como ler os comandos:** opcoes curtas como `-p`, `-c`, `-f` ajustam comportamento imediato; opcoes longas como `--help`, `--version`, `--permanent` explicam intencao. Redirecionamentos como `>` gravam a saida, `| tee` grava e exibe, e `2>/dev/null` silencia erros esperados de ferramentas ausentes no container.'
+      - '**Pratica orientada:** execute os comandos abaixo na ordem e observe a saida. Quando aparecer `RHEL real`, trate como referencia de prova para executar em uma VM RHEL completa.'
+      - mkdir -p /tmp/rhcsa-11
+      - (ip addr 2>/dev/null || hostname -I || true) | tee /tmp/rhcsa-11/addr.txt
+      - (ip route 2>/dev/null || route -n 2>/dev/null || true) | tee /tmp/rhcsa-11/route.txt
+      - 'printf ''RHEL real: nmcli con show; nmcli dev status; nmcli con mod ...
+
+        '' > /tmp/rhcsa-11/nmcli.txt'
+      - '**Conclusao e reforco:** voce praticou rede, ip, rotas e networkmanager no dominio rede. Antes de seguir, diga em voz alta qual arquivo, comando ou saida provou que a tarefa foi concluida; esse habito reduz erro em prova pratica.'
+      tips:
+      - type: tip
+        title: Ritmo RHCSA
+        content: Treine primeiro entendendo o comando; depois repita buscando velocidade, clareza e validacao objetiva.
+      validation:
+      - command: test -s /tmp/rhcsa-11/nmcli.txt && echo ok
+        expectedOutput: ok
+        errorMessage: O roteiro de NetworkManager nao foi registrado.

@@ -1,0 +1,54 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rhcsa-15-scheduling-at-cron-systemd-timers-lab
+  labels:
+    app: girus-lab-template
+    lab: rhcsa-15-scheduling-at-cron-systemd-timers
+data:
+  lab.yaml: |
+    name: rhcsa-15-scheduling-at-cron-systemd-timers
+    title: 'RHCSA 15: Agendamento com cron e timers'
+    description: Modele tarefas recorrentes e diferencie cron de systemd timers em RHEL.
+    duration: 35m
+    image: linuxtips/girus-devops:0.1
+    type: linux
+    tags:
+    - RHCSA
+    - Linux
+    - RHEL
+    - blcsilva
+    - Automacao
+    timerEnabled: true
+    tasks:
+    - name: 'Conhecimento aplicado: Agendamento com cron e timers'
+      description: Modele tarefas recorrentes e diferencie cron de systemd timers em RHEL.
+      steps:
+      - '**Proposta do lab:** Modele tarefas recorrentes e diferencie cron de systemd timers em RHEL. Este exercicio pertence ao bloco RH134, alinhado a administracao avancada: automacao, logs, SELinux, storage, boot, seguranca de rede e containers.'
+      - '**Contexto de aplicacao:** no RHCSA voce precisa resolver tarefas no terminal, produzir evidencias rapidas e reconhecer quando um recurso depende do ambiente RHEL completo. Neste GIRUS, comandos destrutivos de disco, boot ou servico real sao tratados como roteiro controlado quando o container nao oferece o subsistema.'
+      - '**Referencia oficial:** RH134 - https://www.redhat.com/en/services/training/rh134-red-hat-system-administration-ii'
+      - '**Como ler os comandos:** opcoes curtas como `-p`, `-c`, `-f` ajustam comportamento imediato; opcoes longas como `--help`, `--version`, `--permanent` explicam intencao. Redirecionamentos como `>` gravam a saida, `| tee` grava e exibe, e `2>/dev/null` silencia erros esperados de ferramentas ausentes no container.'
+      - '**Pratica orientada:** execute os comandos abaixo na ordem e observe a saida. Quando aparecer `RHEL real`, trate como referencia de prova para executar em uma VM RHEL completa.'
+      - mkdir -p /tmp/rhcsa-15
+      - 'printf ''*/5 * * * * /usr/local/bin/rhcsa-check.sh
+
+        '' > /tmp/rhcsa-15/rhcsa.cron'
+      - 'printf ''[Timer]
+
+        OnCalendar=*:0/5
+
+        [Install]
+
+        WantedBy=timers.target
+
+        '' > /tmp/rhcsa-15/rhcsa.timer'
+      - cat /tmp/rhcsa-15/rhcsa.cron /tmp/rhcsa-15/rhcsa.timer
+      - '**Conclusao e reforco:** voce praticou agendamento com cron e timers no dominio automacao. Antes de seguir, diga em voz alta qual arquivo, comando ou saida provou que a tarefa foi concluida; esse habito reduz erro em prova pratica.'
+      tips:
+      - type: tip
+        title: Ritmo RHCSA
+        content: Treine primeiro entendendo o comando; depois repita buscando velocidade, clareza e validacao objetiva.
+      validation:
+      - command: grep -q 'OnCalendar' /tmp/rhcsa-15/rhcsa.timer && grep -q '/usr/local/bin/rhcsa-check.sh' /tmp/rhcsa-15/rhcsa.cron && echo ok
+        expectedOutput: ok
+        errorMessage: Os exemplos de cron/timer nao foram criados corretamente.

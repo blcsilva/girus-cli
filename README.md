@@ -120,6 +120,88 @@ Recomendação de estudo:
 4. Refaça contra o relógio.
 5. Anote qual comando provou que a solução funcionou.
 
+## Trilha RHCSA Linux/RHEL
+
+Esta versão também inclui uma proposta prática de preparação para a certificação **Red Hat Certified System Administrator (RHCSA)**, organizada como uma trilha de **26 laboratórios Linux/RHEL** com filtro dedicado **RHCSA**.
+
+A trilha segue a progressão dos treinamentos oficiais Red Hat **RH124**, **RH134** e **RH200/RH199**: fundamentos de administração, administração avançada e revisão acelerada para prova prática. Como os laboratórios rodam em container local, comandos que dependem de uma instalação RHEL completa, como `systemctl`, `dnf`, SELinux ativo, particionamento real, LVM real, `firewall-cmd`, Podman ou Kickstart, são tratados com roteiro controlado e explicação clara de aplicação em RHEL real.
+
+### Objetivos da Trilha
+
+Ao concluir os laboratórios RHCSA, a pessoa estudante deve praticar:
+
+- navegação no shell, documentação local e manipulação de arquivos;
+- redirecionamento, pipes, filtros e expressões regulares;
+- usuários, grupos, permissões, ownership e umask;
+- software com RPM/DNF em contexto RHEL;
+- processos, jobs, sinais, serviços e systemd;
+- rede, SSH, NetworkManager e segurança de portas;
+- shell scripting, cron, timers e automação básica;
+- logs, journalctl, rsyslog e troubleshooting;
+- SELinux, contextos, firewall e controles de acesso;
+- arquivos compactados, transferência, storage, LVM, swap, NFS e autofs;
+- Podman, Kickstart, Cockpit, image mode e revisão integrada RHCSA.
+
+### Laboratórios Incluídos
+
+| Ordem | Laboratório | Foco |
+| --- | --- | --- |
+| 01 | `rhcsa-01-rhel-ecosystem-cli` | Introdução ao RHEL, shell e contexto do sistema |
+| 02 | `rhcsa-02-help-docs-man-pages` | Ajuda local, `man` e `--help` |
+| 03 | `rhcsa-03-filesystem-navigation` | Hierarquia de filesystem e caminhos |
+| 04 | `rhcsa-04-file-management-editing` | Criação, cópia, movimentação e edição de arquivos |
+| 05 | `rhcsa-05-redirection-pipelines-grep` | Redirecionamento, pipes e `grep` |
+| 06 | `rhcsa-06-users-groups-passwords` | Usuários, grupos e comandos reais de RHEL |
+| 07 | `rhcsa-07-permissions-acl-umask` | Permissões, ownership e umask |
+| 08 | `rhcsa-08-software-rpm-dnf` | RPM, DNF e repositórios |
+| 09 | `rhcsa-09-processes-jobs-signals` | Processos, jobs e sinais |
+| 10 | `rhcsa-10-services-systemd` | Serviços, systemd e PID 1 |
+| 11 | `rhcsa-11-networking-nmcli-ip` | Rede, IP, rotas e NetworkManager |
+| 12 | `rhcsa-12-ssh-remote-access` | SSH, chaves e acesso remoto |
+| 13 | `rhcsa-13-shell-scripting` | Shell scripting para administração |
+| 14 | `rhcsa-14-regex-text-processing` | Regex e processamento de texto |
+| 15 | `rhcsa-15-scheduling-at-cron-systemd-timers` | Cron, `at` e systemd timers |
+| 16 | `rhcsa-16-logs-journalctl-rsyslog` | Logs, journalctl e rsyslog |
+| 17 | `rhcsa-17-selinux-basics-contexts` | SELinux, modos e contextos |
+| 18 | `rhcsa-18-archives-transfer` | `tar`, compressão e transferência |
+| 19 | `rhcsa-19-storage-partitions-filesystems` | Storage básico, partições e filesystems |
+| 20 | `rhcsa-20-lvm-swap-storage` | LVM, swap e crescimento de volumes |
+| 21 | `rhcsa-21-boot-targets-recovery` | Boot, targets e recuperação |
+| 22 | `rhcsa-22-firewall-network-security` | Firewall, portas e segurança de rede |
+| 23 | `rhcsa-23-nfs-autofs` | NFS e automount |
+| 24 | `rhcsa-24-podman-containers` | Containers com Podman |
+| 25 | `rhcsa-25-kickstart-image-mode-cockpit` | Kickstart, Cockpit e image mode |
+| 26 | `rhcsa-26-rhcsa-comprehensive-review` | Revisão integrada RHCSA |
+
+### Modelo Pedagógico
+
+Cada laboratório RHCSA possui:
+
+- texto de fixação explicando a proposta, o contexto e o domínio estudado;
+- explicação dos comandos, parâmetros e redirecionamentos usados;
+- separação entre atalho de laboratório e comando aplicável em RHEL real;
+- referências oficiais Red Hat para RH124, RH134 ou RH200/RH199;
+- validação automática executável no ambiente GIRUS;
+- conclusão reforçando o conhecimento aplicado no lab.
+
+### Referências Oficiais
+
+Os laboratórios apontam para as páginas oficiais de treinamento da Red Hat:
+
+- [RH124 - Red Hat System Administration I](https://www.redhat.com/en/services/training/rh124-red-hat-system-administration-i)
+- [RH134 - Red Hat System Administration II](https://www.redhat.com/en/services/training/rh134-red-hat-system-administration-ii)
+- [RH200 - Red Hat Certified System Administrator Rapid Track course with exam](https://www.redhat.com/en/services/training/rh200-red-hat-certified-system-administrator-rapid-track-course-exam)
+
+### Como Usar no GIRUS
+
+Após subir a plataforma GIRUS, acesse a tela de laboratórios e use o filtro **RHCSA** para visualizar a trilha em ordem:
+
+```text
+RHCSA 01 -> RHCSA 02 -> ... -> RHCSA 26
+```
+
+Os laboratórios RHCSA também aparecem no filtro **Linux**, pois a trilha é uma trilha prática de administração Linux/RHEL. O filtro **RHCSA** usa ícone personalizado Red Hat para facilitar a identificação visual dos cards.
+
 ## Gerenciamento de Repositórios e Laboratórios
 
 O GIRUS implementa um sistema robusto de gerenciamento de repositórios e laboratórios, similar ao Helm para Kubernetes. Este sistema permite:

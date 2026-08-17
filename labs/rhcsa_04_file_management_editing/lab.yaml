@@ -1,0 +1,48 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rhcsa-04-file-management-editing-lab
+  labels:
+    app: girus-lab-template
+    lab: rhcsa-04-file-management-editing
+data:
+  lab.yaml: |
+    name: rhcsa-04-file-management-editing
+    title: 'RHCSA 04: Gerenciamento e edicao de arquivos'
+    description: Crie, copie, mova e edite arquivos mantendo rastreabilidade de alteracoes simples.
+    duration: 30m
+    image: linuxtips/girus-devops:0.1
+    type: linux
+    tags:
+    - RHCSA
+    - Linux
+    - RHEL
+    - blcsilva
+    - Arquivos
+    timerEnabled: true
+    tasks:
+    - name: 'Conhecimento aplicado: Gerenciamento e edicao de arquivos'
+      description: Crie, copie, mova e edite arquivos mantendo rastreabilidade de alteracoes simples.
+      steps:
+      - '**Proposta do lab:** Crie, copie, mova e edite arquivos mantendo rastreabilidade de alteracoes simples. Este exercicio pertence ao bloco RH124, alinhado a fundamentos de administracao Linux: shell, arquivos, usuarios, rede, software e servicos.'
+      - '**Contexto de aplicacao:** no RHCSA voce precisa resolver tarefas no terminal, produzir evidencias rapidas e reconhecer quando um recurso depende do ambiente RHEL completo. Neste GIRUS, comandos destrutivos de disco, boot ou servico real sao tratados como roteiro controlado quando o container nao oferece o subsistema.'
+      - '**Referencia oficial:** RH124 - https://www.redhat.com/en/services/training/rh124-red-hat-system-administration-i'
+      - '**Como ler os comandos:** opcoes curtas como `-p`, `-c`, `-f` ajustam comportamento imediato; opcoes longas como `--help`, `--version`, `--permanent` explicam intencao. Redirecionamentos como `>` gravam a saida, `| tee` grava e exibe, e `2>/dev/null` silencia erros esperados de ferramentas ausentes no container.'
+      - '**Pratica orientada:** execute os comandos abaixo na ordem e observe a saida. Quando aparecer `RHEL real`, trate como referencia de prova para executar em uma VM RHEL completa.'
+      - mkdir -p /tmp/rhcsa-04/origem /tmp/rhcsa-04/destino
+      - 'printf ''porta=8080
+
+        modo=dev
+
+        '' > /tmp/rhcsa-04/origem/app.conf'
+      - cp /tmp/rhcsa-04/origem/app.conf /tmp/rhcsa-04/destino/app.conf
+      - sed -i 's/modo=dev/modo=prod/' /tmp/rhcsa-04/destino/app.conf
+      - '**Conclusao e reforco:** voce praticou gerenciamento e edicao de arquivos no dominio arquivos. Antes de seguir, diga em voz alta qual arquivo, comando ou saida provou que a tarefa foi concluida; esse habito reduz erro em prova pratica.'
+      tips:
+      - type: tip
+        title: Ritmo RHCSA
+        content: Treine primeiro entendendo o comando; depois repita buscando velocidade, clareza e validacao objetiva.
+      validation:
+      - command: grep -q 'modo=prod' /tmp/rhcsa-04/destino/app.conf && echo ok
+        expectedOutput: ok
+        errorMessage: A edicao do arquivo de configuracao nao foi aplicada.

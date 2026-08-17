@@ -1,0 +1,49 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rhcsa-26-rhcsa-comprehensive-review-lab
+  labels:
+    app: girus-lab-template
+    lab: rhcsa-26-rhcsa-comprehensive-review
+data:
+  lab.yaml: |
+    name: rhcsa-26-rhcsa-comprehensive-review
+    title: 'RHCSA 26: Revisao integrada RHCSA'
+    description: Execute uma mini-revisao integrando arquivos, usuarios, permissoes, processos, logs e plano operacional.
+    duration: 45m
+    image: linuxtips/girus-devops:0.1
+    type: linux
+    tags:
+    - RHCSA
+    - Linux
+    - RHEL
+    - blcsilva
+    - Revisao
+    timerEnabled: true
+    tasks:
+    - name: 'Conhecimento aplicado: Revisao integrada RHCSA'
+      description: Execute uma mini-revisao integrando arquivos, usuarios, permissoes, processos, logs e plano operacional.
+      steps:
+      - '**Proposta do lab:** Execute uma mini-revisao integrando arquivos, usuarios, permissoes, processos, logs e plano operacional. Este exercicio pertence ao bloco RH200, alinhado a revisao acelerada RHCSA/RH199: consolidacao de RH124 e RH134 com foco operacional.'
+      - '**Contexto de aplicacao:** no RHCSA voce precisa resolver tarefas no terminal, produzir evidencias rapidas e reconhecer quando um recurso depende do ambiente RHEL completo. Neste GIRUS, comandos destrutivos de disco, boot ou servico real sao tratados como roteiro controlado quando o container nao oferece o subsistema.'
+      - '**Referencia oficial:** RH200 - https://www.redhat.com/en/services/training/rh200-red-hat-certified-system-administrator-rapid-track-course-exam'
+      - '**Como ler os comandos:** opcoes curtas como `-p`, `-c`, `-f` ajustam comportamento imediato; opcoes longas como `--help`, `--version`, `--permanent` explicam intencao. Redirecionamentos como `>` gravam a saida, `| tee` grava e exibe, e `2>/dev/null` silencia erros esperados de ferramentas ausentes no container.'
+      - '**Pratica orientada:** execute os comandos abaixo na ordem e observe a saida. Quando aparecer `RHEL real`, trate como referencia de prova para executar em uma VM RHEL completa.'
+      - mkdir -p /tmp/rhcsa-26/revisao
+      - 'printf ''RHCSA revisao final
+
+        usuarios arquivos rede storage seguranca
+
+        '' > /tmp/rhcsa-26/revisao/summary.txt'
+      - chmod 640 /tmp/rhcsa-26/revisao/summary.txt
+      - sleep 120 & echo $! > /tmp/rhcsa-26/revisao/process.pid
+      - ps -p $(cat /tmp/rhcsa-26/revisao/process.pid) -o pid,comm >> /tmp/rhcsa-26/revisao/summary.txt
+      - '**Conclusao e reforco:** voce praticou revisao integrada rhcsa no dominio revisao. Antes de seguir, diga em voz alta qual arquivo, comando ou saida provou que a tarefa foi concluida; esse habito reduz erro em prova pratica.'
+      tips:
+      - type: tip
+        title: Ritmo RHCSA
+        content: Treine primeiro entendendo o comando; depois repita buscando velocidade, clareza e validacao objetiva.
+      validation:
+      - command: grep -q 'RHCSA revisao final' /tmp/rhcsa-26/revisao/summary.txt && stat -c '%a' /tmp/rhcsa-26/revisao/summary.txt | grep -q '^640$' && echo ok
+        expectedOutput: ok
+        errorMessage: A revisao final nao contem conteudo/permissao esperados.

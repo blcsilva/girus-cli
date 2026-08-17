@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rhcsa-09-processes-jobs-signals-lab
+  labels:
+    app: girus-lab-template
+    lab: rhcsa-09-processes-jobs-signals
+data:
+  lab.yaml: |
+    name: rhcsa-09-processes-jobs-signals
+    title: 'RHCSA 09: Processos, jobs e sinais'
+    description: Investigue processos, PID, sinais e controle basico de execucao em segundo plano.
+    duration: 30m
+    image: linuxtips/girus-devops:0.1
+    type: linux
+    tags:
+    - RHCSA
+    - Linux
+    - RHEL
+    - blcsilva
+    - Processos
+    timerEnabled: true
+    tasks:
+    - name: 'Conhecimento aplicado: Processos, jobs e sinais'
+      description: Investigue processos, PID, sinais e controle basico de execucao em segundo plano.
+      steps:
+      - '**Proposta do lab:** Investigue processos, PID, sinais e controle basico de execucao em segundo plano. Este exercicio pertence ao bloco RH124, alinhado a fundamentos de administracao Linux: shell, arquivos, usuarios, rede, software e servicos.'
+      - '**Contexto de aplicacao:** no RHCSA voce precisa resolver tarefas no terminal, produzir evidencias rapidas e reconhecer quando um recurso depende do ambiente RHEL completo. Neste GIRUS, comandos destrutivos de disco, boot ou servico real sao tratados como roteiro controlado quando o container nao oferece o subsistema.'
+      - '**Referencia oficial:** RH124 - https://www.redhat.com/en/services/training/rh124-red-hat-system-administration-i'
+      - '**Como ler os comandos:** opcoes curtas como `-p`, `-c`, `-f` ajustam comportamento imediato; opcoes longas como `--help`, `--version`, `--permanent` explicam intencao. Redirecionamentos como `>` gravam a saida, `| tee` grava e exibe, e `2>/dev/null` silencia erros esperados de ferramentas ausentes no container.'
+      - '**Pratica orientada:** execute os comandos abaixo na ordem e observe a saida. Quando aparecer `RHEL real`, trate como referencia de prova para executar em uma VM RHEL completa.'
+      - sleep 300 & echo $! > /tmp/rhcsa-09.pid
+      - ps -p $(cat /tmp/rhcsa-09.pid) -o pid,stat,comm | tee /tmp/rhcsa-09-ps.txt
+      - kill -0 $(cat /tmp/rhcsa-09.pid)
+      - cat /tmp/rhcsa-09-ps.txt
+      - '**Conclusao e reforco:** voce praticou processos, jobs e sinais no dominio processos. Antes de seguir, diga em voz alta qual arquivo, comando ou saida provou que a tarefa foi concluida; esse habito reduz erro em prova pratica.'
+      tips:
+      - type: tip
+        title: Ritmo RHCSA
+        content: Treine primeiro entendendo o comando; depois repita buscando velocidade, clareza e validacao objetiva.
+      validation:
+      - command: kill -0 $(cat /tmp/rhcsa-09.pid) && echo ok
+        expectedOutput: ok
+        errorMessage: O processo de teste nao esta em execucao.

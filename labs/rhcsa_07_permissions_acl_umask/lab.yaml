@@ -1,0 +1,46 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rhcsa-07-permissions-acl-umask-lab
+  labels:
+    app: girus-lab-template
+    lab: rhcsa-07-permissions-acl-umask
+data:
+  lab.yaml: |
+    name: rhcsa-07-permissions-acl-umask
+    title: 'RHCSA 07: Permissoes, ownership e umask'
+    description: Controle acesso com dono, grupo e bits numericos antes de avancar para ACL e SELinux.
+    duration: 30m
+    image: linuxtips/girus-devops:0.1
+    type: linux
+    tags:
+    - RHCSA
+    - Linux
+    - RHEL
+    - blcsilva
+    - Seguranca
+    timerEnabled: true
+    tasks:
+    - name: 'Conhecimento aplicado: Permissoes, ownership e umask'
+      description: Controle acesso com dono, grupo e bits numericos antes de avancar para ACL e SELinux.
+      steps:
+      - '**Proposta do lab:** Controle acesso com dono, grupo e bits numericos antes de avancar para ACL e SELinux. Este exercicio pertence ao bloco RH124, alinhado a fundamentos de administracao Linux: shell, arquivos, usuarios, rede, software e servicos.'
+      - '**Contexto de aplicacao:** no RHCSA voce precisa resolver tarefas no terminal, produzir evidencias rapidas e reconhecer quando um recurso depende do ambiente RHEL completo. Neste GIRUS, comandos destrutivos de disco, boot ou servico real sao tratados como roteiro controlado quando o container nao oferece o subsistema.'
+      - '**Referencia oficial:** RH124 - https://www.redhat.com/en/services/training/rh124-red-hat-system-administration-i'
+      - '**Como ler os comandos:** opcoes curtas como `-p`, `-c`, `-f` ajustam comportamento imediato; opcoes longas como `--help`, `--version`, `--permanent` explicam intencao. Redirecionamentos como `>` gravam a saida, `| tee` grava e exibe, e `2>/dev/null` silencia erros esperados de ferramentas ausentes no container.'
+      - '**Pratica orientada:** execute os comandos abaixo na ordem e observe a saida. Quando aparecer `RHEL real`, trate como referencia de prova para executar em uma VM RHEL completa.'
+      - mkdir -p /tmp/rhcsa-07
+      - 'printf ''segredo
+
+        '' > /tmp/rhcsa-07/arquivo.txt'
+      - chmod 640 /tmp/rhcsa-07/arquivo.txt
+      - stat -c '%a %U %G %n' /tmp/rhcsa-07/arquivo.txt | tee /tmp/rhcsa-07/stat.txt
+      - '**Conclusao e reforco:** voce praticou permissoes, ownership e umask no dominio seguranca. Antes de seguir, diga em voz alta qual arquivo, comando ou saida provou que a tarefa foi concluida; esse habito reduz erro em prova pratica.'
+      tips:
+      - type: tip
+        title: Ritmo RHCSA
+        content: Treine primeiro entendendo o comando; depois repita buscando velocidade, clareza e validacao objetiva.
+      validation:
+      - command: stat -c '%a' /tmp/rhcsa-07/arquivo.txt | grep -q '^640$' && echo ok
+        expectedOutput: ok
+        errorMessage: A permissao esperada do arquivo e 640.

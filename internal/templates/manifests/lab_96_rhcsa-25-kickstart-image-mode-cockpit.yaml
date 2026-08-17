@@ -1,0 +1,46 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rhcsa-25-kickstart-image-mode-cockpit-lab
+  labels:
+    app: girus-lab-template
+    lab: rhcsa-25-kickstart-image-mode-cockpit
+data:
+  lab.yaml: |
+    name: rhcsa-25-kickstart-image-mode-cockpit
+    title: 'RHCSA 25: Kickstart, Cockpit e image mode'
+    description: Consolide instalacao automatizada, gerenciamento via Cockpit e image mode em um pacote de configuracao.
+    duration: 45m
+    image: linuxtips/girus-devops:0.1
+    type: linux
+    tags:
+    - RHCSA
+    - Linux
+    - RHEL
+    - blcsilva
+    - Instalacao
+    timerEnabled: true
+    tasks:
+    - name: 'Conhecimento aplicado: Kickstart, Cockpit e image mode'
+      description: Consolide instalacao automatizada, gerenciamento via Cockpit e image mode em um pacote de configuracao.
+      steps:
+      - '**Proposta do lab:** Consolide instalacao automatizada, gerenciamento via Cockpit e image mode em um pacote de configuracao. Este exercicio pertence ao bloco RH200, alinhado a revisao acelerada RHCSA/RH199: consolidacao de RH124 e RH134 com foco operacional.'
+      - '**Contexto de aplicacao:** no RHCSA voce precisa resolver tarefas no terminal, produzir evidencias rapidas e reconhecer quando um recurso depende do ambiente RHEL completo. Neste GIRUS, comandos destrutivos de disco, boot ou servico real sao tratados como roteiro controlado quando o container nao oferece o subsistema.'
+      - '**Referencia oficial:** RH200 - https://www.redhat.com/en/services/training/rh200-red-hat-certified-system-administrator-rapid-track-course-exam'
+      - '**Como ler os comandos:** opcoes curtas como `-p`, `-c`, `-f` ajustam comportamento imediato; opcoes longas como `--help`, `--version`, `--permanent` explicam intencao. Redirecionamentos como `>` gravam a saida, `| tee` grava e exibe, e `2>/dev/null` silencia erros esperados de ferramentas ausentes no container.'
+      - '**Pratica orientada:** execute os comandos abaixo na ordem e observe a saida. Quando aparecer `RHEL real`, trate como referencia de prova para executar em uma VM RHEL completa.'
+      - mkdir -p /tmp/rhcsa-25
+      - printf 'lang en_US.UTF-8\ntimezone America/Sao_Paulo --utc\nrootpw --plaintext redhat\nreboot\n%%packages\n@^minimal-environment\n%%end\n' > /tmp/rhcsa-25/ks.cfg
+      - 'printf ''RHEL real: cockpit.socket; composer-cli; bootc image mode; kickstart validation
+
+        '' > /tmp/rhcsa-25/contexto-rh200.txt'
+      - cat /tmp/rhcsa-25/ks.cfg /tmp/rhcsa-25/contexto-rh200.txt
+      - '**Conclusao e reforco:** voce praticou kickstart, cockpit e image mode no dominio instalacao. Antes de seguir, diga em voz alta qual arquivo, comando ou saida provou que a tarefa foi concluida; esse habito reduz erro em prova pratica.'
+      tips:
+      - type: tip
+        title: Ritmo RHCSA
+        content: Treine primeiro entendendo o comando; depois repita buscando velocidade, clareza e validacao objetiva.
+      validation:
+      - command: grep -q 'rootpw' /tmp/rhcsa-25/ks.cfg && grep -q 'bootc' /tmp/rhcsa-25/contexto-rh200.txt && echo ok
+        expectedOutput: ok
+        errorMessage: O pacote Kickstart/image mode nao foi criado.

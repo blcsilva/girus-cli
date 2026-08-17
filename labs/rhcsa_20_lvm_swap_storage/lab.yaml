@@ -1,0 +1,43 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rhcsa-20-lvm-swap-storage-lab
+  labels:
+    app: girus-lab-template
+    lab: rhcsa-20-lvm-swap-storage
+data:
+  lab.yaml: |
+    name: rhcsa-20-lvm-swap-storage
+    title: 'RHCSA 20: LVM, swap e crescimento de volumes'
+    description: Pratique o raciocinio de PV, VG, LV, filesystem e swap com um plano operacional validavel.
+    duration: 35m
+    image: linuxtips/girus-devops:0.1
+    type: linux
+    tags:
+    - RHCSA
+    - Linux
+    - RHEL
+    - blcsilva
+    - Storage
+    timerEnabled: true
+    tasks:
+    - name: 'Conhecimento aplicado: LVM, swap e crescimento de volumes'
+      description: Pratique o raciocinio de PV, VG, LV, filesystem e swap com um plano operacional validavel.
+      steps:
+      - '**Proposta do lab:** Pratique o raciocinio de PV, VG, LV, filesystem e swap com um plano operacional validavel. Este exercicio pertence ao bloco RH134, alinhado a administracao avancada: automacao, logs, SELinux, storage, boot, seguranca de rede e containers.'
+      - '**Contexto de aplicacao:** no RHCSA voce precisa resolver tarefas no terminal, produzir evidencias rapidas e reconhecer quando um recurso depende do ambiente RHEL completo. Neste GIRUS, comandos destrutivos de disco, boot ou servico real sao tratados como roteiro controlado quando o container nao oferece o subsistema.'
+      - '**Referencia oficial:** RH134 - https://www.redhat.com/en/services/training/rh134-red-hat-system-administration-ii'
+      - '**Como ler os comandos:** opcoes curtas como `-p`, `-c`, `-f` ajustam comportamento imediato; opcoes longas como `--help`, `--version`, `--permanent` explicam intencao. Redirecionamentos como `>` gravam a saida, `| tee` grava e exibe, e `2>/dev/null` silencia erros esperados de ferramentas ausentes no container.'
+      - '**Pratica orientada:** execute os comandos abaixo na ordem e observe a saida. Quando aparecer `RHEL real`, trate como referencia de prova para executar em uma VM RHEL completa.'
+      - mkdir -p /tmp/rhcsa-20
+      - printf 'pvcreate /dev/vdb\nvgcreate vg_data /dev/vdb\nlvcreate -n lv_app -L 1G vg_data\nmkfs.xfs /dev/vg_data/lv_app\nmount /dev/vg_data/lv_app /app\nmkswap /dev/vg_data/lv_swap\nswapon /dev/vg_data/lv_swap\n' > /tmp/rhcsa-20/plano-lvm.txt
+      - cat /tmp/rhcsa-20/plano-lvm.txt
+      - '**Conclusao e reforco:** voce praticou lvm, swap e crescimento de volumes no dominio storage. Antes de seguir, diga em voz alta qual arquivo, comando ou saida provou que a tarefa foi concluida; esse habito reduz erro em prova pratica.'
+      tips:
+      - type: tip
+        title: Ritmo RHCSA
+        content: Treine primeiro entendendo o comando; depois repita buscando velocidade, clareza e validacao objetiva.
+      validation:
+      - command: grep -q 'lvcreate' /tmp/rhcsa-20/plano-lvm.txt && grep -q 'swapon' /tmp/rhcsa-20/plano-lvm.txt && echo ok
+        expectedOutput: ok
+        errorMessage: O plano de LVM/swap nao contem os comandos esperados.

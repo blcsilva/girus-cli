@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rhcsa-01-rhel-ecosystem-cli-lab
+  labels:
+    app: girus-lab-template
+    lab: rhcsa-01-rhel-ecosystem-cli
+data:
+  lab.yaml: |
+    name: rhcsa-01-rhel-ecosystem-cli
+    title: 'RHCSA 01: Introducao ao RHEL e shell'
+    description: Mapeie distribuicao, kernel, shell e contexto de execucao antes de administrar um servidor.
+    duration: 30m
+    image: linuxtips/girus-devops:0.1
+    type: linux
+    tags:
+    - RHCSA
+    - Linux
+    - RHEL
+    - blcsilva
+    - Fundamentos
+    timerEnabled: true
+    tasks:
+    - name: 'Conhecimento aplicado: Introducao ao RHEL e shell'
+      description: Mapeie distribuicao, kernel, shell e contexto de execucao antes de administrar um servidor.
+      steps:
+      - '**Proposta do lab:** Mapeie distribuicao, kernel, shell e contexto de execucao antes de administrar um servidor. Este exercicio pertence ao bloco RH124, alinhado a fundamentos de administracao Linux: shell, arquivos, usuarios, rede, software e servicos.'
+      - '**Contexto de aplicacao:** no RHCSA voce precisa resolver tarefas no terminal, produzir evidencias rapidas e reconhecer quando um recurso depende do ambiente RHEL completo. Neste GIRUS, comandos destrutivos de disco, boot ou servico real sao tratados como roteiro controlado quando o container nao oferece o subsistema.'
+      - '**Referencia oficial:** RH124 - https://www.redhat.com/en/services/training/rh124-red-hat-system-administration-i'
+      - '**Como ler os comandos:** opcoes curtas como `-p`, `-c`, `-f` ajustam comportamento imediato; opcoes longas como `--help`, `--version`, `--permanent` explicam intencao. Redirecionamentos como `>` gravam a saida, `| tee` grava e exibe, e `2>/dev/null` silencia erros esperados de ferramentas ausentes no container.'
+      - '**Pratica orientada:** execute os comandos abaixo na ordem e observe a saida. Quando aparecer `RHEL real`, trate como referencia de prova para executar em uma VM RHEL completa.'
+      - cat /etc/os-release | tee /tmp/rhcsa-01-report.txt
+      - uname -a | tee -a /tmp/rhcsa-01-report.txt
+      - echo SHELL=${SHELL:-/bin/sh} | tee -a /tmp/rhcsa-01-report.txt
+      - whoami | tee -a /tmp/rhcsa-01-report.txt
+      - '**Conclusao e reforco:** voce praticou introducao ao rhel e shell no dominio fundamentos. Antes de seguir, diga em voz alta qual arquivo, comando ou saida provou que a tarefa foi concluida; esse habito reduz erro em prova pratica.'
+      tips:
+      - type: tip
+        title: Ritmo RHCSA
+        content: Treine primeiro entendendo o comando; depois repita buscando velocidade, clareza e validacao objetiva.
+      validation:
+      - command: grep -Eq 'ID=|NAME=' /tmp/rhcsa-01-report.txt && echo ok
+        expectedOutput: ok
+        errorMessage: Voce nao gerou o relatorio basico do sistema.

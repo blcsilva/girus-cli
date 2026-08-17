@@ -1,817 +1,1228 @@
 apiVersion: v1
-generated: "2024-06-01T10:00:00Z"
+generated: '2024-06-01T10:00:00Z'
 entries:
   aws_localstack_terraform:
-    - name: aws_localstack_terraform
-      version: "1.0.0"
-      description: "Laboratório de AWS LocalStack com Terraform"
-      keywords:
-        - aws
-        - localstack
-        - terraform
-      maintainers:
-        - "Jeferson <jeferson@linuxtips.io>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/aws_localstack_terraform/lab.yaml"
-      created: "2024-06-01T10:00:00Z"
-      digest: "sha256:796479639f2a8f5426b3cb850182f9c402ea71b42f3c964b13680e5ea67c5aef"
+  - name: aws_localstack_terraform
+    version: 1.0.0
+    description: "Laborat\xF3rio de AWS LocalStack com Terraform"
+    keywords:
+    - aws
+    - localstack
+    - terraform
+    maintainers:
+    - Jeferson <jeferson@linuxtips.io>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/aws_localstack_terraform/lab.yaml
+    created: '2024-06-01T10:00:00Z'
+    digest: sha256:796479639f2a8f5426b3cb850182f9c402ea71b42f3c964b13680e5ea67c5aef
   aws_s3_storage:
-    - name: aws_s3_storage
-      version: "1.0.0"
-      description: "Laboratório de AWS S3 Storage"
-      keywords:
-        - aws
-        - s3
-        - storage
-      maintainers:
-        - "Jeferson <jeferson@linuxtips.io>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/aws_s3_storage/lab.yaml"
-      created: "2024-06-01T10:00:00Z"
-      digest: "sha256:a4ea25c2d7909510592175825f01a4652956187e69a371271115f070f6c8d6b7"
+  - name: aws_s3_storage
+    version: 1.0.0
+    description: "Laborat\xF3rio de AWS S3 Storage"
+    keywords:
+    - aws
+    - s3
+    - storage
+    maintainers:
+    - Jeferson <jeferson@linuxtips.io>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/aws_s3_storage/lab.yaml
+    created: '2024-06-01T10:00:00Z'
+    digest: sha256:a4ea25c2d7909510592175825f01a4652956187e69a371271115f070f6c8d6b7
   aws_s3_storage-es:
-    - name: aws_s3_storage-es
-      version: "1.0.0"
-      description: "Laboratorio de AWS S3 Storage"
-      keywords:
-        - aws
-        - s3
-        - storage
-      maintainers:
-        - "Jeferson <jeferson@linuxtips.io>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/aws_s3_storage/lab_es.yaml"
-      created: "2024-06-01T10:00:00Z"
-      digest: "sha256:47640be45d13fd9adc6c9280d6f1c59ab33a9823d841fc207daeecc0505fb4de"
+  - name: aws_s3_storage-es
+    version: 1.0.0
+    description: Laboratorio de AWS S3 Storage
+    keywords:
+    - aws
+    - s3
+    - storage
+    maintainers:
+    - Jeferson <jeferson@linuxtips.io>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/aws_s3_storage/lab_es.yaml
+    created: '2024-06-01T10:00:00Z'
+    digest: sha256:47640be45d13fd9adc6c9280d6f1c59ab33a9823d841fc207daeecc0505fb4de
   aws_dynamodb_nosql:
-    - name: aws_dynamodb_nosql
-      version: "1.0.0"
-      description: "Laboratório de AWS DynamoDB NoSQL"
-      keywords:
-        - aws
-        - dynamodb
-        - nosql
-      maintainers:
-        - "Jeferson <jeferson@linuxtips.io>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/aws_dynamodb_nosql/lab.yaml"
-      created: "2024-06-01T10:00:00Z"
-      digest: "sha256:3c337f5377e48c0d5413461f82a8e175c3e695013a2fd26a302aa0f6c6ce2c6d"
+  - name: aws_dynamodb_nosql
+    version: 1.0.0
+    description: "Laborat\xF3rio de AWS DynamoDB NoSQL"
+    keywords:
+    - aws
+    - dynamodb
+    - nosql
+    maintainers:
+    - Jeferson <jeferson@linuxtips.io>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/aws_dynamodb_nosql/lab.yaml
+    created: '2024-06-01T10:00:00Z'
+    digest: sha256:3c337f5377e48c0d5413461f82a8e175c3e695013a2fd26a302aa0f6c6ce2c6d
   aws_lambda_serverless:
-    - name: aws_lambda_serverless
-      version: "1.0.0"
-      description: "Laboratório de AWS Lambda Serverless"
-      keywords:
-        - aws
-        - lambda
-        - serverless
-      maintainers:
-        - "Jeferson <jeferson@linuxtips.io>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/aws_lambda_serverless/lab.yaml"
-      created: "2024-06-01T10:00:00Z"
-      digest: "sha256:0ec129e490ccbd3339c924a9bc2fd6f391f4b7c9d5a508112d2a44b5729df414"
+  - name: aws_lambda_serverless
+    version: 1.0.0
+    description: "Laborat\xF3rio de AWS Lambda Serverless"
+    keywords:
+    - aws
+    - lambda
+    - serverless
+    maintainers:
+    - Jeferson <jeferson@linuxtips.io>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/aws_lambda_serverless/lab.yaml
+    created: '2024-06-01T10:00:00Z'
+    digest: sha256:0ec129e490ccbd3339c924a9bc2fd6f391f4b7c9d5a508112d2a44b5729df414
   terraform_fundamentos:
-    - name: terraform_fundamentos
-      version: "1.0.0"
-      description: "Laboratório de Fundamentos do Terraform"
-      keywords:
-        - terraform
-        - infraestrutura
-      maintainers:
-        - "Jeferson <jeferson@linuxtips.io>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/terraform_fundamentos/lab.yaml"
-      created: "2024-06-01T10:00:00Z"
-      digest: "sha256:b0152d96dae8e9a33595e8e39a18ce2932829cb3656442d195a19cfb1386609d"
+  - name: terraform_fundamentos
+    version: 1.0.0
+    description: "Laborat\xF3rio de Fundamentos do Terraform"
+    keywords:
+    - terraform
+    - infraestrutura
+    maintainers:
+    - Jeferson <jeferson@linuxtips.io>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/terraform_fundamentos/lab.yaml
+    created: '2024-06-01T10:00:00Z'
+    digest: sha256:b0152d96dae8e9a33595e8e39a18ce2932829cb3656442d195a19cfb1386609d
   terraform_aws_infraestrutura:
-    - name: terraform_aws_infraestrutura
-      version: "1.0.0"
-      description: "Laboratório de Terraform com AWS"
-      keywords:
-        - terraform
-        - aws
-        - infraestrutura
-      maintainers:
-        - "Jeferson <jeferson@linuxtips.io>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/terraform_aws_infraestrutura/lab.yaml"
-      created: "2024-06-01T10:00:00Z"
-      digest: "sha256:e6ce9b4a03a8f2f03cc617aa539c3b67146eb4fac7f36de4847523d307e56034"
+  - name: terraform_aws_infraestrutura
+    version: 1.0.0
+    description: "Laborat\xF3rio de Terraform com AWS"
+    keywords:
+    - terraform
+    - aws
+    - infraestrutura
+    maintainers:
+    - Jeferson <jeferson@linuxtips.io>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/terraform_aws_infraestrutura/lab.yaml
+    created: '2024-06-01T10:00:00Z'
+    digest: sha256:e6ce9b4a03a8f2f03cc617aa539c3b67146eb4fac7f36de4847523d307e56034
   terraform_provisioners_e_modulos:
-    - name: terraform_provisioners_e_modulos
-      version: "1.0.0"
-      description: "Laboratório de Provisioners e Módulos no Terraform"
-      keywords:
-        - terraform
-        - provisioners
-        - módulos
-      maintainers:
-        - "Jeferson <jeferson@linuxtips.io>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/terraform_provisioners_e_modulos/lab.yaml"
-      created: "2024-06-01T10:00:00Z"
-      digest: "sha256:bd20ccb4ad7e9f34a513c28d80f59a248cefbbab86c3c05923b16a4770eb6206"
+  - name: terraform_provisioners_e_modulos
+    version: 1.0.0
+    description: "Laborat\xF3rio de Provisioners e M\xF3dulos no Terraform"
+    keywords:
+    - terraform
+    - provisioners
+    - "m\xF3dulos"
+    maintainers:
+    - Jeferson <jeferson@linuxtips.io>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/terraform_provisioners_e_modulos/lab.yaml
+    created: '2024-06-01T10:00:00Z'
+    digest: sha256:bd20ccb4ad7e9f34a513c28d80f59a248cefbbab86c3c05923b16a4770eb6206
   kubernetes_fundamentos:
-    - name: kubernetes_fundamentos
-      version: "1.0.0"
-      description: "Laboratório de Fundamentos do Kubernetes"
-      keywords:
-        - kubernetes
-        - k8s
-      maintainers:
-        - "Jeferson <jeferson@linuxtips.io>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/kubernetes_fundamentos/lab.yaml"
-      created: "2024-06-01T10:00:00Z"
-      digest: "sha256:902300e3dc0cffc056ae6743bd9fe93ce1c38820f6f1a1f5f566796cf1c419db"
+  - name: kubernetes_fundamentos
+    version: 1.0.0
+    description: "Laborat\xF3rio de Fundamentos do Kubernetes"
+    keywords:
+    - kubernetes
+    - k8s
+    maintainers:
+    - Jeferson <jeferson@linuxtips.io>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/kubernetes_fundamentos/lab.yaml
+    created: '2024-06-01T10:00:00Z'
+    digest: sha256:902300e3dc0cffc056ae6743bd9fe93ce1c38820f6f1a1f5f566796cf1c419db
   kubernetes_deployment:
-    - name: kubernetes_deployment
-      version: "1.0.0"
-      description: "Laboratório de Deployment no Kubernetes"
-      keywords:
-        - kubernetes
-        - deployment
-      maintainers:
-        - "Jeferson <jeferson@linuxtips.io>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/kubernetes_deployment/lab.yaml"
-      created: "2024-06-01T10:00:00Z"
-      digest: "sha256:15234db636c79593918d1365fea9fa5dad8a67da17ec58f18c9dff1b9b40bf8d"
+  - name: kubernetes_deployment
+    version: 1.0.0
+    description: "Laborat\xF3rio de Deployment no Kubernetes"
+    keywords:
+    - kubernetes
+    - deployment
+    maintainers:
+    - Jeferson <jeferson@linuxtips.io>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/kubernetes_deployment/lab.yaml
+    created: '2024-06-01T10:00:00Z'
+    digest: sha256:15234db636c79593918d1365fea9fa5dad8a67da17ec58f18c9dff1b9b40bf8d
   kubernetes_probes-healthchecks:
-    - name: kubernetes_probes-healthchecks
-      version: "1.0.0"
-      description: "Laboratório de Probes e Health Checks no Kubernetes"
-      keywords:
-        - kubernetes
-        - probes
-        - healthchecks
-        - observabilidade
-        - blcsilva
-        - CKA
-      maintainers:
-        - "Jeferson <jeferson@linuxtips.io>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/kubernetes_probes-healthchecks/lab.yaml"
-      created: "2026-08-16T00:00:00Z"
-      digest: "sha256:d68213e9d0f32c62988108904dcdc21d196d02a5b45e7165efffceb2eef5af31"
+  - name: kubernetes_probes-healthchecks
+    version: 1.0.0
+    description: "Laborat\xF3rio de Probes e Health Checks no Kubernetes"
+    keywords:
+    - kubernetes
+    - probes
+    - healthchecks
+    - observabilidade
+    - blcsilva
+    - CKA
+    maintainers:
+    - Jeferson <jeferson@linuxtips.io>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/kubernetes_probes-healthchecks/lab.yaml
+    created: '2026-08-16T00:00:00Z'
+    digest: sha256:d68213e9d0f32c62988108904dcdc21d196d02a5b45e7165efffceb2eef5af31
   kubernetes_recursos-limits:
-    - name: kubernetes_recursos-limits
-      version: "1.0.0"
-      description: "Laboratório de Requests, Limits e Quotas no Kubernetes"
-      keywords:
-        - kubernetes
-        - resources
-        - limits
-        - quotas
-        - blcsilva
-        - CKA
-      maintainers:
-        - "Jeferson <jeferson@linuxtips.io>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/kubernetes_recursos-limits/lab.yaml"
-      created: "2026-08-16T00:00:00Z"
-      digest: "sha256:70eecf268b0927ad87d4d57a649ebcb88e57ebf5f37c574d36552eb88289d4f2"
+  - name: kubernetes_recursos-limits
+    version: 1.0.0
+    description: "Laborat\xF3rio de Requests, Limits e Quotas no Kubernetes"
+    keywords:
+    - kubernetes
+    - resources
+    - limits
+    - quotas
+    - blcsilva
+    - CKA
+    maintainers:
+    - Jeferson <jeferson@linuxtips.io>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/kubernetes_recursos-limits/lab.yaml
+    created: '2026-08-16T00:00:00Z'
+    digest: sha256:70eecf268b0927ad87d4d57a649ebcb88e57ebf5f37c574d36552eb88289d4f2
   kubernetes_rbac-serviceaccounts:
-    - name: kubernetes_rbac-serviceaccounts
-      version: "1.0.0"
-      description: "Laboratório de RBAC e ServiceAccounts no Kubernetes"
-      keywords:
-        - kubernetes
-        - rbac
-        - serviceaccounts
-        - security
-        - blcsilva
-        - CKA
-      maintainers:
-        - "Jeferson <jeferson@linuxtips.io>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/kubernetes_rbac-serviceaccounts/lab.yaml"
-      created: "2026-08-16T00:00:00Z"
-      digest: "sha256:dc6b8944b9ef556950d5d5faeaa7bc504d8e65f67c5f09f57dccac819efece01"
+  - name: kubernetes_rbac-serviceaccounts
+    version: 1.0.0
+    description: "Laborat\xF3rio de RBAC e ServiceAccounts no Kubernetes"
+    keywords:
+    - kubernetes
+    - rbac
+    - serviceaccounts
+    - security
+    - blcsilva
+    - CKA
+    maintainers:
+    - Jeferson <jeferson@linuxtips.io>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/kubernetes_rbac-serviceaccounts/lab.yaml
+    created: '2026-08-16T00:00:00Z'
+    digest: sha256:dc6b8944b9ef556950d5d5faeaa7bc504d8e65f67c5f09f57dccac819efece01
   cka_01_kubectl_pods:
-    - name: cka-01-kubectl-pods
-      version: "1.0.0"
-      description: "Crie Pods rapidamente, inspecione status, eventos e detalhes com kubectl."
-      keywords:
-        - kubernetes
-        - cka
-        - kubectl
-        - blcsilva
-        - CKA
-      maintainers:
-        - "Bruno Silva <blcsilva>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_01_kubectl_pods/lab.yaml"
-      created: "2026-08-16T00:00:00Z"
-      digest: "sha256:ef1445cbcdc85f2f65ef46ba8d6499c1c297aac0249bbee38526415f2fb96aea"
+  - name: cka-01-kubectl-pods
+    version: 1.0.0
+    description: Crie Pods rapidamente, inspecione status, eventos e detalhes com kubectl.
+    keywords:
+    - kubernetes
+    - cka
+    - kubectl
+    - blcsilva
+    - CKA
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_01_kubectl_pods/lab.yaml
+    created: '2026-08-16T00:00:00Z'
+    digest: sha256:ef1445cbcdc85f2f65ef46ba8d6499c1c297aac0249bbee38526415f2fb96aea
   cka_02_yaml_dry_run:
-    - name: cka-02-yaml-dry-run
-      version: "1.0.0"
-      description: "Gere YAML com dry-run client e aplique manifestos sem escrever tudo do zero."
-      keywords:
-        - kubernetes
-        - cka
-        - kubectl
-        - blcsilva
-        - CKA
-      maintainers:
-        - "Bruno Silva <blcsilva>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_02_yaml_dry_run/lab.yaml"
-      created: "2026-08-16T00:00:00Z"
-      digest: "sha256:89f4b855d345b5de67ad4886b5b84e9a4152a67afae9f729315f72a93842723a"
+  - name: cka-02-yaml-dry-run
+    version: 1.0.0
+    description: Gere YAML com dry-run client e aplique manifestos sem escrever tudo do zero.
+    keywords:
+    - kubernetes
+    - cka
+    - kubectl
+    - blcsilva
+    - CKA
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_02_yaml_dry_run/lab.yaml
+    created: '2026-08-16T00:00:00Z'
+    digest: sha256:89f4b855d345b5de67ad4886b5b84e9a4152a67afae9f729315f72a93842723a
   cka_03_namespaces_labels_selectors:
-    - name: cka-03-namespaces-labels-selectors
-      version: "1.0.0"
-      description: "Pratique isolamento por namespace, labels e seletores usados por Services."
-      keywords:
-        - kubernetes
-        - cka
-        - kubectl
-        - blcsilva
-        - CKA
-      maintainers:
-        - "Bruno Silva <blcsilva>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_03_namespaces_labels_selectors/lab.yaml"
-      created: "2026-08-16T00:00:00Z"
-      digest: "sha256:3efdb8cb30e6f3e1000cdd2d2be0f1d39b7ef05767f2d60ba6cea8c41021e8b8"
+  - name: cka-03-namespaces-labels-selectors
+    version: 1.0.0
+    description: Pratique isolamento por namespace, labels e seletores usados por Services.
+    keywords:
+    - kubernetes
+    - cka
+    - kubectl
+    - blcsilva
+    - CKA
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_03_namespaces_labels_selectors/lab.yaml
+    created: '2026-08-16T00:00:00Z'
+    digest: sha256:3efdb8cb30e6f3e1000cdd2d2be0f1d39b7ef05767f2d60ba6cea8c41021e8b8
   cka_04_logs_exec_debug:
-    - name: cka-04-logs-exec-debug
-      version: "1.0.0"
-      description: "Use logs e exec para provar comportamento dentro do container."
-      keywords:
-        - kubernetes
-        - cka
-        - kubectl
-        - blcsilva
-        - CKA
-      maintainers:
-        - "Bruno Silva <blcsilva>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_04_logs_exec_debug/lab.yaml"
-      created: "2026-08-16T00:00:00Z"
-      digest: "sha256:dd877c31fda4d2454468dd84a3cdff444f9d4f22b3f3cb1dba6103505151d4c3"
+  - name: cka-04-logs-exec-debug
+    version: 1.0.0
+    description: Use logs e exec para provar comportamento dentro do container.
+    keywords:
+    - kubernetes
+    - cka
+    - kubectl
+    - blcsilva
+    - CKA
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_04_logs_exec_debug/lab.yaml
+    created: '2026-08-16T00:00:00Z'
+    digest: sha256:dd877c31fda4d2454468dd84a3cdff444f9d4f22b3f3cb1dba6103505151d4c3
   cka_05_cluster_components:
-    - name: cka-05-cluster-components
-      version: "1.0.0"
-      description: "Mapeie nodes, kube-system, API resources e versao do cluster."
-      keywords:
-        - kubernetes
-        - cka
-        - cluster
-        - blcsilva
-        - CKA
-      maintainers:
-        - "Bruno Silva <blcsilva>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_05_cluster_components/lab.yaml"
-      created: "2026-08-16T00:00:00Z"
-      digest: "sha256:5b292a128a4d3c0d8498c90ddc56dd95422a1faacbf75ffd22b0f84c540e8272"
+  - name: cka-05-cluster-components
+    version: 1.0.0
+    description: Mapeie nodes, kube-system, API resources e versao do cluster.
+    keywords:
+    - kubernetes
+    - cka
+    - cluster
+    - blcsilva
+    - CKA
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_05_cluster_components/lab.yaml
+    created: '2026-08-16T00:00:00Z'
+    digest: sha256:5b292a128a4d3c0d8498c90ddc56dd95422a1faacbf75ffd22b0f84c540e8272
   cka_06_node_maintenance:
-    - name: cka-06-node-maintenance
-      version: "1.0.0"
-      description: "Pratique cordon e uncordon em ambiente single-node sem executar drain destrutivo."
-      keywords:
-        - kubernetes
-        - cka
-        - cluster
-        - blcsilva
-        - CKA
-      maintainers:
-        - "Bruno Silva <blcsilva>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_06_node_maintenance/lab.yaml"
-      created: "2026-08-16T00:00:00Z"
-      digest: "sha256:d5e723e8a5207702d5a25c16c761bd86da29c444ca555da6b0345967a5828bdd"
+  - name: cka-06-node-maintenance
+    version: 1.0.0
+    description: Pratique cordon e uncordon em ambiente single-node sem executar drain destrutivo.
+    keywords:
+    - kubernetes
+    - cka
+    - cluster
+    - blcsilva
+    - CKA
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_06_node_maintenance/lab.yaml
+    created: '2026-08-16T00:00:00Z'
+    digest: sha256:d5e723e8a5207702d5a25c16c761bd86da29c444ca555da6b0345967a5828bdd
   cka_07_rbac_serviceaccounts:
-    - name: cka-07-rbac-serviceaccounts
-      version: "1.0.0"
-      description: "Crie permissao minima com Role, RoleBinding e valide com auth can-i."
-      keywords:
-        - kubernetes
-        - cka
-        - cluster
-        - blcsilva
-        - CKA
-      maintainers:
-        - "Bruno Silva <blcsilva>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_07_rbac_serviceaccounts/lab.yaml"
-      created: "2026-08-16T00:00:00Z"
-      digest: "sha256:d93edccdf563292c3813cbbfbdc05420259b6aa5a535e3cb6eafc5f8f66ef1a0"
+  - name: cka-07-rbac-serviceaccounts
+    version: 1.0.0
+    description: Crie permissao minima com Role, RoleBinding e valide com auth can-i.
+    keywords:
+    - kubernetes
+    - cka
+    - cluster
+    - blcsilva
+    - CKA
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_07_rbac_serviceaccounts/lab.yaml
+    created: '2026-08-16T00:00:00Z'
+    digest: sha256:d93edccdf563292c3813cbbfbdc05420259b6aa5a535e3cb6eafc5f8f66ef1a0
   cka_08_api_helm_kustomize_crd:
-    - name: cka-08-api-helm-kustomize-crd
-      version: "1.0.0"
-      description: "Descubra capacidades administrativas sem depender de objetos externos ao cluster."
-      keywords:
-        - kubernetes
-        - cka
-        - cluster
-        - blcsilva
-        - CKA
-      maintainers:
-        - "Bruno Silva <blcsilva>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_08_api_helm_kustomize_crd/lab.yaml"
-      created: "2026-08-16T00:00:00Z"
-      digest: "sha256:2d333f225cbc3a6c90dbae7d8556589f71cc1c0d73baf00b601c168f47d94125"
+  - name: cka-08-api-helm-kustomize-crd
+    version: 1.0.0
+    description: Descubra capacidades administrativas sem depender de objetos externos ao cluster.
+    keywords:
+    - kubernetes
+    - cka
+    - cluster
+    - blcsilva
+    - CKA
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_08_api_helm_kustomize_crd/lab.yaml
+    created: '2026-08-16T00:00:00Z'
+    digest: sha256:2d333f225cbc3a6c90dbae7d8556589f71cc1c0d73baf00b601c168f47d94125
   cka_09_deployment_rollout_rollback:
-    - name: cka-09-deployment-rollout-rollback
-      version: "1.0.0"
-      description: "Quebre uma revisao de Deployment, diagnostique e volte para a versao estavel."
-      keywords:
-        - kubernetes
-        - cka
-        - workloads
-        - blcsilva
-        - CKA
-      maintainers:
-        - "Bruno Silva <blcsilva>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_09_deployment_rollout_rollback/lab.yaml"
-      created: "2026-08-16T00:00:00Z"
-      digest: "sha256:d95e3296c66a731275a000656168eea34ccc9822534f76e428a14adccfced987"
+  - name: cka-09-deployment-rollout-rollback
+    version: 1.0.0
+    description: Quebre uma revisao de Deployment, diagnostique e volte para a versao estavel.
+    keywords:
+    - kubernetes
+    - cka
+    - workloads
+    - blcsilva
+    - CKA
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_09_deployment_rollout_rollback/lab.yaml
+    created: '2026-08-16T00:00:00Z'
+    digest: sha256:d95e3296c66a731275a000656168eea34ccc9822534f76e428a14adccfced987
   cka_10_configmap_secret_env:
-    - name: cka-10-configmap-secret-env
-      version: "1.0.0"
-      description: "Injete configuracao e segredo em um Pod e valide por exec."
-      keywords:
-        - kubernetes
-        - cka
-        - workloads
-        - blcsilva
-        - CKA
-      maintainers:
-        - "Bruno Silva <blcsilva>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_10_configmap_secret_env/lab.yaml"
-      created: "2026-08-16T00:00:00Z"
-      digest: "sha256:2b39dde25bace6c2b38c1264d62d4ddf891570d80f5271c4082c23880620736c"
+  - name: cka-10-configmap-secret-env
+    version: 1.0.0
+    description: Injete configuracao e segredo em um Pod e valide por exec.
+    keywords:
+    - kubernetes
+    - cka
+    - workloads
+    - blcsilva
+    - CKA
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_10_configmap_secret_env/lab.yaml
+    created: '2026-08-16T00:00:00Z'
+    digest: sha256:2b39dde25bace6c2b38c1264d62d4ddf891570d80f5271c4082c23880620736c
   cka_11_probes_healthchecks:
-    - name: cka-11-probes-healthchecks
-      version: "1.0.0"
-      description: "Configure readiness e liveness probe em Deployment HTTP."
-      keywords:
-        - kubernetes
-        - cka
-        - workloads
-        - blcsilva
-        - CKA
-      maintainers:
-        - "Bruno Silva <blcsilva>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_11_probes_healthchecks/lab.yaml"
-      created: "2026-08-16T00:00:00Z"
-      digest: "sha256:105f7e863b95a8451c1ebe63fa1e9f3e7eb2114f64a96adff9c9b9ce647181e0"
+  - name: cka-11-probes-healthchecks
+    version: 1.0.0
+    description: Configure readiness e liveness probe em Deployment HTTP.
+    keywords:
+    - kubernetes
+    - cka
+    - workloads
+    - blcsilva
+    - CKA
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_11_probes_healthchecks/lab.yaml
+    created: '2026-08-16T00:00:00Z'
+    digest: sha256:105f7e863b95a8451c1ebe63fa1e9f3e7eb2114f64a96adff9c9b9ce647181e0
   cka_12_resources_quotas_limits:
-    - name: cka-12-resources-quotas-limits
-      version: "1.0.0"
-      description: "Aplique LimitRange e ResourceQuota para controlar consumo de namespace."
-      keywords:
-        - kubernetes
-        - cka
-        - workloads
-        - blcsilva
-        - CKA
-      maintainers:
-        - "Bruno Silva <blcsilva>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_12_resources_quotas_limits/lab.yaml"
-      created: "2026-08-16T00:00:00Z"
-      digest: "sha256:d8473210a591de77d712740cc62fbbb2dafd23b788e19b3705f8cf276cb28020"
+  - name: cka-12-resources-quotas-limits
+    version: 1.0.0
+    description: Aplique LimitRange e ResourceQuota para controlar consumo de namespace.
+    keywords:
+    - kubernetes
+    - cka
+    - workloads
+    - blcsilva
+    - CKA
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_12_resources_quotas_limits/lab.yaml
+    created: '2026-08-16T00:00:00Z'
+    digest: sha256:d8473210a591de77d712740cc62fbbb2dafd23b788e19b3705f8cf276cb28020
   cka_13_scheduling_nodeselector:
-    - name: cka-13-scheduling-nodeselector
-      version: "1.0.0"
-      description: "Use labels de node e nodeSelector para influenciar agendamento."
-      keywords:
-        - kubernetes
-        - cka
-        - workloads
-        - blcsilva
-        - CKA
-      maintainers:
-        - "Bruno Silva <blcsilva>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_13_scheduling_nodeselector/lab.yaml"
-      created: "2026-08-16T00:00:00Z"
-      digest: "sha256:c7c5b7068fbb7a3b2182f59acf15371df663fd757775ecbbb1ad1846d7997c45"
+  - name: cka-13-scheduling-nodeselector
+    version: 1.0.0
+    description: Use labels de node e nodeSelector para influenciar agendamento.
+    keywords:
+    - kubernetes
+    - cka
+    - workloads
+    - blcsilva
+    - CKA
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_13_scheduling_nodeselector/lab.yaml
+    created: '2026-08-16T00:00:00Z'
+    digest: sha256:c7c5b7068fbb7a3b2182f59acf15371df663fd757775ecbbb1ad1846d7997c45
   cka_14_jobs_cronjobs:
-    - name: cka-14-jobs-cronjobs
-      version: "1.0.0"
-      description: "Crie Jobs e CronJobs, acompanhe execucao e valide completions."
-      keywords:
-        - kubernetes
-        - cka
-        - workloads
-        - blcsilva
-        - CKA
-      maintainers:
-        - "Bruno Silva <blcsilva>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_14_jobs_cronjobs/lab.yaml"
-      created: "2026-08-16T00:00:00Z"
-      digest: "sha256:323a972f7abce717aa1170b1424e0685be5a1ce7cb34a7b269474811be9a69ef"
+  - name: cka-14-jobs-cronjobs
+    version: 1.0.0
+    description: Crie Jobs e CronJobs, acompanhe execucao e valide completions.
+    keywords:
+    - kubernetes
+    - cka
+    - workloads
+    - blcsilva
+    - CKA
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_14_jobs_cronjobs/lab.yaml
+    created: '2026-08-16T00:00:00Z'
+    digest: sha256:323a972f7abce717aa1170b1424e0685be5a1ce7cb34a7b269474811be9a69ef
   cka_15_hpa_autoscaling:
-    - name: cka-15-hpa-autoscaling
-      version: "1.0.0"
-      description: "Crie um HPA e identifique dependencias de metrics-server."
-      keywords:
-        - kubernetes
-        - cka
-        - workloads
-        - blcsilva
-        - CKA
-      maintainers:
-        - "Bruno Silva <blcsilva>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_15_hpa_autoscaling/lab.yaml"
-      created: "2026-08-16T00:00:00Z"
-      digest: "sha256:68f475c2216794b7b77f9144d986c54f5373872f45e25917a35d4a4bf3148b98"
+  - name: cka-15-hpa-autoscaling
+    version: 1.0.0
+    description: Crie um HPA e identifique dependencias de metrics-server.
+    keywords:
+    - kubernetes
+    - cka
+    - workloads
+    - blcsilva
+    - CKA
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_15_hpa_autoscaling/lab.yaml
+    created: '2026-08-16T00:00:00Z'
+    digest: sha256:68f475c2216794b7b77f9144d986c54f5373872f45e25917a35d4a4bf3148b98
   cka_16_services_endpoints:
-    - name: cka-16-services-endpoints
-      version: "1.0.0"
-      description: "Exponha Deployment por ClusterIP e valide endpoints reais."
-      keywords:
-        - kubernetes
-        - cka
-        - networking
-        - blcsilva
-        - CKA
-      maintainers:
-        - "Bruno Silva <blcsilva>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_16_services_endpoints/lab.yaml"
-      created: "2026-08-16T00:00:00Z"
-      digest: "sha256:002c1f5579ac4b7a229bdd21ec8eff26de2dd8f04f1c6add1cae5319888f21ff"
+  - name: cka-16-services-endpoints
+    version: 1.0.0
+    description: Exponha Deployment por ClusterIP e valide endpoints reais.
+    keywords:
+    - kubernetes
+    - cka
+    - networking
+    - blcsilva
+    - CKA
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_16_services_endpoints/lab.yaml
+    created: '2026-08-16T00:00:00Z'
+    digest: sha256:002c1f5579ac4b7a229bdd21ec8eff26de2dd8f04f1c6add1cae5319888f21ff
   cka_17_dns_coredns:
-    - name: cka-17-dns-coredns
-      version: "1.0.0"
-      description: "Valide resolucao DNS de Services dentro do cluster."
-      keywords:
-        - kubernetes
-        - cka
-        - networking
-        - blcsilva
-        - CKA
-      maintainers:
-        - "Bruno Silva <blcsilva>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_17_dns_coredns/lab.yaml"
-      created: "2026-08-16T00:00:00Z"
-      digest: "sha256:de88916a5d348a771c6ca747a65483ef79884273a21a695ce3a1716fd0ef2f61"
+  - name: cka-17-dns-coredns
+    version: 1.0.0
+    description: Valide resolucao DNS de Services dentro do cluster.
+    keywords:
+    - kubernetes
+    - cka
+    - networking
+    - blcsilva
+    - CKA
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_17_dns_coredns/lab.yaml
+    created: '2026-08-16T00:00:00Z'
+    digest: sha256:de88916a5d348a771c6ca747a65483ef79884273a21a695ce3a1716fd0ef2f61
   cka_18_networkpolicy:
-    - name: cka-18-networkpolicy
-      version: "1.0.0"
-      description: "Crie uma NetworkPolicy default deny para treinar isolamento de trafego."
-      keywords:
-        - kubernetes
-        - cka
-        - networking
-        - blcsilva
-        - CKA
-      maintainers:
-        - "Bruno Silva <blcsilva>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_18_networkpolicy/lab.yaml"
-      created: "2026-08-16T00:00:00Z"
-      digest: "sha256:4d46ddc8ae520a610751fc6324e5164f35dc20d10142677ff7e2dbb484a35881"
+  - name: cka-18-networkpolicy
+    version: 1.0.0
+    description: Crie uma NetworkPolicy default deny para treinar isolamento de trafego.
+    keywords:
+    - kubernetes
+    - cka
+    - networking
+    - blcsilva
+    - CKA
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_18_networkpolicy/lab.yaml
+    created: '2026-08-16T00:00:00Z'
+    digest: sha256:4d46ddc8ae520a610751fc6324e5164f35dc20d10142677ff7e2dbb484a35881
   cka_19_ingress:
-    - name: cka-19-ingress
-      version: "1.0.0"
-      description: "Crie um Ingress e valide regra, mesmo sem controller instalado."
-      keywords:
-        - kubernetes
-        - cka
-        - networking
-        - blcsilva
-        - CKA
-      maintainers:
-        - "Bruno Silva <blcsilva>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_19_ingress/lab.yaml"
-      created: "2026-08-16T00:00:00Z"
-      digest: "sha256:1c1ca465d40f5e3c1599ae8ddb922371a9496332cd64d7f230eb6e472f0262fe"
+  - name: cka-19-ingress
+    version: 1.0.0
+    description: Crie um Ingress e valide regra, mesmo sem controller instalado.
+    keywords:
+    - kubernetes
+    - cka
+    - networking
+    - blcsilva
+    - CKA
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_19_ingress/lab.yaml
+    created: '2026-08-16T00:00:00Z'
+    digest: sha256:1c1ca465d40f5e3c1599ae8ddb922371a9496332cd64d7f230eb6e472f0262fe
   cka_20_gateway_api_discovery:
-    - name: cka-20-gateway-api-discovery
-      version: "1.0.0"
-      description: "Descubra se Gateway API esta disponivel e registre a checagem no cluster."
-      keywords:
-        - kubernetes
-        - cka
-        - networking
-        - blcsilva
-        - CKA
-      maintainers:
-        - "Bruno Silva <blcsilva>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_20_gateway_api_discovery/lab.yaml"
-      created: "2026-08-16T00:00:00Z"
-      digest: "sha256:87db31a0b4a9538f75213fcc89946d538b2f3c7db7b38a359c1c77a67366e049"
+  - name: cka-20-gateway-api-discovery
+    version: 1.0.0
+    description: Descubra se Gateway API esta disponivel e registre a checagem no cluster.
+    keywords:
+    - kubernetes
+    - cka
+    - networking
+    - blcsilva
+    - CKA
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_20_gateway_api_discovery/lab.yaml
+    created: '2026-08-16T00:00:00Z'
+    digest: sha256:87db31a0b4a9538f75213fcc89946d538b2f3c7db7b38a359c1c77a67366e049
   cka_21_storageclass_pvc:
-    - name: cka-21-storageclass-pvc
-      version: "1.0.0"
-      description: "Inspecione StorageClass e crie PVC usando provisionamento dinamico quando disponivel."
-      keywords:
-        - kubernetes
-        - cka
-        - storage
-        - blcsilva
-        - CKA
-      maintainers:
-        - "Bruno Silva <blcsilva>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_21_storageclass_pvc/lab.yaml"
-      created: "2026-08-16T00:00:00Z"
-      digest: "sha256:cd2315789f8c882c000a84da04843dcdee4b500d8778d486aa1ccc0faafd1129"
+  - name: cka-21-storageclass-pvc
+    version: 1.0.0
+    description: Inspecione StorageClass e crie PVC usando provisionamento dinamico quando disponivel.
+    keywords:
+    - kubernetes
+    - cka
+    - storage
+    - blcsilva
+    - CKA
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_21_storageclass_pvc/lab.yaml
+    created: '2026-08-16T00:00:00Z'
+    digest: sha256:cd2315789f8c882c000a84da04843dcdee4b500d8778d486aa1ccc0faafd1129
   cka_22_pv_pvc_static:
-    - name: cka-22-pv-pvc-static
-      version: "1.0.0"
-      description: "Crie PV hostPath e PVC com bind explicito por volumeName."
-      keywords:
-        - kubernetes
-        - cka
-        - storage
-        - blcsilva
-        - CKA
-      maintainers:
-        - "Bruno Silva <blcsilva>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_22_pv_pvc_static/lab.yaml"
-      created: "2026-08-16T00:00:00Z"
-      digest: "sha256:4039a8c1e854ff32baf81029c96b063917a4e09d865551bb57de5733612d0bf3"
+  - name: cka-22-pv-pvc-static
+    version: 1.0.0
+    description: Crie PV hostPath e PVC com bind explicito por volumeName.
+    keywords:
+    - kubernetes
+    - cka
+    - storage
+    - blcsilva
+    - CKA
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_22_pv_pvc_static/lab.yaml
+    created: '2026-08-16T00:00:00Z'
+    digest: sha256:4039a8c1e854ff32baf81029c96b063917a4e09d865551bb57de5733612d0bf3
   cka_23_volume_mounts:
-    - name: cka-23-volume-mounts
-      version: "1.0.0"
-      description: "Monte PVC em Pod e valide escrita/leitura de arquivo."
-      keywords:
-        - kubernetes
-        - cka
-        - storage
-        - blcsilva
-        - CKA
-      maintainers:
-        - "Bruno Silva <blcsilva>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_23_volume_mounts/lab.yaml"
-      created: "2026-08-16T00:00:00Z"
-      digest: "sha256:de5c423b80ae6bc5f257c0a12222f05063bdac0c378845288a4ea053da0b703c"
+  - name: cka-23-volume-mounts
+    version: 1.0.0
+    description: Monte PVC em Pod e valide escrita/leitura de arquivo.
+    keywords:
+    - kubernetes
+    - cka
+    - storage
+    - blcsilva
+    - CKA
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_23_volume_mounts/lab.yaml
+    created: '2026-08-16T00:00:00Z'
+    digest: sha256:de5c423b80ae6bc5f257c0a12222f05063bdac0c378845288a4ea053da0b703c
   cka_24_troubleshoot_crashloop:
-    - name: cka-24-troubleshoot-crashloop
-      version: "1.0.0"
-      description: "Diagnostique falha de comando, logs e eventos de Pod quebrado."
-      keywords:
-        - kubernetes
-        - cka
-        - troubleshooting
-        - blcsilva
-        - CKA
-      maintainers:
-        - "Bruno Silva <blcsilva>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_24_troubleshoot_crashloop/lab.yaml"
-      created: "2026-08-16T00:00:00Z"
-      digest: "sha256:30333cbe595e30d196e6a0036b2effd00de14f08f6c6f0a26bb559b3b5a478d0"
+  - name: cka-24-troubleshoot-crashloop
+    version: 1.0.0
+    description: Diagnostique falha de comando, logs e eventos de Pod quebrado.
+    keywords:
+    - kubernetes
+    - cka
+    - troubleshooting
+    - blcsilva
+    - CKA
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_24_troubleshoot_crashloop/lab.yaml
+    created: '2026-08-16T00:00:00Z'
+    digest: sha256:30333cbe595e30d196e6a0036b2effd00de14f08f6c6f0a26bb559b3b5a478d0
   cka_25_troubleshoot_image_service:
-    - name: cka-25-troubleshoot-image-service
-      version: "1.0.0"
-      description: "Diagnostique ImagePullBackOff e Service sem endpoint por selector errado."
-      keywords:
-        - kubernetes
-        - cka
-        - troubleshooting
-        - blcsilva
-        - CKA
-      maintainers:
-        - "Bruno Silva <blcsilva>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_25_troubleshoot_image_service/lab.yaml"
-      created: "2026-08-16T00:00:00Z"
-      digest: "sha256:e95fcfa8e63f673e0ad5e1b9e18c4fb896de9f4520a226c06609791d2e5006b9"
+  - name: cka-25-troubleshoot-image-service
+    version: 1.0.0
+    description: Diagnostique ImagePullBackOff e Service sem endpoint por selector errado.
+    keywords:
+    - kubernetes
+    - cka
+    - troubleshooting
+    - blcsilva
+    - CKA
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_25_troubleshoot_image_service/lab.yaml
+    created: '2026-08-16T00:00:00Z'
+    digest: sha256:e95fcfa8e63f673e0ad5e1b9e18c4fb896de9f4520a226c06609791d2e5006b9
   cka_26_troubleshoot_pending_rbac_pvc:
-    - name: cka-26-troubleshoot-pending-rbac-pvc
-      version: "1.0.0"
-      description: "Treine diagnostico combinado de scheduling, acesso e storage pendente."
-      keywords:
-        - kubernetes
-        - cka
-        - troubleshooting
-        - blcsilva
-        - CKA
-      maintainers:
-        - "Bruno Silva <blcsilva>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_26_troubleshoot_pending_rbac_pvc/lab.yaml"
-      created: "2026-08-16T00:00:00Z"
-      digest: "sha256:dc60084d93c5744732558afa46cca39f301f47b4b3c9dea90738d02f900321a4"
+  - name: cka-26-troubleshoot-pending-rbac-pvc
+    version: 1.0.0
+    description: Treine diagnostico combinado de scheduling, acesso e storage pendente.
+    keywords:
+    - kubernetes
+    - cka
+    - troubleshooting
+    - blcsilva
+    - CKA
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/cka_26_troubleshoot_pending_rbac_pvc/lab.yaml
+    created: '2026-08-16T00:00:00Z'
+    digest: sha256:dc60084d93c5744732558afa46cca39f301f47b4b3c9dea90738d02f900321a4
   kubernetes_deployment-es:
-    - name: kubernetes_deployment-es
-      version: "1.0.0"
-      description: "Laboratorio de Deployment en Kubernetes"
-      keywords:
-        - kubernetes
-        - deployment
-      maintainers:
-        - "Jeferson <jeferson@linuxtips.io>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/kubernetes_deployment/lab_es.yaml"
-      created: "2024-06-01T10:00:00Z"
-      digest: "sha256:11eea5ec3f0a43d77125a0fe728f744802b98fd72026711c84571346bcd816d8"
+  - name: kubernetes_deployment-es
+    version: 1.0.0
+    description: Laboratorio de Deployment en Kubernetes
+    keywords:
+    - kubernetes
+    - deployment
+    maintainers:
+    - Jeferson <jeferson@linuxtips.io>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/kubernetes_deployment/lab_es.yaml
+    created: '2024-06-01T10:00:00Z'
+    digest: sha256:11eea5ec3f0a43d77125a0fe728f744802b98fd72026711c84571346bcd816d8
   docker_fundamentos-redes:
-    - name: docker_fundamentos-redes
-      version: "1.0.0"
-      description: "Laboratório de Fundamentos de Redes no Docker"
-      keywords:
-        - docker
-        - redes
-      maintainers:
-        - "Jeferson <jeferson@linuxtips.io>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/docker_fundamentos-redes/lab.yaml"
-      created: "2024-06-01T10:00:00Z"
-      digest: "sha256:51fb562cf42e3bb93baa43a75f9115d6067c84a76d030e3b364a586d95b54722"
+  - name: docker_fundamentos-redes
+    version: 1.0.0
+    description: "Laborat\xF3rio de Fundamentos de Redes no Docker"
+    keywords:
+    - docker
+    - redes
+    maintainers:
+    - Jeferson <jeferson@linuxtips.io>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/docker_fundamentos-redes/lab.yaml
+    created: '2024-06-01T10:00:00Z'
+    digest: sha256:51fb562cf42e3bb93baa43a75f9115d6067c84a76d030e3b364a586d95b54722
   docker_volumes:
-    - name: docker_volumes
-      version: "1.0.0"
-      description: "Laboratório de Volumes no Docker"
-      keywords:
-        - docker
-        - volumes
-      maintainers:
-        - "Jeferson <jeferson@linuxtips.io>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/docker_volumes/lab.yaml"
-      created: "2024-06-01T10:00:00Z"
-      digest: "sha256:e6f04e128dc9e6554fd4c09e7c0f0c4704975c84a41a5ce42e30f3f9cafb6a0c"
+  - name: docker_volumes
+    version: 1.0.0
+    description: "Laborat\xF3rio de Volumes no Docker"
+    keywords:
+    - docker
+    - volumes
+    maintainers:
+    - Jeferson <jeferson@linuxtips.io>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/docker_volumes/lab.yaml
+    created: '2024-06-01T10:00:00Z'
+    digest: sha256:e6f04e128dc9e6554fd4c09e7c0f0c4704975c84a41a5ce42e30f3f9cafb6a0c
   docker_compose:
-    - name: docker_compose
-      version: "1.0.0"
-      description: "Laboratório de Docker Compose"
-      keywords:
-        - docker
-        - compose
-      maintainers:
-        - "Jeferson <jeferson@linuxtips.io>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/docker_compose/lab.yaml"
-      created: "2024-06-01T10:00:00Z"
-      digest: "sha256:d0462cbf6e274d611844f0e1299d0d4ff6c98c6d04ead759391e025a10c88245"
+  - name: docker_compose
+    version: 1.0.0
+    description: "Laborat\xF3rio de Docker Compose"
+    keywords:
+    - docker
+    - compose
+    maintainers:
+    - Jeferson <jeferson@linuxtips.io>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/docker_compose/lab.yaml
+    created: '2024-06-01T10:00:00Z'
+    digest: sha256:d0462cbf6e274d611844f0e1299d0d4ff6c98c6d04ead759391e025a10c88245
   docker_compose-es:
-    - name: docker_compose-es
-      version: "1.0.0"
-      description: "Laboratorio de Docker Compose"
-      keywords:
-        - docker
-        - compose
-      maintainers:
-        - "Jeferson <jeferson@linuxtips.io>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/docker_compose/lab_es.yaml"
-      created: "2024-06-01T10:00:00Z"
-      digest: "sha256:745a2d44a20f9f6450c92e9413b8af9aea32c92d6f1ceb517a30c0c1262c8198"
+  - name: docker_compose-es
+    version: 1.0.0
+    description: Laboratorio de Docker Compose
+    keywords:
+    - docker
+    - compose
+    maintainers:
+    - Jeferson <jeferson@linuxtips.io>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/docker_compose/lab_es.yaml
+    created: '2024-06-01T10:00:00Z'
+    digest: sha256:745a2d44a20f9f6450c92e9413b8af9aea32c92d6f1ceb517a30c0c1262c8198
   kubernetes_exploracao-recursos:
-    - name: kubernetes_exploracao-recursos
-      version: "1.0.0"
-      description: "Laboratório de Exploração de Recursos no Kubernetes"
-      keywords:
-        - kubernetes
-        - recursos
-      maintainers:
-        - "Jeferson <jeferson@linuxtips.io>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/kubernetes_exploracao-recursos/lab.yaml"
-      created: "2024-06-01T10:00:00Z"
-      digest: "sha256:8719299c0058bef94ef87c9513732b3a54595431edc2e3808c827dba15726cc7"
+  - name: kubernetes_exploracao-recursos
+    version: 1.0.0
+    description: "Laborat\xF3rio de Explora\xE7\xE3o de Recursos no Kubernetes"
+    keywords:
+    - kubernetes
+    - recursos
+    maintainers:
+    - Jeferson <jeferson@linuxtips.io>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/kubernetes_exploracao-recursos/lab.yaml
+    created: '2024-06-01T10:00:00Z'
+    digest: sha256:8719299c0058bef94ef87c9513732b3a54595431edc2e3808c827dba15726cc7
   kubernetes_servicos-redes:
-    - name: kubernetes_servicos-redes
-      version: "1.0.0"
-      description: "Laboratório de Serviços e Redes no Kubernetes"
-      keywords:
-        - kubernetes
-        - serviços
-        - redes
-      maintainers:
-        - "Jeferson <jeferson@linuxtips.io>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/kubernetes_servicos-redes/lab.yaml"
-      created: "2024-06-01T10:00:00Z"
-      digest: "sha256:5ca5d13f401821f88fb9ffb7964d33a333e1ce66655ada8a94dd33b3f04eb30a"
+  - name: kubernetes_servicos-redes
+    version: 1.0.0
+    description: "Laborat\xF3rio de Servi\xE7os e Redes no Kubernetes"
+    keywords:
+    - kubernetes
+    - "servi\xE7os"
+    - redes
+    maintainers:
+    - Jeferson <jeferson@linuxtips.io>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/kubernetes_servicos-redes/lab.yaml
+    created: '2024-06-01T10:00:00Z'
+    digest: sha256:5ca5d13f401821f88fb9ffb7964d33a333e1ce66655ada8a94dd33b3f04eb30a
   kubernetes_configmaps-secrets:
-    - name: kubernetes_configmaps-secrets
-      version: "1.0.0"
-      description: "Laboratório de ConfigMaps e Secrets no Kubernetes"
-      keywords:
-        - kubernetes
-        - configmaps
-        - secrets
-      maintainers:
-        - "Jeferson <jeferson@linuxtips.io>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/kubernetes_configmaps-secrets/lab.yaml"
-      created: "2024-06-01T10:00:00Z"
-      digest: "sha256:b32cb5ba19e4487a933eb28951ebed33d94dd0721fc2a41a73c30c9b546971db"
+  - name: kubernetes_configmaps-secrets
+    version: 1.0.0
+    description: "Laborat\xF3rio de ConfigMaps e Secrets no Kubernetes"
+    keywords:
+    - kubernetes
+    - configmaps
+    - secrets
+    maintainers:
+    - Jeferson <jeferson@linuxtips.io>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/kubernetes_configmaps-secrets/lab.yaml
+    created: '2024-06-01T10:00:00Z'
+    digest: sha256:b32cb5ba19e4487a933eb28951ebed33d94dd0721fc2a41a73c30c9b546971db
   kubernetes_cronjobs:
-    - name: kubernetes_cronjobs
-      version: "1.0.0"
-      description: "Laboratório de CronJobs no Kubernetes"
-      keywords:
-        - kubernetes
-        - cronjobs
-      maintainers:
-        - "Jeferson <jeferson@linuxtips.io>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/kubernetes_cronjobs/lab.yaml"
-      created: "2024-06-01T10:00:00Z"
-      digest: "sha256:92e2a2f7140288d195e5d91bde4afd10798557507209eea6fb80cd15c48512ec"
+  - name: kubernetes_cronjobs
+    version: 1.0.0
+    description: "Laborat\xF3rio de CronJobs no Kubernetes"
+    keywords:
+    - kubernetes
+    - cronjobs
+    maintainers:
+    - Jeferson <jeferson@linuxtips.io>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/kubernetes_cronjobs/lab.yaml
+    created: '2024-06-01T10:00:00Z'
+    digest: sha256:92e2a2f7140288d195e5d91bde4afd10798557507209eea6fb80cd15c48512ec
   linux_comandos-basicos:
-    - name: linux_comandos-basicos
-      version: "1.0.0"
-      description: "Laboratório de Comandos Básicos no Linux"
-      keywords:
-        - linux
-        - comandos
-      maintainers:
-        - "Jeferson <jeferson@linuxtips.io>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/linux_comandos-basicos/lab.yaml"
-      created: "2024-06-01T10:00:00Z"
-      digest: "sha256:740c745715232f106cd0ffbf23463fdd2c64d910c87d31d57db5d77528d7720b"
+  - name: linux_comandos-basicos
+    version: 1.0.0
+    description: "Laborat\xF3rio de Comandos B\xE1sicos no Linux"
+    keywords:
+    - linux
+    - comandos
+    maintainers:
+    - Jeferson <jeferson@linuxtips.io>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/linux_comandos-basicos/lab.yaml
+    created: '2024-06-01T10:00:00Z'
+    digest: sha256:740c745715232f106cd0ffbf23463fdd2c64d910c87d31d57db5d77528d7720b
   linux_comandos-basicos-es:
-    - name: linux_comandos-basicos-es
-      version: "1.0.0"
-      description: "Laboratorio de Comandos Básicos en Linux"
-      keywords:
-        - linux
-        - comandos
-      maintainers:
-        - "Jeferson <jeferson@linuxtips.io>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/linux_comandos-basicos/lab_es.yaml"
-      created: "2024-06-01T10:00:00Z"
-      digest: "sha256:70a8f941c8379cb76c44ae1fd2d5b461440394ababdc255225d78545fbab7bc5"
+  - name: linux_comandos-basicos-es
+    version: 1.0.0
+    description: "Laboratorio de Comandos B\xE1sicos en Linux"
+    keywords:
+    - linux
+    - comandos
+    maintainers:
+    - Jeferson <jeferson@linuxtips.io>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/linux_comandos-basicos/lab_es.yaml
+    created: '2024-06-01T10:00:00Z'
+    digest: sha256:70a8f941c8379cb76c44ae1fd2d5b461440394ababdc255225d78545fbab7bc5
   linux_gerenciamento-usuarios:
-    - name: linux_gerenciamento-usuarios
-      version: "1.0.0"
-      description: "Laboratório de Gerenciamento de Usuários no Linux"
-      keywords:
-        - linux
-        - usuários
-      maintainers:
-        - "Jeferson <jeferson@linuxtips.io>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/linux_gerenciamento-usuarios/lab.yaml"
-      created: "2024-06-01T10:00:00Z"
-      digest: "sha256:ce846801ebe25dd5763a3ae6e8c0f7499ea05cdbe4daa5c925f7e1adfcd9edb6"
+  - name: linux_gerenciamento-usuarios
+    version: 1.0.0
+    description: "Laborat\xF3rio de Gerenciamento de Usu\xE1rios no Linux"
+    keywords:
+    - linux
+    - "usu\xE1rios"
+    maintainers:
+    - Jeferson <jeferson@linuxtips.io>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/linux_gerenciamento-usuarios/lab.yaml
+    created: '2024-06-01T10:00:00Z'
+    digest: sha256:ce846801ebe25dd5763a3ae6e8c0f7499ea05cdbe4daa5c925f7e1adfcd9edb6
   linux_permissoes-arquivos:
-    - name: linux_permissoes-arquivos
-      version: "1.0.0"
-      description: "Laboratório de Permissões de Arquivos no Linux"
-      keywords:
-        - linux
-        - permissões
-      maintainers:
-        - "Jeferson <jeferson@linuxtips.io>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/linux_permissoes-arquivos/lab.yaml"
-      created: "2024-06-01T10:00:00Z"
-      digest: "sha256:55f0227284e0f0bc1eaddbafb6e194d421b48a7c53956f9fd5d4e1d96a3c8729"
+  - name: linux_permissoes-arquivos
+    version: 1.0.0
+    description: "Laborat\xF3rio de Permiss\xF5es de Arquivos no Linux"
+    keywords:
+    - linux
+    - "permiss\xF5es"
+    maintainers:
+    - Jeferson <jeferson@linuxtips.io>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/linux_permissoes-arquivos/lab.yaml
+    created: '2024-06-01T10:00:00Z'
+    digest: sha256:55f0227284e0f0bc1eaddbafb6e194d421b48a7c53956f9fd5d4e1d96a3c8729
   docker_fundamentos:
-    - name: docker_fundamentos
-      version: "1.0.0"
-      description: "Laboratório de Fundamentos do Docker"
-      keywords:
-        - docker
-        - fundamentos
-      maintainers:
-        - "Jeferson <jeferson@linuxtips.io>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/docker_fundamentos/lab.yaml"
-      created: "2024-06-01T10:00:00Z"
-      digest: "sha256:9268dd385409dab457c82aa27ce15910fa5c4de0e9abb7592be4d712a3181b56"
+  - name: docker_fundamentos
+    version: 1.0.0
+    description: "Laborat\xF3rio de Fundamentos do Docker"
+    keywords:
+    - docker
+    - fundamentos
+    maintainers:
+    - Jeferson <jeferson@linuxtips.io>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/docker_fundamentos/lab.yaml
+    created: '2024-06-01T10:00:00Z'
+    digest: sha256:9268dd385409dab457c82aa27ce15910fa5c4de0e9abb7592be4d712a3181b56
   docker_gerenciamento-containers:
-    - name: docker_gerenciamento-containers
-      version: "1.0.0"
-      description: "Laboratório de Gerenciamento de Containers no Docker"
-      keywords:
-        - docker
-        - containers
-      maintainers:
-        - "Jeferson <jeferson@linuxtips.io>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/docker_gerenciamento-containers/lab.yaml"
-      created: "2024-06-01T10:00:00Z"
-      digest: "sha256:439c0941e0e6200b3c9e572c75a6d5c73d7119f5bdb8b37c86605de189665ebd"
+  - name: docker_gerenciamento-containers
+    version: 1.0.0
+    description: "Laborat\xF3rio de Gerenciamento de Containers no Docker"
+    keywords:
+    - docker
+    - containers
+    maintainers:
+    - Jeferson <jeferson@linuxtips.io>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/docker_gerenciamento-containers/lab.yaml
+    created: '2024-06-01T10:00:00Z'
+    digest: sha256:439c0941e0e6200b3c9e572c75a6d5c73d7119f5bdb8b37c86605de189665ebd
   linux_processamento-texto:
-    - name: linux_processamento-texto
-      version: "1.0.0"
-      description: "Laboratório de Processamento de Texto no Linux"
-      keywords:
-        - linux
-        - processamento
-        - texto
-      maintainers:
-        - "Jeferson <jeferson@linuxtips.io>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/linux_processamento-texto/lab.yaml"
-      created: "2024-06-01T10:00:00Z"
-      digest: "sha256:bbb0db3fcf1b6e4859a2b34141af4e125533a0f6ddb943abbe73d48e4bf375e4"
+  - name: linux_processamento-texto
+    version: 1.0.0
+    description: "Laborat\xF3rio de Processamento de Texto no Linux"
+    keywords:
+    - linux
+    - processamento
+    - texto
+    maintainers:
+    - Jeferson <jeferson@linuxtips.io>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/linux_processamento-texto/lab.yaml
+    created: '2024-06-01T10:00:00Z'
+    digest: sha256:bbb0db3fcf1b6e4859a2b34141af4e125533a0f6ddb943abbe73d48e4bf375e4
   linux_gerenciamento-processos:
-    - name: linux_gerenciamento-processos
-      version: "1.0.0"
-      description: "Laboratório de Gerenciamento de Processos no Linux"
-      keywords:
-        - linux
-        - processos
-      maintainers:
-        - "Jeferson <jeferson@linuxtips.io>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/linux_gerenciamento-processos/lab.yaml"
-      created: "2024-06-01T10:00:00Z"
-      digest: "sha256:b6ee38e9d4aaa2579136cdf10e5555f5991342f5b832bf5356bce284139c5b80"
+  - name: linux_gerenciamento-processos
+    version: 1.0.0
+    description: "Laborat\xF3rio de Gerenciamento de Processos no Linux"
+    keywords:
+    - linux
+    - processos
+    maintainers:
+    - Jeferson <jeferson@linuxtips.io>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/linux_gerenciamento-processos/lab.yaml
+    created: '2024-06-01T10:00:00Z'
+    digest: sha256:b6ee38e9d4aaa2579136cdf10e5555f5991342f5b832bf5356bce284139c5b80
   kubernetes_deployments:
-    - name: kubernetes_deployments
-      version: "1.0.0"
-      description: "Laboratório de Deployments no Kubernetes"
-      keywords:
-        - kubernetes
-        - deployments
-      maintainers:
-        - "Jeferson <jeferson@linuxtips.io>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/kubernetes_deployments/lab.yaml"
-      created: "2024-06-01T10:00:00Z"
-      digest: "sha256:2d2735b8c99c2775d825c28d051d357f754f1f70ed5d62b746f185d02845135a"
+  - name: kubernetes_deployments
+    version: 1.0.0
+    description: "Laborat\xF3rio de Deployments no Kubernetes"
+    keywords:
+    - kubernetes
+    - deployments
+    maintainers:
+    - Jeferson <jeferson@linuxtips.io>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/kubernetes_deployments/lab.yaml
+    created: '2024-06-01T10:00:00Z'
+    digest: sha256:2d2735b8c99c2775d825c28d051d357f754f1f70ed5d62b746f185d02845135a
   linux_shell-script:
-    - name: linux_shell-script
-      version: "1.0.0"
-      description: "Laboratório de Shell Script no Linux"
-      keywords:
-        - linux
-        - shell
-        - script
-      maintainers:
-        - "Jeferson <jeferson@linuxtips.io>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/linux_shell-script/lab.yaml"
-      created: "2024-06-01T10:00:00Z"
-      digest: "sha256:bd19f6f8669fb59564d10d16cd19a8ad3bdbea4c0c885a9ff0701a5be70333d0"
+  - name: linux_shell-script
+    version: 1.0.0
+    description: "Laborat\xF3rio de Shell Script no Linux"
+    keywords:
+    - linux
+    - shell
+    - script
+    maintainers:
+    - Jeferson <jeferson@linuxtips.io>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/linux_shell-script/lab.yaml
+    created: '2024-06-01T10:00:00Z'
+    digest: sha256:bd19f6f8669fb59564d10d16cd19a8ad3bdbea4c0c885a9ff0701a5be70333d0
   linux_monitoramento-sistema:
-    - name: linux_monitoramento-sistema
-      version: "1.0.0"
-      description: "Laboratório de Monitoramento de Sistema no Linux"
-      keywords:
-        - linux
-        - monitoramento
-      maintainers:
-        - "Jeferson <jeferson@linuxtips.io>"
-      url: "https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/linux_monitoramento-sistema/lab.yaml"
-      created: "2024-06-01T10:00:00Z"
-      digest: "sha256:d0b045f51c2ae38ec654571cb8d14774ef56843c865167fd4ec1e7506d50e565"
-
-
-
-
-
+  - name: linux_monitoramento-sistema
+    version: 1.0.0
+    description: "Laborat\xF3rio de Monitoramento de Sistema no Linux"
+    keywords:
+    - linux
+    - monitoramento
+    maintainers:
+    - Jeferson <jeferson@linuxtips.io>
+    url: https://raw.githubusercontent.com/badtuxx/girus-cli/main/labs/linux_monitoramento-sistema/lab.yaml
+    created: '2024-06-01T10:00:00Z'
+    digest: sha256:d0b045f51c2ae38ec654571cb8d14774ef56843c865167fd4ec1e7506d50e565
+  rhcsa_01_rhel_ecosystem_cli:
+  - name: rhcsa_01_rhel_ecosystem_cli
+    version: 1.0.0
+    description: Mapeie distribuicao, kernel, shell e contexto de execucao antes de administrar um servidor.
+    keywords:
+    - linux
+    - rhel
+    - rhcsa
+    - redhat
+    - blcsilva
+    - fundamentos
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_01_rhel_ecosystem_cli/lab.yaml
+    created: '2026-08-17T00:00:00Z'
+    digest: sha256:10e4f1f974017b98a697b2289da2eeee1a509010523b9c18d4cfa5355b4cee35
+  rhcsa_02_help_docs_man_pages:
+  - name: rhcsa_02_help_docs_man_pages
+    version: 1.0.0
+    description: Use documentacao local para resolver duvidas sem sair do terminal, habilidade essencial no RHCSA.
+    keywords:
+    - linux
+    - rhel
+    - rhcsa
+    - redhat
+    - blcsilva
+    - fundamentos
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_02_help_docs_man_pages/lab.yaml
+    created: '2026-08-17T00:00:00Z'
+    digest: sha256:bac2facb133c937fc63d06823c0512f779fdde5403218fffd55ad6f47762da81
+  rhcsa_03_filesystem_navigation:
+  - name: rhcsa_03_filesystem_navigation
+    version: 1.0.0
+    description: Navegue pela FHS, diferencie caminhos absolutos e relativos e localize arquivos com seguranca.
+    keywords:
+    - linux
+    - rhel
+    - rhcsa
+    - redhat
+    - blcsilva
+    - arquivos
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_03_filesystem_navigation/lab.yaml
+    created: '2026-08-17T00:00:00Z'
+    digest: sha256:19f272c541af2c4e37650328a38719ff624860ebd93ed453d6b0a3261be73c59
+  rhcsa_04_file_management_editing:
+  - name: rhcsa_04_file_management_editing
+    version: 1.0.0
+    description: Crie, copie, mova e edite arquivos mantendo rastreabilidade de alteracoes simples.
+    keywords:
+    - linux
+    - rhel
+    - rhcsa
+    - redhat
+    - blcsilva
+    - arquivos
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_04_file_management_editing/lab.yaml
+    created: '2026-08-17T00:00:00Z'
+    digest: sha256:69c1520dd6f4785ef539bb8a1bff4ef3b2596659c99750805eb36e43ad692e52
+  rhcsa_05_redirection_pipelines_grep:
+  - name: rhcsa_05_redirection_pipelines_grep
+    version: 1.0.0
+    description: Combine filtros e redirecionamento para transformar saidas de comandos em evidencia verificavel.
+    keywords:
+    - linux
+    - rhel
+    - rhcsa
+    - redhat
+    - blcsilva
+    - shell
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_05_redirection_pipelines_grep/lab.yaml
+    created: '2026-08-17T00:00:00Z'
+    digest: sha256:28c5680c2d77b6a7f9a57fc2b50e1f1211b8ec95838c720a4c53b38fbe2eb7fe
+  rhcsa_06_users_groups_passwords:
+  - name: rhcsa_06_users_groups_passwords
+    version: 1.0.0
+    description: Crie identidade local, associe grupo primario/secundario e valide com getent e id.
+    keywords:
+    - linux
+    - rhel
+    - rhcsa
+    - redhat
+    - blcsilva
+    - usuarios
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_06_users_groups_passwords/lab.yaml
+    created: '2026-08-17T00:00:00Z'
+    digest: sha256:268d943d9313bb3de30da60921e00e03d31f36e29882480ed7b913a45551ecf2
+  rhcsa_07_permissions_acl_umask:
+  - name: rhcsa_07_permissions_acl_umask
+    version: 1.0.0
+    description: Controle acesso com dono, grupo e bits numericos antes de avancar para ACL e SELinux.
+    keywords:
+    - linux
+    - rhel
+    - rhcsa
+    - redhat
+    - blcsilva
+    - seguranca
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_07_permissions_acl_umask/lab.yaml
+    created: '2026-08-17T00:00:00Z'
+    digest: sha256:9be3b220731fa2d404dcb67c075d87a7117f83d08e07bdaec5674df7ab616161
+  rhcsa_08_software_rpm_dnf:
+  - name: rhcsa_08_software_rpm_dnf
+    version: 1.0.0
+    description: Entenda o papel de rpm/dnf no RHEL e registre a ferramenta disponivel no ambiente do lab.
+    keywords:
+    - linux
+    - rhel
+    - rhcsa
+    - redhat
+    - blcsilva
+    - software
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_08_software_rpm_dnf/lab.yaml
+    created: '2026-08-17T00:00:00Z'
+    digest: sha256:4b4260db4b8c92e924707e39f77fd6f50c28ff30c8ad5e84597b7cdd9feab4ee
+  rhcsa_09_processes_jobs_signals:
+  - name: rhcsa_09_processes_jobs_signals
+    version: 1.0.0
+    description: Investigue processos, PID, sinais e controle basico de execucao em segundo plano.
+    keywords:
+    - linux
+    - rhel
+    - rhcsa
+    - redhat
+    - blcsilva
+    - processos
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_09_processes_jobs_signals/lab.yaml
+    created: '2026-08-17T00:00:00Z'
+    digest: sha256:6dbfad08ff170c7cb463845b784f46e78bba85b99e08c70251603f55917ae686
+  rhcsa_10_services_systemd:
+  - name: rhcsa_10_services_systemd
+    version: 1.0.0
+    description: Relacione systemd, unidades e estado de servicos mesmo quando o container nao executa systemd como PID 1.
+    keywords:
+    - linux
+    - rhel
+    - rhcsa
+    - redhat
+    - blcsilva
+    - servicos
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_10_services_systemd/lab.yaml
+    created: '2026-08-17T00:00:00Z'
+    digest: sha256:5f969e03500cfbda285dd57420888ae3982aaa5e99bcd1591abe94cf02d83331
+  rhcsa_11_networking_nmcli_ip:
+  - name: rhcsa_11_networking_nmcli_ip
+    version: 1.0.0
+    description: Colete estado de rede, entenda enderecos/rotas e conecte a pratica aos comandos nmcli do RHEL.
+    keywords:
+    - linux
+    - rhel
+    - rhcsa
+    - redhat
+    - blcsilva
+    - rede
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_11_networking_nmcli_ip/lab.yaml
+    created: '2026-08-17T00:00:00Z'
+    digest: sha256:bd518c3c4faf6a37516d3892c07f0f34ba39a5ef41db43d180b026a57b6ecac2
+  rhcsa_12_ssh_remote_access:
+  - name: rhcsa_12_ssh_remote_access
+    version: 1.0.0
+    description: Prepare chave publica e valide os artefatos de acesso remoto usados em administracao segura.
+    keywords:
+    - linux
+    - rhel
+    - rhcsa
+    - redhat
+    - blcsilva
+    - acesso remoto
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_12_ssh_remote_access/lab.yaml
+    created: '2026-08-17T00:00:00Z'
+    digest: sha256:22fe9e206f60523c2d271a229bb9688ed169e8dc979bfa2c1ad64ad5709c9eba
+  rhcsa_13_shell_scripting:
+  - name: rhcsa_13_shell_scripting
+    version: 1.0.0
+    description: Escreva script simples com variaveis, codigo de saida e saida previsivel.
+    keywords:
+    - linux
+    - rhel
+    - rhcsa
+    - redhat
+    - blcsilva
+    - automacao
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_13_shell_scripting/lab.yaml
+    created: '2026-08-17T00:00:00Z'
+    digest: sha256:aff9d215aae525de19a3556da76479ea25d76addd81b0abd7c7b3325d0623873
+  rhcsa_14_regex_text_processing:
+  - name: rhcsa_14_regex_text_processing
+    version: 1.0.0
+    description: Use regex para extrair informacao operacional de textos e logs.
+    keywords:
+    - linux
+    - rhel
+    - rhcsa
+    - redhat
+    - blcsilva
+    - automacao
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_14_regex_text_processing/lab.yaml
+    created: '2026-08-17T00:00:00Z'
+    digest: sha256:254bc9128c5af00d822529f36585ad0eb3d69545d16ef702c3336aed696c1558
+  rhcsa_15_scheduling_at_cron_systemd_timers:
+  - name: rhcsa_15_scheduling_at_cron_systemd_timers
+    version: 1.0.0
+    description: Modele tarefas recorrentes e diferencie cron de systemd timers em RHEL.
+    keywords:
+    - linux
+    - rhel
+    - rhcsa
+    - redhat
+    - blcsilva
+    - automacao
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_15_scheduling_at_cron_systemd_timers/lab.yaml
+    created: '2026-08-17T00:00:00Z'
+    digest: sha256:111719c81fcebc6a27962e9aed6817c692cc269b2bccc52490f9edaf76bd7e9e
+  rhcsa_16_logs_journalctl_rsyslog:
+  - name: rhcsa_16_logs_journalctl_rsyslog
+    version: 1.0.0
+    description: Colete logs disponiveis e registre comandos equivalentes de journalctl/rsyslog para RHEL.
+    keywords:
+    - linux
+    - rhel
+    - rhcsa
+    - redhat
+    - blcsilva
+    - troubleshooting
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_16_logs_journalctl_rsyslog/lab.yaml
+    created: '2026-08-17T00:00:00Z'
+    digest: sha256:36032094aef9aa6745b4cb2c418b4e780d40b33303d99fc6f1df7cb741d5d6b1
+  rhcsa_17_selinux_basics_contexts:
+  - name: rhcsa_17_selinux_basics_contexts
+    version: 1.0.0
+    description: Reconheca modo, contexto e comandos de correcao SELinux mesmo em ambiente de lab sem SELinux ativo.
+    keywords:
+    - linux
+    - rhel
+    - rhcsa
+    - redhat
+    - blcsilva
+    - seguranca
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_17_selinux_basics_contexts/lab.yaml
+    created: '2026-08-17T00:00:00Z'
+    digest: sha256:c86b691483772f5b6b9955f2fdab689fec91c45bdc0fc18cad0a88507b792a3f
+  rhcsa_18_archives_transfer:
+  - name: rhcsa_18_archives_transfer
+    version: 1.0.0
+    description: Crie arquivo tar comprimido, valide conteudo e gere checksum para transferencia segura.
+    keywords:
+    - linux
+    - rhel
+    - rhcsa
+    - redhat
+    - blcsilva
+    - arquivos
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_18_archives_transfer/lab.yaml
+    created: '2026-08-17T00:00:00Z'
+    digest: sha256:6ec6402548d1fc72ded9eecc8777e771c1da9c72c818b7f442b5586a3d35c41a
+  rhcsa_19_storage_partitions_filesystems:
+  - name: rhcsa_19_storage_partitions_filesystems
+    version: 1.0.0
+    description: Investigue discos/montagens e documente comandos de particao e filesystem usados no RHEL.
+    keywords:
+    - linux
+    - rhel
+    - rhcsa
+    - redhat
+    - blcsilva
+    - storage
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_19_storage_partitions_filesystems/lab.yaml
+    created: '2026-08-17T00:00:00Z'
+    digest: sha256:e118ee77fb9e41389a8501be11d2ed76bbf4b1a4834957a08a749429f697858f
+  rhcsa_20_lvm_swap_storage:
+  - name: rhcsa_20_lvm_swap_storage
+    version: 1.0.0
+    description: Pratique o raciocinio de PV, VG, LV, filesystem e swap com um plano operacional validavel.
+    keywords:
+    - linux
+    - rhel
+    - rhcsa
+    - redhat
+    - blcsilva
+    - storage
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_20_lvm_swap_storage/lab.yaml
+    created: '2026-08-17T00:00:00Z'
+    digest: sha256:5d68e7f2119d901629b185f3766b7b1d9b1d5c136e5516effdc51764d3064618
+  rhcsa_21_boot_targets_recovery:
+  - name: rhcsa_21_boot_targets_recovery
+    version: 1.0.0
+    description: Relacione targets systemd, modo rescue/emergency e recuperacao de acesso administrativo.
+    keywords:
+    - linux
+    - rhel
+    - rhcsa
+    - redhat
+    - blcsilva
+    - troubleshooting
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_21_boot_targets_recovery/lab.yaml
+    created: '2026-08-17T00:00:00Z'
+    digest: sha256:c3fece5d62955bfd822dfc51a76031df91dc966376df7472ea81234e9b22115c
+  rhcsa_22_firewall_network_security:
+  - name: rhcsa_22_firewall_network_security
+    version: 1.0.0
+    description: Mapeie servicos de rede e conecte firewall-cmd/SELinux port labels ao controle de exposicao.
+    keywords:
+    - linux
+    - rhel
+    - rhcsa
+    - redhat
+    - blcsilva
+    - seguranca
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_22_firewall_network_security/lab.yaml
+    created: '2026-08-17T00:00:00Z'
+    digest: sha256:61171f4f236b887a5f4b7b07acec368f3b508f60500ec21be1b19f50a61cdb01
+  rhcsa_23_nfs_autofs:
+  - name: rhcsa_23_nfs_autofs
+    version: 1.0.0
+    description: Modele montagem NFS e automounter, separando configuracao persistente de montagem manual.
+    keywords:
+    - linux
+    - rhel
+    - rhcsa
+    - redhat
+    - blcsilva
+    - storage
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_23_nfs_autofs/lab.yaml
+    created: '2026-08-17T00:00:00Z'
+    digest: sha256:06ec68a1585270acd807f14172b1939f61172682ff33282e445817627e39c563
+  rhcsa_24_podman_containers:
+  - name: rhcsa_24_podman_containers
+    version: 1.0.0
+    description: Crie um Containerfile e registre comandos equivalentes de Podman usados em RHEL.
+    keywords:
+    - linux
+    - rhel
+    - rhcsa
+    - redhat
+    - blcsilva
+    - containers
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_24_podman_containers/lab.yaml
+    created: '2026-08-17T00:00:00Z'
+    digest: sha256:397cd51bce0b85cef4f1c3cf2f398f4ad0e2c46d385c00726ffb0315d5fc4223
+  rhcsa_25_kickstart_image_mode_cockpit:
+  - name: rhcsa_25_kickstart_image_mode_cockpit
+    version: 1.0.0
+    description: Consolide instalacao automatizada, gerenciamento via Cockpit e image mode em um pacote de configuracao.
+    keywords:
+    - linux
+    - rhel
+    - rhcsa
+    - redhat
+    - blcsilva
+    - instalacao
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_25_kickstart_image_mode_cockpit/lab.yaml
+    created: '2026-08-17T00:00:00Z'
+    digest: sha256:ffb524d40b0a1e535701a0d0598a3993ceceefc5f2ff0a0931b07b11be6c0dda
+  rhcsa_26_rhcsa_comprehensive_review:
+  - name: rhcsa_26_rhcsa_comprehensive_review
+    version: 1.0.0
+    description: Execute uma mini-revisao integrando arquivos, usuarios, permissoes, processos, logs e plano operacional.
+    keywords:
+    - linux
+    - rhel
+    - rhcsa
+    - redhat
+    - blcsilva
+    - revisao
+    maintainers:
+    - Bruno Silva <blcsilva>
+    url: https://raw.githubusercontent.com/blcsilva/girus-cli/main/labs/rhcsa_26_rhcsa_comprehensive_review/lab.yaml
+    created: '2026-08-17T00:00:00Z'
+    digest: sha256:679c4a55a203abc9a4636f69e96a75c1b17ea244a9e43c7ca4ce2933349f708c
